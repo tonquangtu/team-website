@@ -1031,7 +1031,6 @@ button.tiny,
   flex-wrap: wrap;
 }
 .item-partner {
-  border-radius: 45px;
   border: 1px solid #ccc;
   height: 120px;
   display: inline-block;
@@ -1065,7 +1064,7 @@ img {
 }
 .item-partner:hover {
   opacity: 1;
-  border: 1px solid #1cec67;
+  border: 3px solid #1cec67;
 }
 .solution-odoo {
   padding-top: 50px;
