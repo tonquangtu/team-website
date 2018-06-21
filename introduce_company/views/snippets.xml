@@ -1,0 +1,46 @@
+<odoo>
+    <template id="e_commerce" inherit_id="website.snippets" name="Ecommerce">
+        <xpath expr="//div[@id='o_scroll']" position="inside">
+            <div id="snippet_e_commerce" class="o_panel">
+                <div class="o_panel_header">
+                    <i class="fa fa-indent"/>
+                    E-commerce
+                </div>
+                <div class="o_panel_body">
+                    <t t-snippet="introduce_company.snippet_banner"
+                       t-thumbnail="/introduce_company/static/src/img/model.jpg"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="snippet_banner" name="Snippet Banner">
+        <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/snippet_style.css"/>
+        <section class="snippet-banner">
+            <div class="snippet-banner-container">
+                <div id="nz-box-1" class="back_active nz-box element-animate">
+                    <div class="nz-box-wrap">
+                        <div class="box-icon-wrap">
+                            <div class="box-icon">
+                                <img class="box-img"
+                                     src="/introduce_company/static/src/img/model.jpg"/>
+                            </div>
+                        </div>
+                        <div class="box-data">
+                            <h3 class="box-title">Creative Team Work</h3>
+                            <p></p>
+                            <p style="text-align: center;">Bring to the table win-win
+                                survival
+                                strategies to ensure proactive domination. At the end of the
+                                day, going forward, a new normal that has evolved.
+                            </p>
+                            <div class="nz-clearfix">
+                                <a class="box-more" href="http://ninzio.com">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

@@ -1,0 +1,283 @@
+@import '/introduce_company/static/src/css/font.css';
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  font-family: icomoon, -apple-system, Raleway SemiBold, Raleway, sans-serif;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+.footer {
+  margin-top: 30px;
+  background-color: #2d2e2f !important;
+  background-image: url(http://ninzio.com/thebuilders/wp-content/uploads/2016/11/footer_bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+}
+.footer {
+  position: relative;
+  z-index: 70;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: #2b3034;
+}
+.footer {
+  width: 100%;
+  position: relative;
+}
+.footer-wa {
+  color: #bfbfbf;
+}
+.container,
+.full-width-true .nz-tabs.full-true .tab-content,
+.ninzio-navigation,
+.wpml-ls-statics-post_translations {
+  width: 92%;
+  max-width: 92%;
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+.footer .widget {
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+img,
+img[class*="wp-image"] {
+  max-width: 100%;
+  height: auto !important;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: bottom;
+  margin: 0;
+}
+.nz-clearfix:after,
+.single_variation_wrap:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.social-links.left {
+  text-align: left;
+}
+.social-links {
+  height: 40px;
+}
+[class*=" icon-"],
+[class^=icon-] {
+  font-family: icomoon;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.social-links a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 0px;
+  font-size: 14px;
+  text-align: center;
+  color: #ffffff !important;
+  background-color: #444444;
+  margin: 0 4px 3px 0;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+.footer .widget a {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.footer-widget-area a:not(.button) {
+  color: #c0c1c2;
+}
+.footer-widget-area a:not(.button):not(.ui-slider-handle),
+.sidebar a:not(.button):not(.ui-slider-handle) {
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.footer .widget .social-links a {
+  color: #ffffff !important;
+  background-color: #39393a;
+}
+.icon-facebook:before {
+  content: "\e769";
+}
+.icon-twitter:before {
+  content: "\e76d";
+}
+.icon-googleplus:before {
+  content: "\e764";
+}
+.icon-apple:before {
+  content: "\e796";
+}
+.social-links a:last-child {
+  margin-right: 0px;
+}
+.nz-clearfix:after,
+.single_variation_wrap:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer .widget {
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+.widget_title,
+.yawp_wim_title {
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+}
+.footer-widget-area .widget_title,
+.footer-widget-area .yawp_wim_title {
+  color: #ffffff;
+}
+.footer-widget-area .widget_title:after,
+.footer-widget-area .yawp_wim_title:after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  display: block;
+  margin-top: 7px;
+}
+.widget_mailchimp .mailchimp-subtitle:not(:empty) {
+  padding-bottom: 25px;
+}
+.widget_mailchimp form,
+.nz-mailchimp form {
+  margin-bottom: 0;
+  position: relative;
+}
+#mce-EMAIL {
+  font-size: inherit;
+  padding-left: 60px;
+  height: 50px;
+  text-transform: none;
+  background: #151515 url(/introduce_company/static/src/img/subscribe_icon.png) no-repeat 18px 50%;
+}
+.footer-widget-area textarea,
+.footer-widget-area select,
+.footer-widget-area input[type="date"],
+.footer-widget-area input[type="datetime"],
+.footer-widget-area input[type="datetime-local"],
+.footer-widget-area input[type="email"],
+.footer-widget-area input[type="month"],
+.footer-widget-area input[type="number"],
+.footer-widget-area input[type="password"],
+.footer-widget-area input[type="search"],
+.footer-widget-area input[type="tel"],
+.footer-widget-area input[type="text"],
+.footer-widget-area input[type="time"],
+.footer-widget-area input[type="url"],
+.footer-widget-area input[type="week"] {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+#mc-embedded-subscribe {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 35px;
+  font-size: 13px;
+  border-radius: 0px;
+}
+@media only screen and (min-width: 1100px) {
+  .footer-widget-area > .widget,
+  .footer-widget-area > .yawp_wim_widget {
+    display: table-cell;
+    vertical-align: top;
+    width: 25%;
+    float: none;
+  }
+  .footer-widget-area > .widget,
+  .footer-widget-area > .yawp_wim_widget {
+    display: table-cell;
+    vertical-align: top;
+    width: 25%;
+    float: none;
+  }
+  .container,
+  .full-width-true .nz-tabs.full-true .tab-content,
+  .ninzio-navigation,
+  .wpml-ls-statics-post_translations {
+    max-width: 1170px;
+    width: 1170px;
+  }
+  .footer-widget-area {
+    display: table;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer-widget-area > .widget,
+  .footer-widget-area > .yawp_wim_widget {
+    width: 50%;
+    float: left;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+  }
+  .footer-widget-area > .widget,
+  .footer-widget-area > .yawp_wim_widget {
+    width: 50%;
+    float: left;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+  }
+  .footer-widget-area {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .container,
+  .full-width-true .nz-tabs.full-true .tab-content,
+  .ninzio-navigation,
+  .wpml-ls-statics-post_translations {
+    max-width: 290px;
+    width: 290px;
+  }
+}

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="homepage" name="Home Page">
+        <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/homepage_style.css"/>
+        <t t-call="website.layout">
+            <div id="homepage" class="oe_structure">
+            <t t-call="introduce_company.header">
+                <t t-set="menu_list" t-value="menu"/>
+                <t t-set="team" t-value="team"/>
+            </t>
+
+            <!--mobi header-->
+            <div class="width_header cen">
+            <button type="button" class="navbar-toggle-custom collapsed" data-toggle="collapse"
+                    data-target="#menu_main_ul">
+                <img src="/introduce_company/static/src/img/icon_menu.svg"/>
+            </button>
+            <div class="box-logo pd0">
+                <a href="/" class="logo">
+                    <img src="/introduce_company/static/src/img/logo1.png"/>
+                </a>
+            </div>
+            <div class="box-menu">
+            <div class="nav-main">
+            <div class="box-nav">
+            <ul class="menu_main" id="menu_main_ul" style="display: none;">
+            <t t-foreach="menu" t-as="item">
+                <li class="menu-solution">
+                    <a class="" t-att-href="item.get('parent').x_link" title="facebook"
+                       target="_blank">
+                    <t t-esc="item.get('parent').name"/>
+                    <img src="/introduce_company/static/src/img/Shape 1.png"
+                         style="margin-left: 5px;margin-bottom: 7px;" class="hidden"/>
+                </a>
+                    <ul class="sub-small" style="display: none;">
+                        <t t-foreach="item.get('childs')" t-as="childs">
+                            <li>
+                                <a t-att-href="item.get('childs').x_link" >
+                                    <t t-esc="childs.name"/>
+                                </a>
+                            </li>
+                        </t>
+                    </ul>
+            </li>
+        </t>
+        <li class="advisory">
+            <h4>Contact us</h4>
+            <b><t t-esc="team.phone"/></b>
+        </li>
+    </ul>
+    <ul class="hidden" id="top_menu">
+        <li></li>
+    </ul>
+</div>
+        </div>
+        </div>
+        </div>
+
+        <!--slide banner-->
+<div class="banner">
+<div class="container1">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/introduce_company/static/src/img/city.jpg" alt="Los Angeles"
+                     style="width:100%;"/>
+            </div>
+
+            <div class="item">
+                <img src="/introduce_company/static/src/img/model.jpg" alt="Chicago"
+                     style="width:100%;"/>
+            </div>
+
+            <div class="item">
+                <img src="/introduce_company/static/src/img/people.jpg" alt="New york"
+                     style="width:100%;"/>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="fa fa-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="fa fa-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+</div>
+
+        <!--odoo-->
+<div class="solution-odoo container">
+<div class="col-md-12">
+    <div class="col-md-6 col-sm-12 solution-odoo-info pull-left">
+        <div class="col-md-12">
+            <div class="col-sm-12">
+                <p style="font-weight: bold; font-size: 30px; line-height: 32px; text-transform: uppercase;">
+                    <t t-esc="odoo.name"/>
+                </p>
+            </div>
+            <span>
+                <t t-esc="odoo.x_description"/>
+            </span>
+            <p>
+                <a href="/solution/giai-phap-nganh-4/post/odoo-erp-25" class="more-view">Xem thêm
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12 solution-odoo-img pull-right">
+        <img t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (odoo.id)"
+             alt="Company Logo"/>
+    </div>
+</div>
+</div>
+
+        <!--HOW CAN WE HELP YOU?-->
+<div class="nz-section horizontal autoheight-false animate-false full-width-false "
+     data-animation-speed="35000" data-parallax="false" style="padding-bottom:25px;">
+<div class="container">
+    <div class="container" style="display: flex;">
+        <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+             style="margin: 0px auto 10px" data-effect="none" data-align="left"
+             data-margin="false">
+            <div class="col-inner" style="">
+                <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                    class="vc_custom_heading">HOW CAN WE HELP YOU?
+                </h2>
+                <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+                     data-effect="none">
+                    <div class="nz-separator solid"
+                         style="border-bottom-color:#17ff00;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                        &#160;
+                    </div>
+                </div>
+                <div style="" class="nz-column-text nz-clearfix  element-animate-false"
+                     data-effect="none"
+                     data-effect-speed="50">
+                    <p></p>
+                    <p style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                        Organically grow the holistic world view of disruptive innovation via
+                        workplace
+                        diversity and empowerment.
+                    </p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nz-row">
+        <div class="col-md-4 oe_structure">
+
+        </div>
+        <div class="col-md-4 oe_structure">
+
+        </div>
+        <div class="col-md-4 oe_structure">
+
+        </div>
+    </div>
+</div>
+</div>
+
+        <!--experience-->
+<div class="nz-section horizontal autoheight-false animate-false full-width-false "
+     data-img-width="1600" data-img-height="899" data-animation-speed="35000" data-parallax="false"
+     style="background-color:#333333;background-image:url(http://ninzio.com/thebuilders/wp-content/uploads/2015/12/counters_bg1.jpg);background-repeat:repeat;background-position:left top;background-attachment:scroll;padding-top:80px;padding-bottom:30px;">
+<div class="nz-video-overlay" style="background-image:url();">&#160;</div>
+<video class="nz-section-back-video" autoplay="" preload="auto" loop="loop" muted="muted"
+       poster="http://ninzio.com/thebuilders/wp-content/themes/thebuilders/images/transparent.png"></video>
+<div class="container">
+    <div class="nz-row">
+        <div class="col vc_col-sm-12 col12  element-animate-false valign-top" style=""
+             data-effect="none" data-align="left">
+            <div class="col-inner" style="">
+                <div id="nz-counter-1" class="nz-counter nz-clearfix" data-columns="4">
+                    <t t-foreach="experience" t-as="exp">
+                        <div class="nz-count" id="nz-count-1">
+                            <div class="nz-count-wrap nz-clearfix">
+                                <span class="count-title" style="color:#17ff00;">
+                                    <t t-esc="exp.name"/>
+                                </span>
+                                <span class="count-value" style="color:#ffffff;">
+                                    <t t-esc="exp.description"/>
+                                </span>
+                                <span class="count-border" style="background-color:#525252;"></span>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+        <!--member-->
+<t t-call="introduce_company.person">
+<t t-set="user" t-value="user"/>
+</t>
+
+        <!--list complete product-->
+<div class="section-body container">
+<div class="container" style="display: flex;">
+    <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+         style="margin: 0px auto 10px" data-effect="none" data-align="left" data-margin="false">
+        <div class="col-inner" style="">
+            <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                class="vc_custom_heading">Complete Product
+            </h2>
+            <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+                 data-effect="none">
+                <div class="nz-separator solid"
+                     style="border-bottom-color:#17ff00;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                    &#160;
+                </div>
+            </div>
+            <div style="" class="nz-column-text nz-clearfix  element-animate-false"
+                 data-effect="none"
+                 data-effect-speed="50">
+                <p></p>
+                <p style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                    Organically grow the holistic world view of disruptive innovation via workplace
+                    diversity and empowerment.
+                </p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+<ul class="project-tiles large-block-grid-4 medium-block-grid-2 small-block-grid-1">
+    <t t-foreach="product" t-as="j">
+        <li class="project-tile">
+            <div class="project-tile-inner">
+                <div class="project-tile-image fullscreener fsr-container"
+                     t-att-style="'background-image: url(/web/image?model=product.template&amp;id=%s&amp;field=image_medium); background-position: center center;background-size: 100% 100%;' % (j.id)">
+                    <img width="650" height="420"
+                         t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image_medium' % (j.id)"
+                         class="attachment-project-image size-project-image wp-post-image fsr-image fsr-hidden"
+                         alt=""/>
+                </div><!-- /.project-tile-image fullscreener -->
+
+                <div class="project-tile-overlay">
+                    <h4>
+                        <t t-esc="j.name"/>
+                    </h4>
+                    <!--<p>-->
+                    <!--<a href="https://themes.wplook.com/construction/projects-category/interior-design/">-->
+                    <!--Interior Design</a>,-->
+                    <!--<a href="https://themes.wplook.com/construction/projects-category/residential/">-->
+                    <!--Residential-->
+                    <!--</a>-->
+                    <!--</p>-->
+                    <a t-att-href="j.x_link"
+                       class="button tiny">View Product
+                    </a>
+                </div><!-- /.project-tile-overlay -->
+            </div><!-- /.project-tile-inner -->
+        </li><!-- /.project-tile -->
+    </t>
+</ul><!-- /.project-tiles medium-block-grid-3 -->
+</div>
+
+        <!--custommer-->
+<div class="partner">
+<div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+     style="margin: 30px auto 10px;width:100%;" data-effect="none" data-align="left"
+     data-margin="false">
+    <div class="col-inner" style="">
+        <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+            class="vc_custom_heading">OUR CUSTOMER
+        </h2>
+        <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+             data-effect="none">
+            <div class="nz-separator solid"
+                 style="border-bottom-color:#17ff00;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                &#160;
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="partner-top">
+    <t t-foreach="customer" t-as="i">
+        <div class="col-md-2 item-partner">
+            <a t-att-href="i.x_link" target="_blank">
+                <img alt="Customer"
+                     t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image_medium' % (i.id)"/>
+            </a>
+        </div>
+    </t>
+</div>
+<div class="clearfix"></div>
+<div class="nz-clearfix" style="text-align:center;">
+    <a class="box-more" href="http://ninzio.com" style="font-size: 20px;">Read more</a>
+</div>
+<div class="clearfix"></div>
+</div>
+
+<t t-call="introduce_company.footer">
+<t t-set="team" t-value="team"/>
+</t>
+        </div>
+<script src="/introduce_company/static/src/js/homepage_script.js"></script>
+        </t>
+        </template>
+        </odoo>
