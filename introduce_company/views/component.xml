@@ -169,7 +169,7 @@
                                             <div class="animate-item person ">
                                                 <div class="img">
                                                     <img t-att-src="'/web/image?model=res.users&amp;id=%s&amp;field=image' % (j.id)"
-                                                         alt="Image"/>
+                                                         alt="Image" class="image-person"/>
                                                 </div>
                                                 <div class="person-body">
                                                     <div class="person-meta">

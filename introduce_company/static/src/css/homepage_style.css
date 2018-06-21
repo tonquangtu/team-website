@@ -851,7 +851,7 @@ samp {
   padding: 0 0.625rem 1.25rem;
 }
 .project-tiles .project-tile {
-  padding: 0;
+  padding: 0 15px;
   overflow: hidden;
 }
 .project-tile-inner {

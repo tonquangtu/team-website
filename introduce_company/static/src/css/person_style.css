@@ -88,7 +88,7 @@
   text-align: center;
 }
 .person .img {
-  height: 200px;
+  max-height: 160px;
   display: flex;
   margin: 0 auto;
   position: relative;
@@ -99,11 +99,16 @@ img,
 img[class*="wp-image"] {
   max-width: 100%;
   max-height: 100%;
-  height: auto !important;
+  height: auto;
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: bottom;
   margin: 0;
+}
+.image-person {
+  height: 160px !important;
+  width: 160px;
+  border-radius: 80px;
 }
 #nz-content .nz-persons .social-links a {
   width: 40px;
@@ -236,24 +241,20 @@ h6 {
   font-family: Raleway;
   text-transform: none;
 }
-@media (min-width: 1200px) {
-  .vc_col-lg-6 {
-    width: 50%;
-  }
-  .vc_col-lg-1,
-  .vc_col-lg-10,
-  .vc_col-lg-11,
-  .vc_col-lg-12,
-  .vc_col-lg-2,
-  .vc_col-lg-3,
-  .vc_col-lg-4,
-  .vc_col-lg-5,
-  .vc_col-lg-6,
-  .vc_col-lg-7,
-  .vc_col-lg-8,
-  .vc_col-lg-9 {
-    float: left;
-  }
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+.nz-separator {
+  height: 1px;
+  border-bottom-width: 1px;
+}
+.sep-wrap.center .nz-separator {
+  margin: 0 auto;
 }
 @media only screen and (max-width: 1200px) {
   .container {
@@ -314,6 +315,32 @@ h6 {
   }
 }
 @media only screen and (max-width: 768px) {
+  .owl-prev,
+  .owl-next {
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    font-size: 18px!important;
+  }
+  .product-together-item.col-xs-6.col-sm-4.col-md-3 {
+    height: 215px;
+  }
+  .ninzio-overlay .social-links a {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .nz-persons .person .name,
+  .nz-persons .person .title {
+    height: 32px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .image-person {
+    height: 90px!important;
+    width: 90px;
+    border-radius: 45px;
+  }
   .container-infomations {
     font-size: 18px;
   }
@@ -371,18 +398,29 @@ h6 {
     left: -50%;
   }
 }
-*,
-:after,
-:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  word-wrap: break-word;
+@media only screen and (max-width: 420px) {
+  .image-person {
+    height: 70px!important;
+    width: 70px;
+    border-radius: 35px;
+  }
 }
-.nz-separator {
-  height: 1px;
-  border-bottom-width: 1px;
-}
-.sep-wrap.center .nz-separator {
-  margin: 0 auto;
+@media (min-width: 1200px) {
+  .vc_col-lg-6 {
+    width: 50%;
+  }
+  .vc_col-lg-1,
+  .vc_col-lg-10,
+  .vc_col-lg-11,
+  .vc_col-lg-12,
+  .vc_col-lg-2,
+  .vc_col-lg-3,
+  .vc_col-lg-4,
+  .vc_col-lg-5,
+  .vc_col-lg-6,
+  .vc_col-lg-7,
+  .vc_col-lg-8,
+  .vc_col-lg-9 {
+    float: left;
+  }
 }
