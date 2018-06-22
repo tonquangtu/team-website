@@ -25,7 +25,7 @@ odoo.define("introduce_company.homepage", function (require) {
             }
         }
 
-        if (height >= 500) {
+        if (height >= 800) {
             //tang tu 1,2,3... đen het
             if (!$(".count-value").hasClass('check-width')) {
                 $('.count').each(function () {
@@ -40,7 +40,7 @@ odoo.define("introduce_company.homepage", function (require) {
                     });
                 });
             }
-             $(".count-value").addClass('check-width');
+            $(".count-value").addClass('check-width');
         }
     });
 
