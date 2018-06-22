@@ -5,11 +5,16 @@ odoo.define("introduce_company.homepage", function (require) {
     var subSmall = $('.sub-small');
     var menuUl = $('#menu_main_ul');
 
+
     $(window).scroll(function () {
         var height = $(window).scrollTop();
+        console.log("mot hai ba");
+        console.log(height);
+
         if (height < 10) {
             $('.header').removeClass('active');
         }
+
         if (height >= 10) {
             $('.header').addClass('active');
             if (T_header > 0) {
@@ -18,6 +23,24 @@ odoo.define("introduce_company.homepage", function (require) {
             } else {
                 $('.width_header').css('top', '0');
             }
+        }
+
+        if (height >= 500) {
+            //tang tu 1,2,3... đen het
+            if (!$(".count-value").hasClass('check-width')) {
+                $('.count').each(function () {
+                    $(this).prop('Counter', 0).animate({
+                        Counter: $(this).text()
+                    }, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now));
+                        }
+                    });
+                });
+            }
+             $(".count-value").addClass('check-width');
         }
     });
 
@@ -52,26 +75,16 @@ odoo.define("introduce_company.homepage", function (require) {
         $('.menu-child').addClass('hidden');
     }
 
-    //tang tu 1,2,3... đen het
-    $('.count').each(function () {
-        $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-        }, {
-            duration: 4000,
-            easing: 'swing',
-            step: function (now) {
-                $(this).text(Math.ceil(now));
-            }
-        });
-    });
-
+    //so sanh text dua ra chi so
     $('.count-title').each(function () {
         var testText = $(this).text();
         if (testText.trim() === "EXPERIENCE") {
             $(this).parent().find('.exp-value').removeClass('hidden');
         }
-        else if((testText.trim() === "CUSTOMER")||(testText.trim() === "PRODUCT")){
+        else if ((testText.trim() === "CUSTOMER") || (testText.trim() === "PRODUCT")) {
             $(this).parent().find('.product-value').removeClass('hidden');
         }
     });
+
+
 });

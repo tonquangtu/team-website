@@ -11,9 +11,9 @@ class Homepage(http.Controller):
         product = request.env['product.template'].search([('x_type', '=', 'complete_product')])
         customer = request.env['product.template'].search([('x_type', '=', 'customer')])
         user = request.env['res.users'].search([('company_ids', '=', 'team')])
-        experience = request.env['introduce.experience'].search([])
-        teams = request.env['res.company'].search([('x_id', '=', '1')])
-        odoos = request.env['res.company'].search([('x_id', '=', '2')])
+        experience = request.env['introduce.experience'].sudo().search([])
+        teams = request.env['res.company'].sudo().search([('x_id', '=', '1')])
+        odoos = request.env['res.company'].sudo().search([('x_id', '=', '2')])
 
         if len(teams) > 0:
             team = teams[0]
