@@ -320,7 +320,7 @@ h6 {
     height: 25px;
     width: 25px;
     line-height: 25px;
-    font-size: 18px!important;
+    font-size: 18px !important;
   }
   .product-together-item.col-xs-6.col-sm-4.col-md-3 {
     height: 215px;
@@ -337,7 +337,7 @@ h6 {
     line-height: 16px;
   }
   .image-person {
-    height: 90px!important;
+    height: 90px !important;
     width: 90px;
     border-radius: 45px;
   }
@@ -400,7 +400,7 @@ h6 {
 }
 @media only screen and (max-width: 420px) {
   .image-person {
-    height: 70px!important;
+    height: 70px !important;
     width: 70px;
     border-radius: 35px;
   }
