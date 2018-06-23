@@ -10,7 +10,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-family: icomoon, -apple-system, Raleway SemiBold, Raleway, sans-serif;
+  font-family: Raleway, icomoon, -apple-system, Raleway SemiBold, sans-serif;
 }
 .ls a,
 .mob-menu li a,
@@ -1239,13 +1239,11 @@ img {
   min-height: 32px;
   font-weight: 400;
 }
-.menu_main li a:hover,
-.menu_main li:hover a,
 .menu_main li a.active {
   text-decoration: none;
-  color: #eab61f;
+  color: #17ff00!important;
   background-size: 100%;
-  border-bottom: 3px solid #eab61f;
+  border-bottom: 3px solid #17ff00;
 }
 .menu_main li a {
   padding-left: 0px;
@@ -1295,6 +1293,9 @@ img {
   padding-top: 20px;
   margin-top: -32px !important;
 }
+#menu-item-parent.active {
+  background-color: #17ff00;
+}
 @media only screen and (max-width: 1200px) {
   .header {
     display: none !important;
@@ -1333,6 +1334,12 @@ img {
 @media (max-width: 768px) {
   .item-partner {
     width: calc(100% / 2 - 15px) !important;
+  }
+  #Experience {
+    padding-top: 0!important;
+  }
+  #Experience video {
+    display: none;
   }
 }
 @media only screen and (max-width: 568px) {
@@ -1449,5 +1456,8 @@ img {
   }
 }
 header {
+  display: none !important;
+}
+footer {
   display: none !important;
 }

@@ -11,7 +11,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-family: icomoon, -apple-system, Raleway SemiBold, Raleway, sans-serif;
+  font-family:Raleway,  icomoon, -apple-system, Raleway SemiBold, sans-serif;
 }
 
 .ls a, .mob-menu li a, #nz-content .search input[type="text"], .mob-header-content .header-top-menu li a, .mob-header-content .top-button, .header-top .top-button, .widget_title, .yawp_wim_title, textarea, select, button, .button, .button .txt, input[type="month"], input[type="number"], input[type="submit"], input[type="button"], input[type="date"], input[type="datetime"], input[type="password"], input[type="search"], input[type="datetime-local"], input[type="email"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input[type="reset"], .nz-timer, .count-value, .nz-persons .person .name, .nz-pricing-table > .column .title, .nz-pricing-table .price, .tabset .tab, .toggle-title .toggle-title-header, .ninzio-navigation, .woocommerce-pagination, .ninzio-filter .filter, .single-details .nz-i-list a, .nz-table th, .comment-meta .comment-author cite, .wp-caption .wp-caption-text, .woocommerce .product .added_to_cart, .woocommerce-tabs .tabs > li, .woocommerce .single-product-summary .amount, .reset_variations, .footer-menu > ul > li > a, .share-labelf, a.edit, a.view, .widget_icl_lang_sel_widget, .nz-progress .progress-percent, .nz-progress .progress-title, .nz-content-box-2 .box-title span, .footer-info, .product .price, .related-products-title h3, .ninzio-nav-single > *, .error404-big, .box-more, .count-title, .nz-pricing-table .hlabel, .widget_nz_recent_entries .post .post-date-custom, .standard .post-date-custom, .status-author, .quote-author, .link-link, .single .post-social-share .social-links a span, .woocommerce .product .onsale, .widget_tag_cloud .tagcloud a, .post-tags a, .widget_product_tag_cloud .tagcloud a, .projects-tags a, .widget_recent_entries a, .widget_categories ul li a, .widget_pages ul li a, .widget_archive ul li a, .widget_meta ul li a, .widget_nav_menu li a, .widget_product_categories li a, .post .post-category ul li a, .tagline-title, .nz-accordion .toggle-title {
@@ -884,13 +884,14 @@ img {
   min-height: 32px;
   font-weight: 400;
 }
-
-.menu_main li a:hover, .menu_main li:hover a, .menu_main li a.active {
+//.menu_main li a:hover, .menu_main li:hover a,
+.menu_main li a.active {
   text-decoration: none;
-  color: #eab61f;
+  color: #17ff00!important;
   background-size: 100%;
-  border-bottom: 3px solid #eab61f;
+  border-bottom: 3px solid #17ff00;
 }
+
 
 .menu_main li a {
   padding-left: 0px;
@@ -945,6 +946,10 @@ img {
   margin-top: -32px !important;
 }
 
+#menu-item-parent.active{
+  background-color: #17ff00;
+}
+
 @media only screen and (max-width: 1200px) {
   .header {
     display: none !important;
@@ -988,6 +993,12 @@ img {
 @media (max-width: 768px) {
   .item-partner {
     width: calc(100% / 2 - 15px) !important;
+  }
+  #Experience{
+    padding-top: 0!important;
+    video{
+      display: none;
+    }
   }
 }
 
@@ -1115,5 +1126,8 @@ img {
 }
 
 header {
+  display: none !important;
+}
+footer{
   display: none !important;
 }

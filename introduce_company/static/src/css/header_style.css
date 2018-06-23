@@ -226,7 +226,6 @@ summary {
   display: block;
 }
 .version4 .desk-menu > ul > li {
-  margin-left: 20px !important;
   height: 90px;
   line-height: 90px;
 }
@@ -238,9 +237,6 @@ summary {
   font-family: Raleway;
   margin-top: 30px;
   padding: 0 20px;
-}
-.menu-item-object-parent:hover {
-  background-color: #17ff00;
 }
 .version4 .desk-menu > ul > li:hover > a,
 .version4 .desk-menu > ul > li.one-page-active > a,
@@ -301,14 +297,8 @@ summary {
   font-family: icomoon;
   -moz-osx-font-smoothing: grayscale;
 }
-.version4.effect-underline .desk-menu > ul > li > a:after,
-.version4.effect-overline .desk-menu > ul > li > a:after,
-.version4.effect-fill .desk-menu > ul > li:hover,
-.version4.effect-fill .desk-menu > ul > li.one-page-active > a,
-.version4.effect-fill .desk-menu > ul > li.current-menu-item,
-.version4.effect-fill .desk-menu > ul > li.current-menu-parent,
-.version4.effect-fill .desk-menu > ul > li.current-menu-ancestor {
-  background-color: #17ff00;
+#menu-item-parent .active {
+  background-color: #17ff00!important;
 }
 .version4.effect-underline .desk-menu > ul > li > a:after {
   bottom: -30px;
@@ -345,6 +335,22 @@ summary {
 .version4.fixed-true.active .desk-menu > ul > li {
   height: 60px;
   line-height: 60px;
+}
+.header-top .dropdown a {
+  line-height: 16px;
+  color: #999999;
+}
+.header-top .dropdown a:hover {
+  color: #17ff00;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: #323434;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: #323434;
 }
 @media only screen and (max-width: 768px) {
   [class*="block-grid-"] > li {
@@ -514,7 +520,7 @@ summary {
   }
   .desk-menu {
     float: left;
-    padding-left: 150px;
+    padding-left: 37px;
   }
   .desk-menu > ul {
     list-style: none;
@@ -626,8 +632,7 @@ summary {
     padding-left: 30px;
   }
   .header-top .header-top-menu,
-  .header-top .top-button,
-  .header-top .social-links {
+  .header-top .top-button {
     float: right;
   }
   .header-top .slogan {

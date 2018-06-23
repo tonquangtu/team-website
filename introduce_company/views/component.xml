@@ -4,7 +4,7 @@
         <div class="header desk version4 page-title-section-version1 one-page-side slider-active stuck-boxed-true sl-true search-true cart-true iversion-dark effect-underline subeffect-ghost fixed-true fiversion-dark wiversion-dark">
             <div class="header-content">
                 <div class="header-top nz-clearfix" style=" max-height: 40px;">
-                    <div class="container">
+                    <div class="container" style="display:flex;">
                         <div class="slogan nz-clearfix">
                             <span class="nz-icon none small icon-phone animate-false" style="color:#17ff00"/>
                             <span style="color:#999999;font-size:12px;padding-right:15px">CALL US:
@@ -26,6 +26,25 @@
                                target="_blank"/>
                         </div>
 
+                        <ul class="nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                         title="English (UK)"/>
+                                    English (UK)
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="" dir="ltr">
+                                        <a href="/vi/">
+                                            <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                                 title="Tiếng Việt"/>
+                                            Tiếng Việt
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="header-body">
@@ -46,7 +65,7 @@
                                     <li id="menu-item-parent"
                                         class="menu-item menu-item-object-parent current-menu-item current-menu-ancestor current-menu-parent"
                                         data-mm="false" data-mmc="2">
-                                        <a href="http://ninzio.com/thebuilders/">
+                                        <a t-att-href="item.get('parent').x_link">
                                             <span class="mi"></span>
                                             <span class="txt">
                                                 <t t-esc="item.get('parent').name"/>
@@ -80,7 +99,7 @@
 
     <template id="footer" name="Footer">
         <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/footer_style.css"/>
-        <footer class="footer">
+        <div class="footer">
             <div class="footer-wa footer-columns-4 nz-clearfix">
                 <div class="container">
                     <aside class="footer-widget-area widget-area nz-clearfix">
@@ -124,7 +143,7 @@
                     </aside>
                 </div>
             </div>
-        </footer>
+        </div>
     </template>
 
     <template id="person" name="Person">
@@ -174,9 +193,13 @@
                                                 <div class="person-body">
                                                     <div class="person-meta">
                                                         <a href="#">
-                                                            <div class="name"><t t-esc="j.name"/></div>
+                                                            <div class="name">
+                                                                <t t-esc="j.name"/>
+                                                            </div>
                                                         </a>
-                                                        <div class="title"><t t-esc="j.x_job"/></div>
+                                                        <div class="title">
+                                                            <t t-esc="j.x_job"/>
+                                                        </div>
                                                         <div class="nz-clearfix"></div>
                                                     </div>
                                                 </div>

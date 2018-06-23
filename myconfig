@@ -1,5 +1,5 @@
 [options]
-addons_path = /home/manh/odoo11-master/odoo/addons,/home/manh/odoo11-master/addons,/media/manh/Leaning/code-linux/code/introduce_company
+addons_path = /home/manh/odoo11-master/odoo/addons,/home/manh/odoo11-master/addons,/media/manh/Leaning/code-linux/code/website_introduce/website_introduce
 admin_passwd = admin
 csv_internal_sep = ,
 data_dir = /home/manh/.local/share/Odoo

@@ -27,13 +27,13 @@
                                 <ul class="menu_main" id="menu_main_ul" style="display: none;">
                                     <t t-foreach="menu" t-as="item">
                                         <li class="menu-solution">
-                                            <a class="" t-att-href="item.get('parent').x_link" title="facebook"
-                                               target="_blank">
+                                            <a class="" t-att-href="item.get('parent').x_link" title="Link menu"
+                                               target="_self">
                                                 <t t-esc="item.get('parent').name"/>
                                                 <img src="/introduce_company/static/src/img/Shape 1.png"
                                                      style="margin-left: 5px;margin-bottom: 7px;" class="hidden"/>
                                             </a>
-                                            <ul class="sub-small" style="display: none;">
+                                            <ul class="sub-small hidden" style="display: none;">
                                                 <t t-foreach="item.get('childs')" t-as="childs">
                                                     <li>
                                                         <a t-att-href="item.get('childs').x_link">
@@ -44,9 +44,26 @@
                                             </ul>
                                         </li>
                                     </t>
-                                    <li class="advisory">
-                                        <h4>Contact us</h4>
+                                    <li class="menu-solution" style="background-color: #f1f329;text-align:center">
+                                        <a class="" href="#" title="Link menu"
+                                           target="_self" style="line-height: 14px;">
+                                            <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                                 title="English (UK)"/>
+                                            English (UK)
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="sub-small" style="display: none;">
+                                            <li>
+                                                <a>
+                                                    <img src="/introduce_company/static/src/img/vi.gif"
+                                                         alt="Tiếng Việt"
+                                                         title="Tiếng Việt" style="margin-bottom: 3px;"/>
+                                                    Tiếng Việt
+                                                </a>
+                                            </li>
+                                        </ul>
                                         <b>
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
                                             <t t-esc="team.phone"/>
                                         </b>
                                     </li>
@@ -60,7 +77,7 @@
                 </div>
 
                 <!--slide banner-->
-                <div class="banner">
+                <div id="Banner" class="banner">
                     <div class="container1">
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
@@ -102,7 +119,7 @@
                 </div>
 
                 <!--odoo-->
-                <div class="solution-odoo container">
+                <div id="Introduce-odoo" class="solution-odoo container">
                     <div class="col-md-12">
                         <div class="col-md-6 col-sm-12 solution-odoo-info pull-left">
                             <div class="col-md-12">
@@ -128,7 +145,7 @@
                 </div>
 
                 <!--HOW CAN WE HELP YOU?-->
-                <div class="nz-section horizontal autoheight-false animate-false full-width-false "
+                <div id="Introduce-team" class="nz-section horizontal autoheight-false animate-false full-width-false "
                      data-animation-speed="35000" data-parallax="false" style="padding-bottom:25px;">
                     <div class="container">
                         <div class="container" style="display: flex;">
@@ -175,7 +192,7 @@
                 </div>
 
                 <!--experience-->
-                <div class="nz-section horizontal autoheight-false animate-false full-width-false "
+                <div id="Experience" class="nz-section horizontal autoheight-false animate-false full-width-false "
                      data-img-width="1600" data-img-height="899" data-animation-speed="35000" data-parallax="false"
                      style="background-color:#333333;background-image:url(http://ninzio.com/thebuilders/wp-content/uploads/2015/12/counters_bg1.jpg);background-repeat:repeat;background-position:left top;background-attachment:scroll;padding-top:80px;padding-bottom:30px;">
                     <div class="nz-video-overlay" style="background-image:url();">&#160;</div>
@@ -193,12 +210,15 @@
                                                     <span class="count-title" style="color:#17ff00;">
                                                         <t t-esc="exp.name"/>
                                                     </span>
-                                                    <span class="count-value" style="color:#ffffff;display: flex;justify-content: center;">
+                                                    <span class="count-value"
+                                                          style="color:#ffffff;display: flex;justify-content: center;">
                                                         <span class="count" style="color:#ffffff;">
                                                             <t t-esc="exp.description"/>
                                                         </span>
-                                                        <div class="exp-value hidden" style="font-size: 28px;">year</div>
-                                                        <div class="product-value hidden" style="font-size: 28px;">+</div>
+                                                        <div class="exp-value hidden" style="font-size: 28px;">year
+                                                        </div>
+                                                        <div class="product-value hidden" style="font-size: 28px;">+
+                                                        </div>
                                                     </span>
 
 
@@ -214,12 +234,14 @@
                 </div>
 
                 <!--member-->
-                <t t-call="introduce_company.person">
-                    <t t-set="user" t-value="user"/>
-                </t>
+                <div id="Member">
+                    <t t-call="introduce_company.person">
+                        <t t-set="user" t-value="user"/>
+                    </t>
+                </div>
 
                 <!--list complete product-->
-                <div class="section-body container">
+                <div id="Product" class="section-body container">
                     <div class="container" style="display: flex;">
                         <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
                              style="margin: 0px auto 10px" data-effect="none" data-align="left" data-margin="false">
@@ -280,8 +302,8 @@
                     </ul><!-- /.project-tiles medium-block-grid-3 -->
                 </div>
 
-                <!--custommer-->
-                <div class="partner">
+                <!--customer-->
+                <div id="Customer" class="partner">
                     <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
                          style="margin: 30px auto 10px;width:100%;" data-effect="none" data-align="left"
                          data-margin="false">
