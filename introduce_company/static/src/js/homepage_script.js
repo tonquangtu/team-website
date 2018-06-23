@@ -86,7 +86,7 @@ odoo.define("introduce_company.homepage", function (require) {
 
 
 
-    $(document).on("scroll", onScroll);
+    $(document).on("scroll", onScroll1);
     //smoothscroll
     $('#menu-item-parent a[href^="#"]').on('click', function (e) {
         e.preventDefault();
@@ -104,7 +104,7 @@ odoo.define("introduce_company.homepage", function (require) {
             'scrollTop': $target.offset().top+2
         }, 500, 'swing', function () {
             window.location.hash = target;
-            $(document).on("scroll", onScroll);
+            $(document).on("scroll", onScroll1);
         });
     });
 
@@ -131,7 +131,7 @@ odoo.define("introduce_company.homepage", function (require) {
     });
 });
 
-function onScroll(event){
+function onScroll1(event){
     var scrollPos = $(document).scrollTop();
     $('#menu-item-parent a').each(function () {
         var currLink = $(this);
@@ -147,16 +147,18 @@ function onScroll(event){
 }
 
 function onScroll2(event){
-    var scrollPos = $(document).scrollTop();
+    var scrollPos2 = $(document).scrollTop();
     $('.menu-solution a').each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+        var currLink2 = $(this);
+        var refElement2 = $(currLink2.attr("href"));
+        if(refElement2.position()){
+        if (refElement2.position().top <= scrollPos2 && refElement2.position().top + refElement2.height() > scrollPos2) {
             $('.menu-solution a').removeClass("active");
-            currLink.addClass("active");
+            currLink2.addClass("active");
         }
         else{
-            currLink.removeClass("active");
+            currLink2.removeClass("active");
+        }
         }
     });
 }
