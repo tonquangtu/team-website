@@ -7,7 +7,10 @@
                     <div class="container" style="display:flex;">
                         <div class="slogan nz-clearfix">
                             <span class="nz-icon none small icon-phone animate-false" style="color:#17ff00"/>
-                            <span style="color:#999999;font-size:12px;padding-right:15px">CALL US:
+                            <span t-if="vi" style="color:#999999;font-size:12px;padding-right:15px">Điện thoại:
+                                <t t-esc="team.phone"/>
+                            </span>
+                            <span t-else="" style="color:#999999;font-size:12px;padding-right:15px">CALL US:
                                 <t t-esc="team.phone"/>
                             </span>
                             <span class="nz-icon none small icon-envelope animate-false"
@@ -17,7 +20,8 @@
                             </span>
                         </div>
                         <div class="social-links header-top-social-links nz-clearfix">
-                            <span class="social-text">Contact us:</span>
+                            <span t-if="vi" class="social-text">Liên hệ:</span>
+                            <span t-else="" class="social-text">Contact us:</span>
                             <a class="icon-facebook" t-att-href="team.social_facebook" title="facebook"
                                target="_blank"/>
                             <a class="icon-twitter" t-att-href="team.social_twitter" title="twitter"
@@ -27,18 +31,35 @@
                         </div>
 
                         <ul class="nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <li t-if="vi" class="dropdown">
+                                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                         title="Tiếng Việt" style="width: 20px;"/>
+                                    Tiếng Việt
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="" dir="ltr">
+                                        <a href="/">
+                                            <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                                 title="English (UK)" style="width: 20px;"/>
+                                            English (UK)
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li t-else="" class="dropdown">
+                                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
-                                         title="English (UK)"/>
+                                         title="English (UK)" style="width: 20px;"/>
                                     English (UK)
                                     <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="" dir="ltr">
-                                        <a href="/vi/">
+                                        <a href="/vi">
                                             <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
-                                                 title="Tiếng Việt"/>
+                                                 title="Tiếng Việt" style="width: 20px;"/>
                                             Tiếng Việt
                                         </a>
                                     </li>
@@ -68,7 +89,8 @@
                                         <a t-att-href="item.get('parent').x_link">
                                             <span class="mi"></span>
                                             <span class="txt">
-                                                <t t-esc="item.get('parent').name"/>
+                                                <t t-if="vi" t-esc="item.get('parent').x_name_vn"/>
+                                                <t t-else="" t-esc="item.get('parent').name"/>
                                             </span>
                                             <span class="di icon-arrow-right9"></span>
                                         </a>
@@ -80,7 +102,8 @@
                                                     <a href="http://ngonparty.com">
                                                         <span class="mi"></span>
                                                         <span class="txt">
-                                                            <t t-esc="childs.name"/>
+                                                            <t t-if="vi" t-esc="childs.x_name_vn"/>
+                                                            <t t-else="" t-esc="childs.name"/>
                                                         </span>
                                                         <span class="di icon-arrow-right9"></span>
                                                     </a>
@@ -109,7 +132,11 @@
                                      t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"
                                      alt="Montserrat"/>
                                 <div class="gap nz-clearfix" style="height:30px">&#160;</div>
-                                <span style="color:#c0c0c1;font-size:14px;line-height:28px;">Địa chỉ:
+                                <span t-if="vi" style="color:#c0c0c1;font-size:14px;line-height:28px;">Địa chỉ:
+                                    <br/>
+                                    <t t-esc="team.x_address"/>
+                                </span>
+                                <span t-else="" style="color:#c0c0c1;font-size:14px;line-height:28px;">Address
                                     <br/>
                                     <t t-esc="team.street"/>
                                 </span>
@@ -123,10 +150,12 @@
                             </div>
                         </div>
                         <div id="mailchimp-1" class="widget widget_mailchimp">
-                            <h6 class="widget_title">Subscribe</h6>
+                            <h6 t-if="vi" class="widget_title">Đăng ký</h6>
+                            <h6 t-else="" class="widget_title">Subscribe</h6>
                             <div id="mc_embed_signup">
-                                <div class="mailchimp-subtitle">Enter your email and we'll send you a coupon with 10%
-                                    off your next order.
+                                <div t-if="vi" class="mailchimp-subtitle">Nhập email của bạn để nhận thông báo mới nhất
+                                </div>
+                                <div t-else="" class="mailchimp-subtitle">Import your email to receive latest reports
                                 </div>
                                 <form action="//ninzio.us3.list-manage.com/subscribe/post?u=d4b8ae9364cc26cecfd46d335&amp;id=23c55ddae5"
                                       method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
@@ -154,7 +183,10 @@
                 <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
                      style="margin: 30px auto 10px" data-effect="none" data-align="left" data-margin="false">
                     <div class="col-inner" style="">
-                        <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                        <h2 t-if="vi" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                            class="vc_custom_heading">Thành viên
+                        </h2>
+                        <h2 t-else="" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
                             class="vc_custom_heading">TEAM MEMBERS
                         </h2>
                         <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
@@ -167,9 +199,11 @@
                         <div style="" class="nz-column-text nz-clearfix  element-animate-false" data-effect="none"
                              data-effect-speed="50">
                             <p></p>
-                            <p style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
-                                Organically grow the holistic world view of disruptive innovation via workplace
-                                diversity and empowerment.
+                            <p t-if="vi" style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                Chúng tôi có những thành viên trẻ trung và năng động.<br/> Sẵn sàng đối mặt với mọi thử thách.
+                            </p>
+                            <p t-else="" style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                We have the following users and dynamic center.<br/>Ready for objects with every try.
                             </p>
                             <p></p>
                         </div>
@@ -194,11 +228,13 @@
                                                     <div class="person-meta">
                                                         <a href="#">
                                                             <div class="name">
-                                                                <t t-esc="j.name"/>
+                                                                <t t-if="vi" t-esc="j.x_name_vn"/>
+                                                                <t t-else="" t-esc="j.name"/>
                                                             </div>
                                                         </a>
                                                         <div class="title">
-                                                            <t t-esc="j.x_job"/>
+                                                            <t t-if="vi" t-esc="j.x_job_vn"/>
+                                                            <t t-else="" t-esc="j.x_job"/>
                                                         </div>
                                                         <div class="nz-clearfix"></div>
                                                     </div>

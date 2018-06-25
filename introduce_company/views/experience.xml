@@ -10,6 +10,7 @@
                     <sheet>
                        <group colspan="2" col="2">
                             <field name="name" placeholder="name"/>
+                            <field name="name_vn" placeholder="Tên"/>
                         </group>
                         <group colspan="2" col="2">
                             <field name="description" placeholder="Idea description..."/>

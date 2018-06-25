@@ -93,7 +93,6 @@ samp {
   color: #999999;
   font-weight: 400;
   font-size: 12px;
-  text-transform: uppercase;
 }
 a {
   text-decoration: none;
@@ -249,39 +248,7 @@ summary {
   display: none;
   padding-right: 10px;
 }
-.mob-menu li a .mi,
-.header-top-menu li a .mi,
-.header-menu li a .mi,
-.ls .lang_sel_sel:before,
-.widget_icl_lang_sel_widget .lang_sel_sel:before,
-.tagline-title:after,
-.nz-media-slider .flex-direction-nav a:before,
-#slider-arrow:after,
-.woocommerce .star-rating,
-.woocommerce-page .woocommerce-product-rating .star-rating:before,
-.woocommerce .comment-text .star-rating:before,
-.widget_recent_reviews .star-rating:before,
-.widget_top_rated_products .star-rating:before,
-.woocommerce .woocommerce-product-rating .star-rating span:before,
-.woocommerce-page .woocommerce-product-rating .star-rating span:before,
-.woocommerce .comment-text .star-rating span:before,
-.widget_recent_reviews .star-rating span:before,
-.widget_top_rated_products .star-rating span:before,
-.woocommerce-tabs .comment-form-rating .stars a:after,
-.widget_product_search form:after,
-.blog-post .post .post-meta > *:before,
-.nz-breadcrumbs > .container > *:before,
-.nz-breadcrumbs > .container > *:after,
-.woocommerce .single-product-summary .product_meta > *:before,
-.ninzio-nav-single > *:after,
-.ninzio-nav-single > *:before,
-.nz-tweets:before,
-.widget_categories ul li a:before,
-.widget_pages ul li a:before,
-.widget_archive ul li a:before,
-.widget_meta ul li a:before,
-.owl-controls .owl-buttons div:before,
-.nz-testimonials .text-icon:before {
+.header-menu li a .mi {
   font-family: icomoon !important;
   speak: none;
   font-style: normal;
@@ -298,7 +265,7 @@ summary {
   -moz-osx-font-smoothing: grayscale;
 }
 #menu-item-parent .active {
-  background-color: #17ff00!important;
+  background-color: #17ff00 !important;
 }
 .version4.effect-underline .desk-menu > ul > li > a:after {
   bottom: -30px;
@@ -626,7 +593,6 @@ summary {
   }
   .header-top .social-text {
     display: inline-block;
-    text-transform: uppercase;
     line-height: 40px;
     vertical-align: top;
     padding-left: 30px;

@@ -26,10 +26,26 @@
                                      src="/introduce_company/static/src/img/model.jpg"/>
                             </div>
                         </div>
-                        <div class="box-data">
-                            <h3 class="box-title">Creative Team Work</h3>
+                        <div t-if="vi" class="box-data">
+                            <h3 class="box-title">Tạo 1 website</h3>
                             <p></p>
-                            <p style="text-align: center;">Bring to the table win-win
+                            <p style="text-align: center;">Mang đến bàn thắng-thắng
+                                Sự sống còn các chiến lược để đảm bảo sự thống trị chủ động. Vào cuối của
+                                ngày, về sau, một sự bình thường mới đã phát triển.
+                            </p>
+                             <p style="text-align: center;">Bring to the table win-win
+                                survival
+                                strategies to ensure proactive domination. At the end of the
+                                day, going forward, a new normal that has evolved.
+                            </p>
+                            <div class="nz-clearfix">
+                                <a class="box-more" href="http://ninzio.com">Xem thêm</a>
+                            </div>
+                        </div>
+                        <div t-else="" class="box-data">
+                            <h3 t-else="" class="box-title">Creative one website</h3>
+                            <p></p>
+                             <p style="text-align: center;">Bring to the table win-win
                                 survival
                                 strategies to ensure proactive domination. At the end of the
                                 day, going forward, a new normal that has evolved.
