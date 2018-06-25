@@ -257,20 +257,7 @@
                                                             <t t-esc="exp.description"/>
                                                         </span>
                                                         <div class="exp-value hidden" style="font-size: 28px;">
-                                                            <span t-if="vi">nam</span>
-                                                            <span t-else="">year</span>
-                                                        </div>
-                                                        <div class="product-value hidden" style="font-size: 28px;">+
-                                                        </div>
-                                                    </span>
-                                                    <span class="count-value"
-                                                          style="color:#ffffff;display: flex;justify-content: center;">
-                                                        <span class="count" style="color:#ffffff;">
-                                                            <t t-esc="exp.description"/>
-                                                        </span>
-                                                        <div class="exp-value hidden" style="font-size: 28px;">
-                                                            <span t-if="vi">năm</span>
-                                                            <span t-else="">year</span>
+                                                            <span>year</span>
                                                         </div>
                                                         <div class="product-value hidden" style="font-size: 28px;">+
                                                         </div>

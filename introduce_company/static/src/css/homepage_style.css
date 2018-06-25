@@ -10,7 +10,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-family: Raleway, icomoon, -apple-system, Raleway SemiBold, sans-serif;
+  font-family: SFProDisplay, Raleway, icomoon, -apple-system, Raleway SemiBold, sans-serif;
 }
 .ls a,
 .header-top .top-button,
@@ -409,7 +409,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Raleway;
+  font-family: SFProDisplay;
   text-transform: none;
 }
 h1,
