@@ -308,7 +308,7 @@ summary {
   color: #999999;
 }
 .header-top .dropdown a:hover {
-  color: #17ff00;
+  color: red;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {

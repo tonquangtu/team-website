@@ -18,7 +18,8 @@
                     </button>
                     <div class="box-logo pd0">
                         <a href="/" class="logo">
-                            <img src="/introduce_company/static/src/img/logo1.png"/>
+                            <img t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"
+                                 alt="Odoo Insight"/>
                         </a>
                     </div>
                     <div class="box-menu">
@@ -45,54 +46,48 @@
                                             </ul>
                                         </li>
                                     </t>
-                                    <li t-if="vi" class="menu-solution"
-                                        style="background-color: #f1f329;text-align:center">
-                                        <a class="" href="/" title="Link menu"
-                                           target="_self" style="line-height: 14px;">
-                                            <img src="/introduce_company/static/src/img/vi.gif"
-                                                 alt="Tiếng Việt"
-                                                 title="Tiếng Việt" style="margin-bottom: 3px;width: 20px;"/>
+                                    <li t-if="vi" class="dropdown">
+                                        <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                            <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                                 title="Tiếng Việt"/>
                                             Tiếng Việt
+                                            <b class="caret"></b>
                                         </a>
-                                        <ul class="sub-small" style="display: none;">
-                                            <li>
-                                                <a href="/">
+                                        <ul class="dropdown-menu"
+                                            style="border: none;box-shadow: none;margin-left: 65px;margin-top: -9px;position: relative;">
+                                            <li class="" dir="ltr">
+                                                <a href="/" style="font-size:12px;">
                                                     <img src="/introduce_company/static/src/img/en.gif"
                                                          alt="English (UK)"
-                                                         title="English (UK)" style="width: 20px;"/>
+                                                         title="English (UK)"/>
                                                     English (UK)
                                                 </a>
                                             </li>
                                         </ul>
-                                        <b>
-                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <t t-esc="team.phone"/>
-                                        </b>
                                     </li>
-                                    <li t-else="" class="menu-solution"
-                                        style="background-color: #f1f329;text-align:center">
-                                        <a class="" href="/" title="Link menu"
-                                           target="_self" style="line-height: 14px;">
+                                    <li t-else="" class="dropdown">
+                                        <a href="/" class="dropdown-toggle" data-toggle="dropdown">
                                             <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
-                                                 title="English (UK)" style="width: 20px;"/>
+                                                 title="English (UK)"/>
                                             English (UK)
                                             <b class="caret"></b>
                                         </a>
-                                        <ul class="sub-small" style="display: none;">
-                                            <li>
-                                                <a href="/vi">
-                                                    <img src="/introduce_company/static/src/img/vi.gif"
-                                                         alt="Tiếng Việt"
-                                                         title="Tiếng Việt" style="margin-bottom: 3px;width: 20px;"/>
+                                        <ul class="dropdown-menu" style="border: none;box-shadow: none;margin-left: 65px;margin-top: -9px;position: relative;">
+                                            <li class="" dir="ltr">
+                                                <a href="/vi" style="font-size:12px;">
+                                                    <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                                         title="Tiếng Việt"/>
                                                     Tiếng Việt
                                                 </a>
                                             </li>
                                         </ul>
-                                        <b>
-                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <t t-esc="team.phone"/>
-                                        </b>
                                     </li>
+                                    <div style="text-align:center;">
+                                    <b>
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        <t t-esc="team.phone"/>
+                                    </b>
+                                    </div>
                                 </ul>
                                 <ul class="hidden" id="top_menu">
                                     <li></li>
@@ -286,10 +281,12 @@
                         <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
                              style="margin: 0px auto 10px" data-effect="none" data-align="left" data-margin="false">
                             <div class="col-inner" style="">
-                                <h2 t-if="vi" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                <h2 t-if="vi"
+                                    style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
                                     class="vc_custom_heading">Sản Phẩm Đã Hoàn Thành
                                 </h2>
-                                <h2 t-else="" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                <h2 t-else=""
+                                    style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
                                     class="vc_custom_heading">Complete Product
                                 </h2>
                                 <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
@@ -303,13 +300,17 @@
                                      data-effect="none"
                                      data-effect-speed="50">
                                     <p></p>
-                                    <p t-if="vi" style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                    <p t-if="vi"
+                                       style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
                                         Chúng tôi đã hoàn thành rất nhiều sản phẩm cho các khách hàng khác nhau.
                                         <br/>Các sản phẩm này vẫn đang được hoạt động.
                                     </p>
-                                    <p t-else="" style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                    <p t-else=""
+                                       style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
                                         We were completed many many products for other customers.
-                                        <br/> This products will be active.
+                                                                                
+                                        <br/>
+                                        This products will be active.
                                     </p>
                                     <p></p>
                                 </div>
@@ -368,10 +369,12 @@
                                  data-effect="none"
                                  data-effect-speed="50">
                                 <p></p>
-                                <p t-if="vi" style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                <p t-if="vi"
+                                   style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
                                     Chúng tôi đã hợp tác với rất nhiều khách hàng trong nước cũng như nước ngoài.
                                 </p>
-                                <p t-else="" style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                <p t-else=""
+                                   style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
                                     We are already associated with many customer rows in other water..
                                 </p>
                                 <p></p>

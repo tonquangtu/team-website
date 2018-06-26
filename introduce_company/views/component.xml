@@ -6,21 +6,21 @@
                 <div class="header-top nz-clearfix" style=" max-height: 40px;">
                     <div class="container" style="display:flex;">
                         <div class="slogan nz-clearfix">
-                            <span class="nz-icon none small icon-phone animate-false" style="color:#17ff00"/>
-                            <span style="color:#999999;font-size:12px;padding-right:15px">Điện thoại:
+                            <span class="nz-icon none small icon-phone animate-false" style="color:red"/>
+                            <span t-if="vi" style="color:#999999;font-size:12px;padding-right:15px">Điện thoại:
                                 <t t-esc="team.phone"/>
                             </span>
-                            <span style="color:#999999;font-size:12px;padding-right:15px">CALL US:
+                            <span t-else="" style="color:#999999;font-size:12px;padding-right:15px">CALL US:
                                 <t t-esc="team.phone"/>
                             </span>
                             <span class="nz-icon none small icon-envelope animate-false"
-                                  style="color:#17ff00;font-size:12px"/>
+                                  style="color:red;font-size:12px"/>
                             <span style="color:#999999;font-size:12px">
                                 <t t-esc="team.email"/>
                             </span>
                         </div>
                         <div class="social-links header-top-social-links nz-clearfix">
-                            <span class="social-text">Liên hệ:</span>
+                            <span t-if="vi" class="social-text">Liên hệ:</span>
                             <span t-else="" class="social-text">Contact us:</span>
                             <a class="icon-facebook" t-att-href="team.social_facebook" title="facebook"
                                target="_blank"/>
@@ -31,41 +31,42 @@
                         </div>
 
                         <ul class="nav navbar-right">
-                            <li t-if="vi" class="dropdown">
-                                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
-                                         title="Tiếng Việt" style="width: 20px;"/>
-                                    Tiếng Việt
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="" dir="ltr">
-                                        <a href="/">
-                                            <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
-                                                 title="English (UK)" style="width: 20px;"/>
-                                            English (UK)
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li t-else="" class="dropdown">
-                                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
-                                         title="English (UK)" style="width: 20px;"/>
-                                    English (UK)
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="" dir="ltr">
-                                        <a href="/vi">
-                                            <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
-                                                 title="Tiếng Việt" style="width: 20px;"/>
-                                            Tiếng Việt
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                           <li t-if="vi" class="dropdown">
+                               <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                   <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                        title="Tiếng Việt" style="width: 20px;"/>
+                                   Tiếng Việt
+                                   <b class="caret"></b>
+                               </a>
+                               <ul class="dropdown-menu">
+                                   <li class="" dir="ltr">
+                                       <a href="/" onclick="setCookie('lang','en')">
+                                           <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                                title="English (UK)" style="width: 20px;"/>
+                                           English (UK)
+                                       </a>
+                                   </li>
+                               </ul>
+                           </li>
+                           <li t-else="" class="dropdown">
+                               <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                   <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                        title="English (UK)" style="width: 20px;"/>
+                                   English (UK)
+                                   <b class="caret"></b>
+                               </a>
+                               <ul class="dropdown-menu">
+                                   <li class="" onclick="setCookie('lang','vi')" dir="ltr">
+                                       <a href="/vi" onclick="setCookie('lang','vi')">
+                                           <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                                title="Tiếng Việt" style="width: 20px;"/>
+                                           Tiếng Việt
+                                       </a>
+                                   </li>
+                               </ul>
+                           </li>
+                       </ul>
+
                     </div>
                 </div>
                 <div class="header-body">
@@ -74,10 +75,10 @@
                             <a href="http://ninzio.com/thebuilders/" title="The Builders">
                                 <img class="normal-logo" style="max-width:284px;max-height:48px;"
                                      t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"
-                                     alt="The Builders"/>
+                                     alt="Odoo Insight"/>
                                 <img class="fixed-logo" style="max-width:284px;max-height:48px;margin-top:-24px"
                                      t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"
-                                     alt="The Builders"/>
+                                     alt="Odoo Insight"/>
                             </a>
                         </div>
                         <nav class="header-menu desk-menu nz-clearfix">
@@ -128,7 +129,7 @@
                     <aside class="footer-widget-area widget-area nz-clearfix">
                         <div id="text-2" class="widget widget_text">
                             <div class="textwidget">
-                                <img style="width:226px;height:25px;"
+                                <img style="width:226px;height:25px!important;"
                                      t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"
                                      alt="Montserrat"/>
                                 <div class="gap nz-clearfix" style="height:30px">&#160;</div>
@@ -161,10 +162,9 @@
                                       method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
                                       class="validate" target="_blank" novalidate="">
                                     <input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL"
-                                           placeholder="Enter email" required=""/>
-                                    <input type="text" name="b_d4b8ae9364cc26cecfd46d335_23c55ddae5" tabindex="-1"
-                                           value="" class="hidden"/>
-                                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"/>
+                                           placeholder="email@gmail.com" required=""/>
+                                    <input t-if="vi" type="submit" value="Gửi" name="subscribe" id="mc-embedded-subscribe"/>
+                                    <input t-else="" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"/>
                                 </form>
                                 <div class="mailchimp-description"></div>
                             </div>

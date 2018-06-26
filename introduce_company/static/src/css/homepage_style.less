@@ -35,14 +35,28 @@ a:hover, a:focus {
 }
 
 .nz-persons .person .title:after, .post .post-date:after,
-.widget_twitter .follow,.nz-persons .person .title:after, .nz-persons .person .title:before,
+ .nz-persons .person .title:before,
 #top,.desk-menu .sub-menu li > a:before, .standard .post-date-custom,
-.post .post-category ul li a,.single .single-post-content a:before,
 .social-links a:hover, .box-more:hover:after, .nz-persons .person .name:after,
-.stepset .active .step-title,.post .post-more:hover:after, .post .post-date-custom
-{
-  background-color: #17ff00 !important;
+.stepset .active .step-title{
+  background-color: #ec9f0e !important;
 }
+
+.header-content .social-links .icon-youtube:hover,.footer .widget .social-links .icon-youtube:hover{
+  color: red!important;
+}
+
+.icon-googleplus:hover,.footer .widget .social-links .icon-googleplus:hover{
+  color: red!important;
+}
+
+.icon-twitter:hover,.header-content .social-links .icon-twitter:hover,.footer .widget .social-links .icon-twitter:hover{
+  color: #1da1f2!important;
+}
+.icon-facebook:hover,.header-content .social-links .icon-facebook:hover,.footer .widget .social-links .icon-facebook:hover{
+  color: #4267b2!important;
+}
+
 
 p, q, pre, address, hr, code, samp, dl, ol, ul, li ul, li ol, form, table, fieldset, menu, kbd, samp {
   margin: 0 0 10px;
@@ -142,33 +156,16 @@ button, input[type="reset"], input[type="submit"], input[type="button"], .single
   font-size: 13px;
   border-radius: 0px;
 }
- .loop .project-title a:hover,
-.loop .projects-category a:hover,
-.footer-widget-area .widget_shopping_cart .cart_list > li > a:hover,
-.footer-widget-area .widget_products .product_list_widget > li > a:hover,
-.footer-widget-area .widget_recently_viewed_products .product_list_widget > li > a:hover,
-.footer-widget-area .widget_recent_reviews .product_list_widget > li > a:hover,
-.footer-widget-area .widget_top_rated_products .product_list_widget > li > a:hover,
-.footer-widget-area .widget_product_tag_cloud .tagcloud a:hover,
-.footer-widget-area .post-tags a:hover, .footer-widget-area .projects-tags a:hover,
-.footer-widget-area .widget_tag_cloud .tagcloud a:hover,
-.loop .small-image .projects .projects-category a:hover,
-.loop .medium-image .projects .projects-category a:hover,
-.loop .large-image .projects .projects-category a:hover,
-.loop .small-image-nogap .projects .projects-category a:hover,
-.loop .medium-image-nogap .projects .projects-category a:hover, .box-more:hover,
-.nz-persons .person .name:hover, .post .post-more:hover,
-.desk .header-top .header-top-social-links a:hover{
-  color: #17ff00 !important;
-}
 
+.nz-persons .person .name:hover,.box-more:hover,.person-meta .title:hover{
+  color: red!important;
+}
 .icon-googleplus:before {
   content: "\e764";
 }
 
-.sidebar a:not(.button):not(.ui-slider-handle),
-.post-tags a:hover, .shop-loader, .woocommerce .star-rating{
-  color: #17ff00;
+.sidebar a:not(.button):not(.ui-slider-handle){
+  color: red;
 }
 
 #nz-box-1 .box-icon {
@@ -598,9 +595,10 @@ button.tiny, .button.tiny {
 }
 
 .button:hover, .button:focus {
-  background: #34d904;
+  background: #f398db;
   border-color: transparent;
   outline: none;
+  color: #ffffff;
 }
 
 //partner
@@ -847,7 +845,7 @@ img {
 .menu_main {
   top: 78px;
   overflow-y: scroll;
-  height: 255px;
+  height: 370px;
 }
 
 .menu_main li {
@@ -951,8 +949,14 @@ img {
     padding-top: 34px;
   }
 }
-
+.box-menu .dropdown img{
+  width: 20px!important;
+  padding-bottom: 3px!important;
+}
 @media only screen and (max-width: 991px) {
+  .solution-odoo{
+    padding-top: 0;
+  }
   .solution-odoo .solution-odoo-img img {
     width: 50%;
   }
@@ -993,6 +997,13 @@ img {
 @media only screen and (max-width: 568px) {
   #nz-counter-1 {
     display: block;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .ninzio-overlay .social-links a{
+    width: 18px;
+    height: 18px;
+    line-height: 17px;
   }
 }
 
@@ -1116,6 +1127,6 @@ img {
 header {
   display: none !important;
 }
-//footer{
-//  display: none !important;
-//}
+footer{
+  display: none !important;
+}

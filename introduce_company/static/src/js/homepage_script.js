@@ -1,6 +1,23 @@
 odoo.define("introduce_company.homepage", function (require) {
     'use strict';
     require("web.dom_ready");
+
+    // Change the interface language
+    var lang = getCookie("lang")
+    if (lang) {
+        // cookie language was set to "vi" and URL does not contain "vi"
+        if (lang.include("vi") && !(document.URL.includes("vi"))) {
+            window.location.href = '/vi/';
+        } else if (lang.include("en") && !(document.URL.includes("en"))) {
+            window.location.href = '/en/';
+        }
+
+    } else {
+        var userLang = navigator.language;
+        if (userLang.includes('vi') && !(document.URL.includes("vi")))
+            window.location.href = '/vi/';
+    }
+
     var odooHeader = $('#oe_main_menu_navbar').length;
     var menuUl = $('#menu_main_ul');
 
@@ -85,7 +102,6 @@ odoo.define("introduce_company.homepage", function (require) {
     });
 
 
-
     $(document).on("scroll", onScroll1);
     //smoothscroll
     $('#menu-item-parent a[href^="#"]').on('click', function (e) {
@@ -101,16 +117,16 @@ odoo.define("introduce_company.homepage", function (require) {
             menu = target;
         var $target = $(target);
         $('html, body').stop().animate({
-            'scrollTop': $target.offset().top+2
+            'scrollTop': $target.offset().top + 2
         }, 500, 'swing', function () {
             window.location.hash = target;
             $(document).on("scroll", onScroll1);
         });
     });
 
-     $(document).on("scroll", onScroll2);
+    $(document).on("scroll", onScroll2);
     //smoothscroll
-    $('.menu-solution a[href^="#"]').on('click', function (e) {
+    $('.menu-solution a').on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
 
@@ -123,7 +139,7 @@ odoo.define("introduce_company.homepage", function (require) {
             menu = target;
         var $target = $(target);
         $('html, body').stop().animate({
-            'scrollTop': $target.offset().top+2
+            'scrollTop': $target.offset().top + 2
         }, 500, 'swing', function () {
             window.location.hash = target;
             $(document).on("scroll", onScroll2);
@@ -131,7 +147,32 @@ odoo.define("introduce_company.homepage", function (require) {
     });
 });
 
-function onScroll1(event){
+// functions to help manipulating cookies
+function setCookie(cname,cvalue,exdays){
+   var d = new Date();
+   d.setTime(d.getTime() + (exdays*24*60*60*1000));
+   var expires = "expires="+ d.toUTCString();
+   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+   var name = cname + "=";
+   var decodedCookie = decodeURIComponent(document.cookie);
+   var ca = decodedCookie.split(';');
+   for (var i = 0; i <ca.length; i++) {
+       var c = ca[i];
+       while (c.charAt(0)==' '){
+           c=c.substring(1);
+       }
+       if (c.indexOf(name)==0){
+           return c.substring(name.length, c.length);
+       }
+   }
+   return "";
+
+}
+
+function onScroll1(event) {
     var scrollPos = $(document).scrollTop();
     $('#menu-item-parent a').each(function () {
         var currLink = $(this);
@@ -140,25 +181,27 @@ function onScroll1(event){
             $('#menu-item-parent a').removeClass("active");
             currLink.parent().addClass("active");
         }
-        else{
+        else {
             currLink.parent().removeClass("active");
         }
     });
 }
 
-function onScroll2(event){
-    var scrollPos2 = $(document).scrollTop();
+function onScroll2(event) {
+    var scrollPos = $(document).scrollTop();
     $('.menu-solution a').each(function () {
-        var currLink2 = $(this);
-        var refElement2 = $(currLink2.attr("href"));
-        if(refElement2.position()){
-        if (refElement2.position().top <= scrollPos2 && refElement2.position().top + refElement2.height() > scrollPos2) {
-            $('.menu-solution a').removeClass("active");
-            currLink2.addClass("active");
-        }
-        else{
-            currLink2.removeClass("active");
-        }
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        console.log(currLink.attr("href"));
+        if (refElement.position()) {
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('.menu-solution a').removeClass("active");
+                currLink.addClass("active");
+            }
+            else {
+                currLink.removeClass("active");
+            }
         }
     });
 }
+
