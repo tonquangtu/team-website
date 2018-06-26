@@ -14,22 +14,6 @@
   font-family:SFProDisplay, Raleway,  icomoon, -apple-system, Raleway SemiBold, sans-serif;
 }
 
-
-.ls a, .header-top .top-button,
-.widget_title, .yawp_wim_title, textarea, select, button,
-.button, .button .txt, input[type="month"], input[type="number"],
-input[type="submit"], input[type="button"], input[type="date"],
-input[type="datetime"], input[type="password"], input[type="search"],
-input[type="datetime-local"], input[type="email"], input[type="tel"],
-input[type="text"], input[type="time"], input[type="url"], input[type="week"],
-input[type="reset"], .count-value, .nz-persons .person .name,
-.share-labelf, a.edit, a.view, .product .price, .box-more, .count-title,
-.single .post-social-share .social-links a span, .woocommerce .product .onsale,
-.projects-tags a, .widget_recent_entries a, .widget_categories ul li a,
-.post .post-category ul li a{
-  font-family: Raleway !important;
-}
-
 .container {
   padding: 0;
 }
@@ -949,9 +933,11 @@ img {
 }
 
 #menu-item-parent.active{
-  background-color: #17ff00;
+  background-color: red;
 }
-
+#menu-item-parent.active a .txt{
+  color: #ffffff;
+}
 @media only screen and (max-width: 1200px) {
   .header {
     display: none !important;
@@ -1130,6 +1116,6 @@ img {
 header {
   display: none !important;
 }
-footer{
-  display: none !important;
-}
+//footer{
+//  display: none !important;
+//}
