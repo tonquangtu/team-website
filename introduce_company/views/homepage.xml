@@ -25,7 +25,8 @@
                     <div class="box-menu">
                         <div class="nav-main">
                             <div class="box-nav">
-                                <ul class="menu_main" id="menu_main_ul" style="display: none;box-shadow: 6px 7px 9px 1px #d8d7d6;">
+                                <ul class="menu_main" id="menu_main_ul"
+                                    style="display: none;box-shadow: 6px 7px 9px 1px #d8d7d6;">
                                     <t t-foreach="menu" t-as="item">
                                         <li class="menu-solution">
                                             <a class="" t-att-href="item.get('parent').x_link" title="Link menu"
@@ -85,11 +86,11 @@
                                             </ul>
                                         </li>
                                         <div style="text-align:center;display: inline-block;width: 100%;">
-                                        <b>
-                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <t t-esc="team.phone"/>
-                                        </b>
-                                    </div>
+                                            <b>
+                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                                <t t-esc="team.phone"/>
+                                            </b>
+                                        </div>
                                     </ul>
 
 
@@ -311,7 +312,8 @@
                                     </p>
                                     <p t-else=""
                                        style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
-                                        We were completed many many products for other customers.                                  
+                                        We were completed many many products for other customers.
+                                                                         
                                         <br/>
                                         This products will be active.
                                     </p>

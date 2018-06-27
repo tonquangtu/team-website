@@ -31,41 +31,41 @@
                         </div>
 
                         <ul class="nav navbar-right">
-                           <li t-if="vi" class="dropdown">
-                               <a href="/" class="dropdown-toggle" data-toggle="dropdown">
-                                   <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
-                                        title="Tiếng Việt" style="width: 20px;"/>
-                                   Tiếng Việt
-                                   <b class="caret"></b>
-                               </a>
-                               <ul class="dropdown-menu">
-                                   <li class="" dir="ltr">
-                                       <a href="/" onclick="setCookie('lang','en')">
-                                           <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
-                                                title="English (UK)" style="width: 20px;"/>
-                                           English (UK)
-                                       </a>
-                                   </li>
-                               </ul>
-                           </li>
-                           <li t-else="" class="dropdown">
-                               <a href="/" class="dropdown-toggle" data-toggle="dropdown">
-                                   <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
-                                        title="English (UK)" style="width: 20px;"/>
-                                   English (UK)
-                                   <b class="caret"></b>
-                               </a>
-                               <ul class="dropdown-menu">
-                                   <li class="" onclick="setCookie('lang','vi')" dir="ltr">
-                                       <a href="/vi" onclick="setCookie('lang','vi')">
-                                           <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
-                                                title="Tiếng Việt" style="width: 20px;"/>
-                                           Tiếng Việt
-                                       </a>
-                                   </li>
-                               </ul>
-                           </li>
-                       </ul>
+                            <li t-if="vi" class="dropdown">
+                                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                         title="Tiếng Việt" style="width: 20px;"/>
+                                    Tiếng Việt
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="" dir="ltr">
+                                        <a href="/" onclick="setCookie('lang','en')">
+                                            <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                                 title="English (UK)" style="width: 20px;"/>
+                                            English (UK)
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li t-else="" class="dropdown">
+                                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                         title="English (UK)" style="width: 20px;"/>
+                                    English (UK)
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="" onclick="setCookie('lang','vi')" dir="ltr">
+                                        <a href="/vi" onclick="setCookie('lang','vi')">
+                                            <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                                 title="Tiếng Việt" style="width: 20px;"/>
+                                            Tiếng Việt
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
 
                     </div>
                 </div>
@@ -163,8 +163,10 @@
                                       class="validate" target="_blank" novalidate="">
                                     <input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL"
                                            placeholder="email@gmail.com" required=""/>
-                                    <input t-if="vi" type="submit" value="Gửi" name="subscribe" id="mc-embedded-subscribe"/>
-                                    <input t-else="" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"/>
+                                    <input t-if="vi" type="submit" value="Gửi" name="subscribe"
+                                           id="mc-embedded-subscribe"/>
+                                    <input t-else="" type="submit" value="Subscribe" name="subscribe"
+                                           id="mc-embedded-subscribe"/>
                                 </form>
                                 <div class="mailchimp-description"></div>
                             </div>
@@ -199,10 +201,14 @@
                         <div style="" class="nz-column-text nz-clearfix  element-animate-false" data-effect="none"
                              data-effect-speed="50">
                             <p></p>
-                            <p t-if="vi" style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
-                                Chúng tôi có những thành viên trẻ trung và năng động.<br/> Sẵn sàng đối mặt với mọi thử thách.
+                            <p t-if="vi"
+                               style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                Chúng tôi có những thành viên trẻ trung và năng động.
+                                <br/>
+                                Sẵn sàng đối mặt với mọi thử thách.
                             </p>
-                            <p t-else="" style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                            <p t-else=""
+                               style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
                                 We have the following users and dynamic center.<br/>Ready for objects with every try.
                             </p>
                             <p></p>

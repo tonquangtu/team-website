@@ -48,21 +48,21 @@ a:focus {
 }
 .header-content .social-links .icon-youtube:hover,
 .footer .widget .social-links .icon-youtube:hover {
-  color: red!important;
+  color: red !important;
 }
 .icon-googleplus:hover,
 .footer .widget .social-links .icon-googleplus:hover {
-  color: red!important;
+  color: red !important;
 }
 .icon-twitter:hover,
 .header-content .social-links .icon-twitter:hover,
 .footer .widget .social-links .icon-twitter:hover {
-  color: #1da1f2!important;
+  color: #1da1f2 !important;
 }
 .icon-facebook:hover,
 .header-content .social-links .icon-facebook:hover,
 .footer .widget .social-links .icon-facebook:hover {
-  color: #4267b2!important;
+  color: #4267b2 !important;
 }
 p,
 q,
@@ -228,7 +228,7 @@ input[type="button"] {
 .nz-persons .person .title,
 .box-more:hover,
 .person-meta .title:hover {
-  color: #ee6100!important;
+  color: #ee6100 !important;
 }
 .icon-googleplus:before {
   content: "\e764";
@@ -883,7 +883,7 @@ img {
 }
 .menu_main li a.active {
   text-decoration: none;
-  color: #17ff00!important;
+  color: #17ff00 !important;
   background-size: 100%;
   border-bottom: 3px solid #17ff00;
 }
@@ -953,8 +953,8 @@ img {
   }
 }
 .box-menu .dropdown img {
-  width: 20px!important;
-  padding-bottom: 3px!important;
+  width: 20px !important;
+  padding-bottom: 3px !important;
 }
 .box-menu .dropdown-menu {
   box-shadow: none;
@@ -993,7 +993,7 @@ img {
     width: calc(100% / 2 - 15px) !important;
   }
   #Experience {
-    padding-top: 0!important;
+    padding-top: 0 !important;
   }
   #Experience video {
     display: none;

@@ -30,14 +30,14 @@ def get_home_info():
         menu_customs.append(menu_item)
 
     return {
-            'menu': menu_customs,
-            'odoo': odoo,
-            'team': team,
-            'experience': experience,
-            'user': user,
-            'product': product,
-            'customer': customer,
-        }
+        'menu': menu_customs,
+        'odoo': odoo,
+        'team': team,
+        'experience': experience,
+        'user': user,
+        'product': product,
+        'customer': customer,
+    }
 
 
 class Homepage(Website):

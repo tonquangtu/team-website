@@ -12,7 +12,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: icomoon;
     src: url('/introduce_company/static/src/font/icomoon.woff');
@@ -61,7 +60,6 @@
     font-weight: 100;
     font-style: normal;
 }
-
 
 @font-face {
     font-family: Raleway;
@@ -77,7 +75,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: Raleway;
     src: url('/introduce_company/static/src/font/Raleway.woff2');
@@ -119,14 +116,13 @@
     font-weight: 200;
     font-style: normal;
 }
+
 @font-face {
     font-family: Raleway;
     src: url('/introduce_company/static/src/font/Raleway.woff2');
     font-weight: 100;
     font-style: normal;
 }
-
-
 
 @font-face {
     font-family: Raleway SemiBold;
@@ -142,7 +138,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: Raleway SemiBold;
     src: url('/introduce_company/static/src/font/RalewaySemiBold.woff2');
@@ -191,9 +186,6 @@
     font-weight: 100;
     font-style: normal;
 }
-
-
-
 
 @font-face {
     font-family: Roboto Condensed;
