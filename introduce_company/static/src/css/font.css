@@ -192,128 +192,131 @@
     font-style: normal;
 }
 
+
+
+
 @font-face {
-    font-family: SFProDisplay;
+    font-family: Roboto Condensed;
     src: url('/website_vezo/static/src/font/SF-Pro-Display-Black.otf');
     font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
+    font-family: Roboto Condensed;
     src: url('/website_vezo/static/src/font/SF-Pro-Display-BlackItalic.otf');
     font-weight: 900;
     font-style: italic;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-Bold.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Bold.ttf');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-BoldItalic.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-BoldItalic.ttf');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-Heavy.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Regular.ttf');
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-HeavyItalic.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Italic.ttf');
     font-weight: 800;
     font-style: italic;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-Light.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Regular.ttf');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-LightItalic.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Italic.ttf');
     font-weight: 300;
     font-style: italic;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-Medium.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Regular.ttf');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-MediumItalic.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Italic.ttf');
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-Regular.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Regular.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-RegularItalic.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-LightItalic.ttf');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-Semibold.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Regular.ttf');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-SemiboldItalic.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Italic.ttf');
     font-weight: 600;
     font-style: italic;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-Thin.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Regular.ttf');
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-ThinItalic.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Italic.ttf');
     font-weight: 200;
     font-style: italic;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-Ultralight.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Regular.ttf');
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
-    font-family: SFProDisplay;
-    src: url('/website_vezo/static/src/font/SF-Pro-Display-UltralightItalic.otf');
+    font-family: Roboto Condensed;
+    src: url('/introduce_company/static/src/font/RobotoCondensed-Italic.ttf');
     font-weight: 100;
     font-style: italic;
 }

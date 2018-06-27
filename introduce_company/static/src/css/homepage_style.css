@@ -10,7 +10,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-family: SFProDisplay, Raleway, icomoon, -apple-system, Raleway SemiBold, sans-serif;
+  font-family: Roboto Condensed, Raleway, icomoon, -apple-system, Raleway SemiBold, sans-serif;
 }
 .container {
   padding: 0;
@@ -44,7 +44,7 @@ a:focus {
 .box-more:hover:after,
 .nz-persons .person .name:after,
 .stepset .active .step-title {
-  background-color: #ec9f0e !important;
+  background-color: #d0d0d0 !important;
 }
 .header-content .social-links .icon-youtube:hover,
 .footer .widget .social-links .icon-youtube:hover {
@@ -169,49 +169,24 @@ button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"],
-.single-details .project-link,
-.wc-proceed-to-checkout a,
-.woocommerce-message .button.wc-forward,
 a.edit,
 a.view,
-#nz-content .nz-single-image:before,
 .loop .project-more:hover,
-.nz-recent-projects .project-more:hover,
-.woocommerce .product .onsale,
-.woocommerce .single-product-summary .product_meta a:after,
-.woocommerce-tabs .panel > h2:after,
-.woocommerce-tabs .panel > #reviews > #comments > h2:after,
-.related-products-title h3:after,
-.button-ghost.default.icon-true.animate-false .btn-icon:after,
-.widget_nav_menu li a:before,
-.widget_product_categories li a:before,
-.widget_categories ul li a:before,
-.widget_pages ul li a:before,
-.widget_archive ul li a:before,
-.widget_meta ul li a:before,
-#comments #submit:hover,
-.ajax-loading-wrap .load-bar:before,
-.nz-pricing-table > .column.highlight-true .pricing,
-.nz-accordion .toggle-title.active .toggle-icon:before,
-.nz-accordion .toggle-title.active .toggle-icon:after,
-.owl-controls .owl-page.active {
-  background-color: #ffb700;
+#comments #submit:hover {
+  background-color: #ee6100;
 }
 .button.square,
 button,
 input[type="reset"],
 input[type="submit"],
-input[type="button"],
-.wc-proceed-to-checkout a {
+input[type="button"] {
   border-radius: 0;
 }
 .button.medium,
 button,
 input[type="reset"],
 input[type="submit"],
-input[type="button"],
-.wc-proceed-to-checkout a,
-.single_add_to_cart_button {
+input[type="button"] {
   padding: 14px 34px;
   font-size: 14px;
   line-height: 22px;
@@ -220,8 +195,7 @@ input[type="button"],
 button,
 input[type="reset"],
 input[type="submit"],
-input[type="button"],
-.wc-proceed-to-checkout a {
+input[type="button"] {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
@@ -229,9 +203,7 @@ input[type="button"],
 button,
 input[type="reset"],
 input[type="submit"],
-input[type="button"],
-.wc-proceed-to-checkout a,
-.single_add_to_cart_button {
+input[type="button"] {
   outline: none;
   border: none;
   color: #fff;
@@ -252,10 +224,11 @@ input[type="button"],
   font-size: 13px;
   border-radius: 0px;
 }
-.nz-persons .person .name:hover,
+.nz-persons .person .name,
+.nz-persons .person .title,
 .box-more:hover,
 .person-meta .title:hover {
-  color: red!important;
+  color: #ee6100!important;
 }
 .icon-googleplus:before {
   content: "\e764";
@@ -360,7 +333,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: SFProDisplay;
+  font-family: Roboto Condensed;
   text-transform: none;
 }
 h1,
@@ -559,7 +532,7 @@ samp {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #f1d6ea;
+  background: #f5a873;
   visibility: hidden;
   opacity: 0;
 }
@@ -679,7 +652,7 @@ button.tiny,
 }
 .button:hover,
 .button:focus {
-  background: #f398db;
+  background: #ee6100;
   border-color: transparent;
   outline: none;
   color: #ffffff;
@@ -732,7 +705,7 @@ img {
 }
 .item-partner:hover {
   opacity: 1;
-  border: 3px solid #1cec67;
+  border: 3px solid #f1be9a;
 }
 .solution-odoo {
   padding-top: 50px;
@@ -779,6 +752,7 @@ img {
 }
 .solution-odoo-info .col-sm-12 p {
   margin: 0 0 10px;
+  font-family: Roboto Condensed;
 }
 .solution-odoo-info span {
   line-height: 24px;
@@ -789,7 +763,7 @@ img {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-family: Open Sans;
+  font-family: Roboto Condensed;
 }
 .solution-odoo-info p {
   text-align: center;
@@ -981,6 +955,11 @@ img {
 .box-menu .dropdown img {
   width: 20px!important;
   padding-bottom: 3px!important;
+}
+.box-menu .dropdown-menu {
+  box-shadow: none;
+  border: none;
+  width: 100%;
 }
 @media only screen and (max-width: 991px) {
   .solution-odoo {

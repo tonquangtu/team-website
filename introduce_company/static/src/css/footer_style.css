@@ -10,7 +10,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-family: icomoon, -apple-system, Raleway SemiBold, Raleway, sans-serif;
+  font-family: Roboto Condensed, icomoon, -apple-system, Raleway SemiBold, Raleway, sans-serif;
 }
 article,
 aside,
@@ -29,7 +29,7 @@ summary {
 .footer {
   margin-top: 30px;
   background-color: #2d2e2f !important;
-  background-image: url(http://ninzio.com/thebuilders/wp-content/uploads/2016/11/footer_bg.jpg);
+  background-image: url(/introduce_company/static/src/img/background.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   -webkit-background-size: cover;
@@ -69,7 +69,6 @@ summary {
 img,
 img[class*="wp-image"] {
   max-width: 100%;
-  height: auto !important;
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: bottom;

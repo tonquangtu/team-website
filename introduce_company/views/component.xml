@@ -6,7 +6,7 @@
                 <div class="header-top nz-clearfix" style=" max-height: 40px;">
                     <div class="container" style="display:flex;">
                         <div class="slogan nz-clearfix">
-                            <span class="nz-icon none small icon-phone animate-false" style="color:red"/>
+                            <span class="nz-icon none small icon-phone animate-false" style="color:#eba386"/>
                             <span t-if="vi" style="color:#999999;font-size:12px;padding-right:15px">Điện thoại:
                                 <t t-esc="team.phone"/>
                             </span>
@@ -14,7 +14,7 @@
                                 <t t-esc="team.phone"/>
                             </span>
                             <span class="nz-icon none small icon-envelope animate-false"
-                                  style="color:red;font-size:12px"/>
+                                  style="color:#eba386;font-size:12px"/>
                             <span style="color:#999999;font-size:12px">
                                 <t t-esc="team.email"/>
                             </span>
@@ -72,7 +72,7 @@
                 <div class="header-body">
                     <div class="container">
                         <div class="logo logo-desk">
-                            <a href="http://ninzio.com/thebuilders/" title="The Builders">
+                            <a href="#" title="Odoo Insight">
                                 <img class="normal-logo" style="max-width:284px;max-height:48px;"
                                      t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"
                                      alt="Odoo Insight"/>
@@ -129,7 +129,7 @@
                     <aside class="footer-widget-area widget-area nz-clearfix">
                         <div id="text-2" class="widget widget_text">
                             <div class="textwidget">
-                                <img style="width:226px;height:25px!important;"
+                                <img style="width:226px;height:60px!important;"
                                      t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"
                                      alt="Montserrat"/>
                                 <div class="gap nz-clearfix" style="height:30px">&#160;</div>
@@ -158,7 +158,7 @@
                                 </div>
                                 <div t-else="" class="mailchimp-subtitle">Import your email to receive latest reports
                                 </div>
-                                <form action="//ninzio.us3.list-manage.com/subscribe/post?u=d4b8ae9364cc26cecfd46d335&amp;id=23c55ddae5"
+                                <form action="#Banner"
                                       method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
                                       class="validate" target="_blank" novalidate="">
                                     <input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL"
@@ -192,17 +192,17 @@
                         <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                              data-effect="none">
                             <div class="nz-separator solid"
-                                 style="border-bottom-color:#17ff00;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                 style="border-bottom-color:#f1bd9a;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
                                 &#160;
                             </div>
                         </div>
                         <div style="" class="nz-column-text nz-clearfix  element-animate-false" data-effect="none"
                              data-effect-speed="50">
                             <p></p>
-                            <p t-if="vi" style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                            <p t-if="vi" style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
                                 Chúng tôi có những thành viên trẻ trung và năng động.<br/> Sẵn sàng đối mặt với mọi thử thách.
                             </p>
-                            <p t-else="" style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                            <p t-else="" style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
                                 We have the following users and dynamic center.<br/>Ready for objects with every try.
                             </p>
                             <p></p>

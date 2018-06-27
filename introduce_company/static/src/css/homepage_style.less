@@ -11,7 +11,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-family:SFProDisplay, Raleway,  icomoon, -apple-system, Raleway SemiBold, sans-serif;
+  font-family:Roboto Condensed, Raleway,  icomoon, -apple-system, Raleway SemiBold, sans-serif;
 }
 
 .container {
@@ -39,7 +39,7 @@ a:hover, a:focus {
 #top,.desk-menu .sub-menu li > a:before, .standard .post-date-custom,
 .social-links a:hover, .box-more:hover:after, .nz-persons .person .name:after,
 .stepset .active .step-title{
-  background-color: #ec9f0e !important;
+  background-color: #d0d0d0 !important;
 }
 
 .header-content .social-links .icon-youtube:hover,.footer .widget .social-links .icon-youtube:hover{
@@ -115,26 +115,30 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
 }
 
-button, input[type="reset"], input[type="submit"], input[type="button"], .single-details .project-link, .wc-proceed-to-checkout a, .woocommerce-message .button.wc-forward, a.edit, a.view, #nz-content .nz-single-image:before, .loop .project-more:hover, .nz-recent-projects .project-more:hover, .woocommerce .product .onsale, .woocommerce .single-product-summary .product_meta a:after, .woocommerce-tabs .panel > h2:after, .woocommerce-tabs .panel > #reviews > #comments > h2:after, .related-products-title h3:after, .button-ghost.default.icon-true.animate-false .btn-icon:after, .widget_nav_menu li a:before, .widget_product_categories li a:before, .widget_categories ul li a:before, .widget_pages ul li a:before, .widget_archive ul li a:before, .widget_meta ul li a:before, #comments #submit:hover, .ajax-loading-wrap .load-bar:before, .nz-pricing-table > .column.highlight-true .pricing, .nz-accordion .toggle-title.active .toggle-icon:before, .nz-accordion .toggle-title.active .toggle-icon:after, .owl-controls .owl-page.active {
-  background-color: #ffb700;
+button, input[type="reset"],
+input[type="submit"], input[type="button"],
+a.edit, a.view,
+.loop .project-more:hover,
+#comments #submit:hover{
+  background-color: #ee6100;
 }
 
-.button.square, button, input[type="reset"], input[type="submit"], input[type="button"], .wc-proceed-to-checkout a {
+.button.square, button, input[type="reset"], input[type="submit"], input[type="button"]{
   border-radius: 0;
 }
 
-.button.medium, button, input[type="reset"], input[type="submit"], input[type="button"], .wc-proceed-to-checkout a, .single_add_to_cart_button {
+.button.medium, button, input[type="reset"], input[type="submit"], input[type="button"]{
   padding: 14px 34px;
   font-size: 14px;
   line-height: 22px;
 }
 
-.button-normal, button, input[type="reset"], input[type="submit"], input[type="button"], .wc-proceed-to-checkout a {
+.button-normal, button, input[type="reset"], input[type="submit"], input[type="button"]{
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
-.button, button, input[type="reset"], input[type="submit"], input[type="button"], .wc-proceed-to-checkout a, .single_add_to_cart_button {
+.button, button, input[type="reset"], input[type="submit"], input[type="button"]{
   outline: none;
   border: none;
   color: #fff;
@@ -157,8 +161,8 @@ button, input[type="reset"], input[type="submit"], input[type="button"], .single
   border-radius: 0px;
 }
 
-.nz-persons .person .name:hover,.box-more:hover,.person-meta .title:hover{
-  color: red!important;
+.nz-persons .person .name,.nz-persons .person .title,.box-more:hover,.person-meta .title:hover{
+  color: #ee6100!important;
 }
 .icon-googleplus:before {
   content: "\e764";
@@ -275,7 +279,7 @@ button, input[type="reset"], input[type="submit"], input[type="button"], .single
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: SFProDisplay;
+  font-family: Roboto Condensed;
   text-transform: none;
 }
 
@@ -465,7 +469,7 @@ p, q, pre, address, hr, code, samp, dl, ol, ul, li ul, li ol, form, table, field
   top: 0;
   width: 100%;
   height: 100%;
-  background: #f1d6ea;
+  background: #f5a873;
   visibility: hidden;
   opacity: 0;
 }
@@ -595,7 +599,7 @@ button.tiny, .button.tiny {
 }
 
 .button:hover, .button:focus {
-  background: #f398db;
+  background: #ee6100;
   border-color: transparent;
   outline: none;
   color: #ffffff;
@@ -661,7 +665,7 @@ img {
 
 .item-partner:hover {
   opacity: 1;
-  border: 3px solid #1cec67;
+  border: 3px solid #f1be9a;
 }
 
 //solution-odoo
@@ -719,6 +723,7 @@ img {
   padding-left: 0;
   p {
     margin: 0 0 10px;
+    font-family: Roboto Condensed;
   }
 }
 
@@ -731,7 +736,7 @@ img {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-family: Open Sans;
+  font-family: Roboto Condensed;
 }
 
 .solution-odoo-info p {
@@ -952,6 +957,15 @@ img {
 .box-menu .dropdown img{
   width: 20px!important;
   padding-bottom: 3px!important;
+}
+
+.box-menu .dropdown-menu{
+    box-shadow:  none;
+    border: none;
+    width: 100%;
+}
+.menu-main{
+
 }
 @media only screen and (max-width: 991px) {
   .solution-odoo{

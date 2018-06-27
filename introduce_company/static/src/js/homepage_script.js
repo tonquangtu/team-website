@@ -2,25 +2,12 @@ odoo.define("introduce_company.homepage", function (require) {
     'use strict';
     require("web.dom_ready");
 
-    // Change the interface language
-    var lang = getCookie("lang")
-    if (lang) {
-        // cookie language was set to "vi" and URL does not contain "vi"
-        if (lang.include("vi") && !(document.URL.includes("vi"))) {
-            window.location.href = '/vi/';
-        } else if (lang.include("en") && !(document.URL.includes("en"))) {
-            window.location.href = '/en/';
-        }
-
-    } else {
-        var userLang = navigator.language;
-        if (userLang.includes('vi') && !(document.URL.includes("vi")))
-            window.location.href = '/vi/';
-    }
-
     var odooHeader = $('#oe_main_menu_navbar').length;
     var menuUl = $('#menu_main_ul');
 
+    if (odooHeader <= 0) {
+        $('.menu_main').css('margin-top', '-34px');
+    }
 
     $(window).scroll(function () {
         var height = $(window).scrollTop();
@@ -90,7 +77,7 @@ odoo.define("introduce_company.homepage", function (require) {
         $('.menu-child').addClass('hidden');
     }
 
-    //so sanh text dua ra chi so
+    //experience and parameter
     $('.count-title').each(function () {
         var testText = $(this).text();
         if (testText.trim() === "EXPERIENCE") {
@@ -145,6 +132,23 @@ odoo.define("introduce_company.homepage", function (require) {
             $(document).on("scroll", onScroll2);
         });
     });
+
+    // Change the interface language
+    var lang = getCookie("lang");
+    if (lang) {
+        //cookie language was set to "vi" and URL does not contain "vi"
+        if (lang.include("vi") && !(document.URL.includes("vi"))) {
+            window.location.href = '/vi/';
+        } else if (lang.include("en") && !(document.URL.includes("en"))) {
+            window.location.href = '/en/';
+        }
+
+    }
+    else {
+        var userLang = navigator.language;
+        if (userLang.includes('vi') && !(document.URL.includes("vi")))
+            window.location.href = '/vi/';
+    }
 });
 
 // functions to help manipulating cookies
@@ -192,7 +196,6 @@ function onScroll2(event) {
     $('.menu-solution a').each(function () {
         var currLink = $(this);
         var refElement = $(currLink.attr("href"));
-        console.log(currLink.attr("href"));
         if (refElement.position()) {
             if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
                 $('.menu-solution a').removeClass("active");

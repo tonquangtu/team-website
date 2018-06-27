@@ -19,13 +19,13 @@
                     <div class="box-logo pd0">
                         <a href="/" class="logo">
                             <img t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"
-                                 alt="Odoo Insight"/>
+                                 alt="Odoo Insight" style="height:40px!important;"/>
                         </a>
                     </div>
                     <div class="box-menu">
                         <div class="nav-main">
                             <div class="box-nav">
-                                <ul class="menu_main" id="menu_main_ul" style="display: none;">
+                                <ul class="menu_main" id="menu_main_ul" style="display: none;box-shadow: 6px 7px 9px 1px #d8d7d6;">
                                     <t t-foreach="menu" t-as="item">
                                         <li class="menu-solution">
                                             <a class="" t-att-href="item.get('parent').x_link" title="Link menu"
@@ -46,48 +46,53 @@
                                             </ul>
                                         </li>
                                     </t>
-                                    <li t-if="vi" class="dropdown">
-                                        <a href="/" class="dropdown-toggle" data-toggle="dropdown">
-                                            <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
-                                                 title="Tiếng Việt"/>
-                                            Tiếng Việt
-                                            <b class="caret"></b>
-                                        </a>
-                                        <ul class="dropdown-menu"
-                                            style="border: none;box-shadow: none;margin-left: 65px;margin-top: -9px;position: relative;">
-                                            <li class="" dir="ltr">
-                                                <a href="/" style="font-size:12px;">
-                                                    <img src="/introduce_company/static/src/img/en.gif"
-                                                         alt="English (UK)"
-                                                         title="English (UK)"/>
-                                                    English (UK)
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li t-else="" class="dropdown">
-                                        <a href="/" class="dropdown-toggle" data-toggle="dropdown">
-                                            <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
-                                                 title="English (UK)"/>
-                                            English (UK)
-                                            <b class="caret"></b>
-                                        </a>
-                                        <ul class="dropdown-menu" style="border: none;box-shadow: none;margin-left: 65px;margin-top: -9px;position: relative;">
-                                            <li class="" dir="ltr">
-                                                <a href="/vi" style="font-size:12px;">
-                                                    <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
-                                                         title="Tiếng Việt"/>
-                                                    Tiếng Việt
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <div style="text-align:center;">
-                                    <b>
-                                        <i class="fa fa-phone" aria-hidden="true"></i>
-                                        <t t-esc="team.phone"/>
-                                    </b>
+
+                                    <ul class="menu-mobi">
+                                        <li t-if="vi" class="dropdown">
+                                            <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                                <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                                     title="Tiếng Việt" style="width: 20px;"/>
+                                                Tiếng Việt
+                                                <b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li class="" dir="ltr">
+                                                    <a href="/" onclick="setCookie('lang','en')">
+                                                        <img src="/introduce_company/static/src/img/en.gif"
+                                                             alt="English (UK)"
+                                                             title="English (UK)" style="width: 20px;"/>
+                                                        English (UK)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li t-else="" class="dropdown">
+                                            <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                                <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                                     title="English (UK)" style="width: 20px;"/>
+                                                English (UK)
+                                                <b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li class="" onclick="setCookie('lang','vi')" dir="ltr">
+                                                    <a href="/vi" onclick="setCookie('lang','vi')">
+                                                        <img src="/introduce_company/static/src/img/vi.gif"
+                                                             alt="Tiếng Việt"
+                                                             title="Tiếng Việt" style="width: 20px;"/>
+                                                        Tiếng Việt
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <div style="text-align:center;display: inline-block;width: 100%;">
+                                        <b>
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <t t-esc="team.phone"/>
+                                        </b>
                                     </div>
+                                    </ul>
+
+
                                 </ul>
                                 <ul class="hidden" id="top_menu">
                                     <li></li>
@@ -191,7 +196,7 @@
                                     <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                          data-effect="none">
                                         <div class="nz-separator solid"
-                                             style="border-bottom-color:#17ff00;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                             style="border-bottom-color:#f1bd9a;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
                                             &#160;
                                         </div>
                                     </div>
@@ -200,11 +205,11 @@
                                          data-effect-speed="50">
                                         <p></p>
                                         <p t-if="vi"
-                                           style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                           style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
                                             Chúng tôi cung cấp những giải pháp tốt nhất trên nền tảng Odoo
                                         </p>
                                         <p t-else=""
-                                           style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                           style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
                                             We provide the best solutions on the Odoo platform
                                         </p>
                                         <p></p>
@@ -229,10 +234,8 @@
                 <!--experience-->
                 <div id="Experience" class="nz-section horizontal autoheight-false animate-false full-width-false "
                      data-img-width="1600" data-img-height="899" data-animation-speed="35000" data-parallax="false"
-                     style="background-color:#333333;background-image:url(http://ninzio.com/thebuilders/wp-content/uploads/2015/12/counters_bg1.jpg);background-repeat:repeat;background-position:left top;background-attachment:scroll;padding-top:80px;padding-bottom:30px;">
+                     style="background-color:#333333;background-image:url(/introduce_company/static/src/img/background.jpg);background-repeat:repeat;background-position:left top;background-attachment:scroll;padding-top:80px;padding-bottom:30px;">
                     <div class="nz-video-overlay" style="background-image:url();">&#160;</div>
-                    <video class="nz-section-back-video" autoplay="" preload="auto" loop="loop" muted="muted"
-                           poster="http://ninzio.com/thebuilders/wp-content/themes/thebuilders/images/transparent.png"></video>
                     <div class="container">
                         <div class="nz-row">
                             <div class="col vc_col-sm-12 col12  element-animate-false valign-top" style=""
@@ -242,7 +245,7 @@
                                         <t t-foreach="experience" t-as="exp">
                                             <div class="nz-count" id="nz-count-1">
                                                 <div class="nz-count-wrap nz-clearfix">
-                                                    <span class="count-title" style="color:#17ff00;">
+                                                    <span class="count-title" style="color:#ee6100;">
                                                         <t t-if="vi" t-esc="exp.name_vn"/>
                                                         <t t-else="" t-esc="exp.name"/>
                                                     </span>
@@ -252,7 +255,8 @@
                                                             <t t-esc="exp.description"/>
                                                         </span>
                                                         <div class="exp-value hidden" style="font-size: 28px;">
-                                                            <span>year</span>
+                                                            <span t-if="vi">nam</span>
+                                                            <span t-esle="">year</span>
                                                         </div>
                                                         <div class="product-value hidden" style="font-size: 28px;">+
                                                         </div>
@@ -292,7 +296,7 @@
                                 <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                      data-effect="none">
                                     <div class="nz-separator solid"
-                                         style="border-bottom-color:#17ff00;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                         style="border-bottom-color:#f1bd9a;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
                                         &#160;
                                     </div>
                                 </div>
@@ -301,14 +305,13 @@
                                      data-effect-speed="50">
                                     <p></p>
                                     <p t-if="vi"
-                                       style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                       style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
                                         Chúng tôi đã hoàn thành rất nhiều sản phẩm cho các khách hàng khác nhau.
                                         <br/>Các sản phẩm này vẫn đang được hoạt động.
                                     </p>
                                     <p t-else=""
-                                       style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
-                                        We were completed many many products for other customers.
-                                                                                
+                                       style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                        We were completed many many products for other customers.                                  
                                         <br/>
                                         This products will be active.
                                     </p>
@@ -361,7 +364,7 @@
                             <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                  data-effect="none">
                                 <div class="nz-separator solid"
-                                     style="border-bottom-color:#17ff00;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                     style="border-bottom-color:#f1bd9a;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
                                     &#160;
                                 </div>
                             </div>
@@ -370,11 +373,11 @@
                                  data-effect-speed="50">
                                 <p></p>
                                 <p t-if="vi"
-                                   style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                   style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
                                     Chúng tôi đã hợp tác với rất nhiều khách hàng trong nước cũng như nước ngoài.
                                 </p>
                                 <p t-else=""
-                                   style="text-align: center; font-size: 16px; line-height: 26px; color: #777777;">
+                                   style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
                                     We are already associated with many customer rows in other water..
                                 </p>
                                 <p></p>
@@ -394,8 +397,8 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="nz-clearfix" style="text-align:center;">
-                        <a t-if="vi" class="box-more" href="http://ninzio.com" style="font-size: 20px;">Xem thêm</a>
-                        <a t-else="" class="box-more" href="http://ninzio.com" style="font-size: 20px;">Read more</a>
+                        <a t-if="vi" class="box-more" href="#" style="font-size: 20px;">Xem thêm</a>
+                        <a t-else="" class="box-more" href="#" style="font-size: 20px;">Read more</a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
