@@ -6,8 +6,15 @@ odoo.define("introduce_company.homepage", function (require) {
     var menuUl = $('#menu_main_ul');
     var $menuSoluA = $('.menu-solution a');
     var $menuParent = $('#menu-item-parent a');
-    if (odooHeader <= 0) {
-        $('.menu_main').css('margin-top', '-34px');
+
+
+
+    if (odooHeader > 0) {
+        $('#header').css('margin-top', '34px');
+        $('.banner').addClass('banner-head-y');
+    } else {
+        $('.banner').addClass('banner-head-n');
+        $('.width_header').css('top', '0');
     }
 
     $(window).scroll(function () {
@@ -19,12 +26,6 @@ odoo.define("introduce_company.homepage", function (require) {
 
         if (height >= 50) {
             header.addClass('active');
-            if (odooHeader > 0) {
-                $('.header.active').css('top', '34px');
-                $('.banner').addClass('pTop');
-            } else {
-                $('.width_header').css('top', '0');
-            }
         }
 
         if (height >= 800) {
@@ -134,46 +135,12 @@ odoo.define("introduce_company.homepage", function (require) {
         });
     });
 
-    // Change the interface language
-    var lang = getCookie("lang");
-    if (lang) {
-        //cookie language was set to "vi" and URL does not contain "vi"
-        if (lang.include("vi") && !(document.URL.includes("vi"))) {
-            window.location.href = '/vi/';
-        } else if (lang.include("en") && !(document.URL.includes("en"))) {
-            window.location.href = '/en/';
-        }
-    }
-    else {
-        var userLang = navigator.language;
-        if (userLang.includes('vi') && !(document.URL.includes("vi")))
-            window.location.href = '/vi/';
-    }
+     //click change my language => click odoo language
+    $('.js_change_lang').onclick(function () {
+        $('.js_language_selector .js_change_lang').click()
+    });
+
 });
-
-// functions to help manipulating cookies
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) === ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) === 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
 
 function onScroll1() {
     var scrollPos = $(document).scrollTop();

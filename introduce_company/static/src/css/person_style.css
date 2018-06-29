@@ -255,6 +255,9 @@ h6 {
 .sep-wrap.center .nz-separator {
   margin: 0 auto;
 }
+#Banner .fa.fa-chevron-right {
+  left: 0;
+}
 @media only screen and (max-width: 1200px) {
   .container {
     width: 100%;

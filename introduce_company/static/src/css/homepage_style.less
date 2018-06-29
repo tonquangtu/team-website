@@ -1,4 +1,3 @@
-@import '/introduce_company/static/src/css/font.css';
 
 * {
   margin: 0;
@@ -495,7 +494,7 @@ p, q, pre, address, hr, code, samp, dl, ol, ul, li ul, li ol, form, table, field
   }
   .button.tiny {
     border-width: 1px;
-    padding-top: 13px;
+    padding-top: 9px;
   }
   .project-tile-overlay .button.tiny {
     width: 160px;
@@ -692,7 +691,7 @@ img {
 }
 
 .solution-odoo .col-md-6 img {
-  width: 100%;
+  width: 60%;
 }
 
 .solution-odoo .solution-odoo-img {
@@ -700,6 +699,7 @@ img {
   padding: 0;
   height: 330px;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -788,7 +788,6 @@ img {
 }
 
 .logo img {
-  height: 50px;
   object-fit: contain;
 }
 
@@ -943,17 +942,65 @@ img {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 1200px) {
-  .header {
-    display: none !important;
-  }
+.banner-head-n {
+  height: 640px;
+}
 
-  .width_header {
-    display: block;
-  }
+.banner-head-y {
+  height: 604px;
+}
 
-  .pTop {
-    padding-top: 34px;
+.banner-title {
+  margin: 0 5%;
+  width: 90%;
+  text-align: center;
+  position: absolute;
+  top: 9%;
+  z-index: 1;
+  .title {
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation: animatezoom 5s 1;
+    width: 70%;
+    font-size: 85px;
+    margin: 0 auto;
+    font-weight: bold;
+    color: yellow;
+    line-height: 85px;
+  }
+  .content {
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation: animatezoom1 6s 1;
+    font-size: 25px;
+    margin: 10px auto 0;
+    font-weight: bold;
+    color: yellow;
+    line-height: 25px;
+  }
+  @keyframes animatezoom {
+    0% {
+      top: 0;
+      color: yellow;
+      font-size: 1px;
+    }
+    100% {
+      top: 0;
+      color: yellow;
+      font-size: 85px;
+    }
+  }
+  @keyframes animatezoom1 {
+    0% {
+      top: 0;
+      color: yellow;
+      font-size: 1px;
+    }
+    100% {
+      top: 0;
+      color: yellow;
+      font-size: 25px;
+    }
   }
 }
 
@@ -968,8 +1015,136 @@ img {
   width: 100%;
 }
 
-.menu-main {
 
+//solution
+
+  .snippet-banner {
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+
+  .snippet-banner-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    opacity: 0.8;
+    position: relative;
+  }
+
+  .snippet-title {
+    font-size: 60px;
+    color: red;
+  }
+
+  .snippet-title-txt {
+    font-size: 35px;
+    color: red;
+  }
+
+  .snippet-banner .snippet-content {
+    width: 60%;
+    margin: 0 20%;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    text-align: center;
+    color: #F44336;
+    font-size: 16px;
+  }
+
+  .snippet-banner-container:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #d1f979;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .snippet-content {
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+
+  .snippet-banner:hover .snippet-content {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
+  }
+
+  .snippet-banner:hover .snippet-content {
+    bottom: 50%;
+    margin-bottom: -20px;
+  }
+
+  .snippet-banner:hover .snippet-banner-container:after {
+    visibility: visible;
+    opacity: 0.9;
+  }
+
+@media only screen and (max-width: 1200px) {
+
+  .banner-head-n {
+    height: auto;
+    padding-top: 44px;
+  }
+
+  .banner-head-y {
+    height: auto;
+    padding-top: 44px;
+  }
+
+  .header {
+    display: none !important;
+  }
+
+  .width_header {
+    display: block;
+  }
+
+  @sizelg: 60px;
+  @sizesm: 25px;
+  .banner-title {
+    top: 7%;
+    .title {
+      font-size: @sizelg;
+      line-height: @sizelg;
+    }
+    .content {
+      font-size: @sizesm;
+      line-height: @sizesm;
+    }
+  }
+
+  @keyframes animatezoom {
+    0% {
+      top: 0;
+      color: yellow;
+      font-size: 1px;
+    }
+    100% {
+      top: 0;
+      color: yellow;
+      font-size: @sizelg;
+    }
+  }
+  @keyframes animatezoom1 {
+    0% {
+      top: 0;
+      color: yellow;
+      font-size: 1px;
+    }
+    100% {
+      top: 0;
+      color: yellow;
+      font-size: @sizesm;
+    }
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1000,6 +1175,10 @@ img {
   .nz-column-text p, .solution-odoo-info span, .solution-odoo-info .more-view {
     font-size: 14px !important;
   }
+
+  .banner-title {
+    top: 5%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1011,6 +1190,45 @@ img {
     padding-top: 0 !important;
     video {
       display: none;
+    }
+  }
+
+  @sizelg: 35px;
+  @sizesm: 15px;
+  .banner-title {
+    top: 3%;
+    .title {
+      font-size: @sizelg;
+      line-height: @sizelg;
+    }
+    .content {
+      font-size: @sizesm;
+      line-height: @sizesm;
+    }
+  }
+
+  @keyframes animatezoom {
+    0% {
+      top: 0;
+      color: yellow;
+      font-size: 1px;
+    }
+    100% {
+      top: 0;
+      color: yellow;
+      font-size: @sizelg;
+    }
+  }
+  @keyframes animatezoom1 {
+    0% {
+      top: 0;
+      color: yellow;
+      font-size: 1px;
+    }
+    100% {
+      top: 0;
+      color: yellow;
+      font-size: @sizesm;
     }
   }
 }
@@ -1026,6 +1244,45 @@ img {
     width: 18px;
     height: 18px;
     line-height: 17px;
+  }
+
+  @sizelg: 25px;
+  @sizesm: 10px;
+  .banner-title {
+    top: 115px;
+    .title {
+      font-size: @sizelg;
+      line-height: @sizelg;
+    }
+    .content {
+      font-size: @sizesm;
+      line-height: @sizesm;
+    }
+  }
+
+  @keyframes animatezoom {
+    0% {
+      top: 0;
+      color: yellow;
+      font-size: 1px;
+    }
+    100% {
+      top: 0;
+      color: yellow;
+      font-size: @sizelg;
+    }
+  }
+  @keyframes animatezoom1 {
+    0% {
+      top: 0;
+      color: yellow;
+      font-size: 1px;
+    }
+    100% {
+      top: 0;
+      color: yellow;
+      font-size: @sizesm;
+    }
   }
 }
 

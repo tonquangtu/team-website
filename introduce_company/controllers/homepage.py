@@ -8,6 +8,7 @@ from odoo.http import request
 
 def get_home_info():
     product = request.env['product.template'].sudo().search([('x_type', '=', 'complete_product')])
+    solution = request.env['product.template'].sudo().search([('x_type', '=', 'solution')])
     customer = request.env['product.template'].sudo().search([('x_type', '=', 'customer')])
     user = request.env['res.users'].sudo().search([('company_ids', '=', 'team')])
     experience = request.env['introduce.experience'].sudo().search([])
@@ -37,16 +38,19 @@ def get_home_info():
         'user': user,
         'product': product,
         'customer': customer,
+        'solution': solution,
     }
 
 
 class Homepage(Website):
     @http.route('/', type='http', auth="public", website=True)
     def homepage(self, **kw):
-        return http.request.render('introduce_company.homepage', get_home_info())
+        return http.request.render('introduce_company.homepage')
 
-    @http.route('/vi', type='http', auth="public", website=True)
-    def homepage_vn(self):
+    @http.route('/get-homepage', type='json', auth='public', method='POST', website=True)
+    def get_homepage(self, is_vi=False):
         info = get_home_info()
-        info.update({'vi': True})
-        return http.request.render('introduce_company.homepage', info)
+        info.update({'vi': is_vi})
+        data = request.env['ir.ui.view'].render_template('introduce_company.main_homepage', info)
+        return data
+

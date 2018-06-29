@@ -6,8 +6,10 @@ from odoo import models, fields
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
+    x_description = fields.Text(string="Description")
+    x_description_vn = fields.Text(string="Miêu tả")
     x_link = fields.Text(string="Link")
-    x_type = fields.Char(string="Type")
+    x_type = fields.Selection(requied=True, string="Type", selection=[('complete_product', 'Sản phẩm xong'), ('customer', 'Khách hàng'), ('solution', 'Giải pháp')])
 
 
 class Person(models.Model):

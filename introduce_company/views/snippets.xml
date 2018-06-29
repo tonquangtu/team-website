@@ -16,47 +16,16 @@
 
     <template id="snippet_banner" name="Snippet Banner">
         <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/snippet_style.css"/>
-        <section class="snippet-banner">
-            <div class="snippet-banner-container">
-                <div id="nz-box-1" class="back_active nz-box element-animate">
-                    <div class="nz-box-wrap">
-                        <div class="box-icon-wrap">
-                            <div class="box-icon">
-                                <img class="box-img"
-                                     src="/introduce_company/static/src/img/model.jpg"/>
-                            </div>
-                        </div>
-                        <div t-if="vi" class="box-data">
-                            <h3 class="box-title">Tạo 1 website</h3>
-                            <p></p>
-                            <p style="text-align: center;">Mang đến bàn thắng-thắng
-                                Sự sống còn các chiến lược để đảm bảo sự thống trị chủ động. Vào cuối của
-                                ngày, về sau, một sự bình thường mới đã phát triển.
-                            </p>
-                            <p style="text-align: center;">Bring to the table win-win
-                                survival
-                                strategies to ensure proactive domination. At the end of the
-                                day, going forward, a new normal that has evolved.
-                            </p>
-                            <div class="nz-clearfix">
-                                <a class="box-more" href="http://ninzio.com">Xem thêm</a>
-                            </div>
-                        </div>
-                        <div t-else="" class="box-data">
-                            <h3 t-else="" class="box-title">Creative one website</h3>
-                            <p></p>
-                            <p style="text-align: center;">Bring to the table win-win
-                                survival
-                                strategies to ensure proactive domination. At the end of the
-                                day, going forward, a new normal that has evolved.
-                            </p>
-                            <div class="nz-clearfix">
-                                <a class="box-more" href="http://ninzio.com">Read more</a>
-                            </div>
-                        </div>
-                    </div>
+            <section class="snippet-banner col-md-4">
+                <div class="snippet-banner-container">
+                    <div class="snippet-title">Odoo ARM</div>
+                    <div class="snippet-title-txt">Giải pháp luồng</div>
                 </div>
-            </div>
-        </section>
+                <div class="snippet-content">
+                     Odo / OpenERP is integrated with cloud computing technology, extremely suitable for small and medium enterprises in all industries. Currently, Odoo is always the first choice for businesses
+                    not only in Vietnam, the world number of people interested in Odo also excel.
+                </div>
+            </section>
+        <script src="/introduce_company/static/src/js/homepage_script.js"/>
     </template>
 </odoo>
