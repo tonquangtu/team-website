@@ -271,12 +271,15 @@ img[class*="wp-image"] {
     width: 100%;
   }
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
   .container,
   .full-width-true .nz-tabs.full-true .tab-content,
   .ninzio-navigation,
   .wpml-ls-statics-post_translations {
     max-width: 290px;
     width: 290px;
+  }
+  .social-links a {
+    font-size: 10px!important;
   }
 }

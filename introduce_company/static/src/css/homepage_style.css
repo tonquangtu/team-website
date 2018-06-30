@@ -912,7 +912,7 @@ img {
   margin: 0;
   z-index: 100;
   width: 100%;
-  background-color: #f2f726;
+  background-color: red;
   opacity: 1;
 }
 .sub-small li a {
@@ -1192,7 +1192,7 @@ img {
     top: 5%;
   }
 }
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .item-partner {
     width: calc(100% / 2 - 15px) !important;
   }
@@ -1237,10 +1237,30 @@ img {
       font-size: 15px;
     }
   }
+  .solution-item:hover .solution-info {
+    display: none;
+  }
+  .solution-item:hover .solution-content {
+    bottom: 60%;
+  }
+  .solution-content {
+    width: 80%;
+    margin: 0 10%;
+  }
+  .to-top {
+    width: 30px;
+    height: 30px;
+  }
+  .to-top .fa {
+    font-size: 15px;
+  }
 }
 @media only screen and (max-width: 568px) {
   #nz-counter-1 {
     display: block;
+  }
+  .solution-item {
+    width: 100%!important;
   }
 }
 @media only screen and (max-width: 400px) {

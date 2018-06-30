@@ -235,7 +235,7 @@
                                 <div class="solution-img">
                                     <img class="img-solution"
                                          t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image' % (k.id)"/>
-                                    <a href="#">
+                                    <a href="">
                                         <div class="solution-info">
                                             <h4>
                                                 <t t-esc="k.name"/>
@@ -416,7 +416,7 @@
             <div class="partner-top">
                 <t t-foreach="customer" t-as="i">
                     <div class="col-md-2 item-partner">
-                        <a t-att-href="i.x_link" target="_blank">
+                        <a t-att-href="i.x_link">
                             <img alt="Customer"
                                  t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image_medium' % (i.id)"/>
                         </a>
@@ -429,9 +429,6 @@
                 <a t-else="" class="box-more" href="#" style="font-size: 20px;">Read more</a>
             </div>
             <div class="clearfix"></div>
-        </div>
-
-        <div id="recruitment" class="container">
         </div>
 
         <a href="#Banner" class="to-top hidden">

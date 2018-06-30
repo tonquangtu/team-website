@@ -7,12 +7,17 @@ odoo.define("introduce_company.homepage", function (require) {
     var $menuSoluA = $('.menu-solution a');
     var $menuParent = $('#menu-item-parent a');
 
+    $('.list-solution a').click(function (e) {
+        e.preventDefault();
+    });
+
     if (odooHeader > 0) {
         $('#header').css('margin-top', '34px');
         $('.banner').addClass('banner-head-y');
     } else {
         $('.banner').addClass('banner-head-n');
         $('.width_header').css('top', '0');
+        $('.menu_main').css('top', '44');
     }
 
     $(window).scroll(function () {
