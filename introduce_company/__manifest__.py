@@ -29,7 +29,6 @@
         'views/homepage.xml',
         'views/component.xml',
         'views/custom.xml',
-        'views/snippets.xml',
         'views/experience.xml',
     ],
     # only loaded in demonstration mode

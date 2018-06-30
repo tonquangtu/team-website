@@ -652,7 +652,7 @@ summary {
     margin-left: -585px;
   }
   .desk.stuck-boxed-true.slider-active.fixed-true:not(.active) {
-    top: 34px ;
+    top: 34px;
     left: 50%;
   }
   .desk.stuck-boxed-true.fixed-true.active {

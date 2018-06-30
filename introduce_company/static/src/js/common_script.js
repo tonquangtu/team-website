@@ -12,7 +12,6 @@ odoo.define("introduce_company.homepage", function (require) {
     ajax.jsonRpc('/get-homepage', 'call', {
         'is_vi': is_vi
     }).then(function (data) {
-        $('#homepage').text('');
         $('#homepage').append(data);
     });
 

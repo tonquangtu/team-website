@@ -4,16 +4,13 @@
     <template id="homepage" name="Odoo Insight">
         <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/homepage_style.css"/>
         <t t-call="website.layout">
-            <div id="homepage">
-
-            </div>
+            <div id="homepage"></div>
             <script src="/introduce_company/static/src/js/common_script.js"/>
         </t>
     </template>
 
     <template id="main_homepage" name="Main Homepage">
-
-        <t t-call="introduce_company.header">
+        <t id="header" t-call="introduce_company.header">
             <t t-set="menu_list" t-value="menu"/>
             <t t-set="team" t-value="team"/>
         </t>
@@ -231,22 +228,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="nz-row container">
-                    <t t-foreach="solution" t-as="k">
-                    <div class="snippet-banner col-md-4">
-                        <div class="snippet-banner-container"
-                        t-att-style="'background-image: url(/web/image?model=product.template&amp;id=%s&amp;field=image);background-size: 100% 100%;' % (k.id)">
-                            <div class="snippet-title">
-                                <t t-esc="k.name"/>
+                <div class="nz-row container list-solution">
+                    <div class="col-md-12 solution-items">
+                        <t t-foreach="solution" t-as="k">
+                            <div class="col-xs-6 col-sm-6 col-md-3 solution-item">
+                                <div class="solution-img">
+                                    <img class="img-solution"
+                                         t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image' % (k.id)"/>
+                                    <a href="#">
+                                        <div class="solution-info">
+                                            <h4>
+                                                <t t-esc="k.name"/>
+                                            </h4>
+                                            <h5>
+                                                <t t-esc="k.default_code"/>
+                                            </h5>
+                                        </div>
+                                        <!--<img src="/introduce_company/static/src/img/icon.png"/>-->
+                                        <div class="solution-content">
+                                            <t t-if="vi" t-esc="k.x_description_vn"/>
+                                            <t t-else="" t-esc="k.x_description"/>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                            <!--<div class="snippet-title-txt">Giải pháp luồng</div>-->
-                        </div>
-                        <div class="snippet-content">
-                            <t t-if="vi" t-esc="k.x_description_vn"/>
-                            <t t-else="" t-esc="k.x_description"/>
-                        </div>
+                        </t>
                     </div>
-                    </t>
+
                 </div>
             </div>
         </div>
@@ -274,8 +282,10 @@
                                                 <span class="count" style="color:#ffffff;">
                                                     <t t-esc="exp.description"/>
                                                 </span>
+                                                <div class="exp-value_vn hidden" style="font-size: 28px;">
+                                                    <span t-if="vi">năm</span>
+                                                </div>
                                                 <div class="exp-value hidden" style="font-size: 28px;">
-                                                    <span t-if="vi">nam</span>
                                                     <span t-esle="">year</span>
                                                 </div>
                                                 <div class="product-value hidden" style="font-size: 28px;">+
@@ -420,6 +430,13 @@
             </div>
             <div class="clearfix"></div>
         </div>
+
+        <div id="recruitment" class="container">
+        </div>
+
+        <a href="#Banner" class="to-top hidden">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a>
 
         <t t-call="introduce_company.footer">
             <t t-set="team" t-value="team"/>

@@ -7,8 +7,6 @@ odoo.define("introduce_company.homepage", function (require) {
     var $menuSoluA = $('.menu-solution a');
     var $menuParent = $('#menu-item-parent a');
 
-
-
     if (odooHeader > 0) {
         $('#header').css('margin-top', '34px');
         $('.banner').addClass('banner-head-y');
@@ -26,6 +24,13 @@ odoo.define("introduce_company.homepage", function (require) {
 
         if (height >= 50) {
             header.addClass('active');
+            $('.to-top').removeClass('hidden');
+        } else {
+            $('.to-top').addClass('hidden');
+        }
+
+        if (height >= 100) {
+
         }
 
         if (height >= 800) {
@@ -84,10 +89,14 @@ odoo.define("introduce_company.homepage", function (require) {
     //experience and parameter
     $('.count-title').each(function () {
         var testText = $(this).text();
-        if (testText.trim() === "EXPERIENCE") {
+        console.log(testText);
+        if ((testText.trim() === "EXPERIENCE")) {
             $(this).parent().find('.exp-value').removeClass('hidden');
+
+        } else if ((testText.trim() === "Kinh Nghiệm")) {
+            $(this).parent().find('.exp-value_vn').removeClass('hidden');
         }
-        else if ((testText.trim() === "CUSTOMER") || (testText.trim() === "PRODUCT")) {
+        else if ((testText.trim() === "CUSTOMER") || (testText.trim() === "PRODUCT") || (testText.trim() === "Khách Hàng") || (testText.trim() === "Sản Phẩm")) {
             $(this).parent().find('.product-value').removeClass('hidden');
         }
     });
@@ -135,7 +144,7 @@ odoo.define("introduce_company.homepage", function (require) {
         });
     });
 
-     //click change my language => click odoo language
+    //click change my language => click odoo language
     $('.js_change_lang').onclick(function () {
         $('.js_language_selector .js_change_lang').click()
     });
