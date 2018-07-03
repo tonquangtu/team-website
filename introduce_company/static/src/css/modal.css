@@ -1,0 +1,158 @@
+/*Modal*/
+.modal {
+    text-align: center;
+}
+
+.register-login .modal-dialog {
+    width: 650px;
+}
+
+.register-login .inner-addon {
+    position: relative;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+.register-login .inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.register-login .left-addon .fa {
+    left: 0;
+    color: #cccccc;
+    font-size: 16px;
+    height: 100%;
+}
+
+.register-login input, .register-login textarea {
+    padding-left: 30px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    height: 100%;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #333333;
+    font-size: 14px;
+}
+
+.register-login input::placeholder, .register-login textarea::placeholder {
+    color: #888888;
+}
+
+.register-login .header {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 15px;
+}
+
+.register-login .header span {
+    width: 100%;
+    float: left;
+    object-fit: contain;
+}
+
+.register-login .header .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #3a3d3f;
+}
+
+.register-login .header .description {
+    font-size: 14px;
+    text-align: center;
+    color: #666666;
+}
+
+.register-login .body {
+    margin: 0 40px;
+    border-bottom: 1px dotted #979797;
+    padding-bottom: 30px;
+}
+
+.register-login .body .name {
+    font-size: 20px;
+    color: #333333 !important;
+    vertical-align: top;
+}
+
+.register-login .footer-modal {
+    text-align: center;
+    margin: 15px auto 30px;
+}
+
+.register-login .footer-modal button {
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666666;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: solid 1px #cbcbd0;
+    width: 100%;
+}
+
+table td {
+    vertical-align: middle;
+}
+
+.td-first {
+    width: 150px;
+}
+
+@media (max-width: 991px) {
+    .modal-dialog {
+        vertical-align: top;
+    }
+
+    .register-login .modal-dialog {
+        width: auto;
+    }
+
+    .register-login .body {
+        margin: 0 5px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+
+}
+@media (max-width: 768px) {
+    .td-first {
+        width: 100px;
+    }
+
+    .register-login .body .name {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .td-first {
+        width: 60px;
+    }
+
+    .register-login .body .name {
+        font-size: 14px;
+    }
+}

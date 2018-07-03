@@ -68,6 +68,18 @@ odoo.define("introduce_company.homepage", function (require) {
 
     });
 
+    //sub-menu header desktop
+    $('.menu-item-object-parent').hover(function () {
+        $(this).find('.sub-menu').css('display', 'block');
+    }, function () {
+        $(this).find('.sub-menu').css('display', 'none');
+    });
+    var childSub = $('.menu-item-object-child');
+    if (childSub.length === 0) {
+        $('.menu-child').addClass('hidden');
+    }
+
+    //sub-menu header mobi
     $('.menu-solution').click(function () {
         var subSmall = $(this).find('.sub-small');
         var menuSub = subSmall.css('display');
@@ -80,16 +92,6 @@ odoo.define("introduce_company.homepage", function (require) {
 
     });
 
-    $('.menu-item-object-parent').hover(function () {
-        $(this).find('.sub-menu').css('display', 'block');
-    }, function () {
-        $(this).find('.sub-menu').css('display', 'none');
-    });
-
-    var childSub = $('.menu-item-object-child');
-    if (childSub.length === 0) {
-        $('.menu-child').addClass('hidden');
-    }
 
     //experience and parameter
     $('.count-title').each(function () {
@@ -106,6 +108,7 @@ odoo.define("introduce_company.homepage", function (require) {
         }
     });
 
+    $('#menu-item-parent:nth-child(1)').addClass('active');
 
     $(document).on("scroll", onScroll1);
     //smoothscroll
@@ -147,6 +150,12 @@ odoo.define("introduce_company.homepage", function (require) {
             window.location.hash = target;
             $(document).on("scroll", onScroll2);
         });
+    });
+
+     //modal login
+    var $modalLogin = $('#modal-login');
+    $('#contact-btn').click(function () {
+        $modalLogin.modal('toggle');
     });
 
     //click change my language => click odoo language

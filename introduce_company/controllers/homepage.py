@@ -45,12 +45,11 @@ def get_home_info():
 class Homepage(Website):
     @http.route('/', type='http', auth="public", website=True)
     def homepage(self, **kw):
-        return http.request.render('introduce_company.homepage')
+        return http.request.render('introduce_company.homepage', get_home_info())
 
-    @http.route('/get-homepage', type='json', auth='public', method='POST', website=True)
+    @http.route('/vi', type='http', auth='public', method='POST', website=True)
     def get_homepage(self, is_vi=False):
         info = get_home_info()
-        info.update({'vi': is_vi})
-        data = request.env['ir.ui.view'].render_template('introduce_company.main_homepage', info)
-        return data
+        info.update({'vi': True})
+        return request.env['ir.ui.view'].render_template('introduce_company.homepage', info)
 

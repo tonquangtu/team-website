@@ -6,6 +6,7 @@
             <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/font.css"/>
             <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/footer_style.css"/>
             <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/header_style.css"/>
+            <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/modal.css"/>
         </xpath>
         <xpath expr="script[last()]" position="after">
         </xpath>

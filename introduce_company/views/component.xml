@@ -81,6 +81,7 @@
                                 <!--alt="Odoo Insight"/>-->
                             </a>
                         </div>
+
                         <nav class="header-menu desk-menu nz-clearfix">
                             <ul id="header-menu" class="menu">
                                 <t t-foreach="menu_list" t-as="item">
@@ -164,7 +165,7 @@
                                       method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
                                       class="validate" target="_blank" novalidate="">
                                     <input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL"
-                                           placeholder="email@gmail.com" required=""/>
+                                           placeholder="email" required=""/>
                                     <input t-if="vi" type="submit" value="Gửi" name="subscribe"
                                            id="mc-embedded-subscribe"/>
                                     <input t-else="" type="submit" value="Subscribe" name="subscribe"

@@ -508,7 +508,7 @@ samp {
   height: 100%;
 }
 .project-tile-image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   vertical-align: middle;
 }
@@ -721,11 +721,10 @@ img {
   vertical-align: middle;
 }
 .solution-odoo .col-md-6 img {
-  width: 60%;
+  width: 100%;
 }
 .solution-odoo .solution-odoo-img {
   width: 50%;
-  padding: 0;
   height: 330px;
   display: flex;
   justify-content: center;
@@ -932,7 +931,7 @@ img {
   margin-top: -32px !important;
 }
 #menu-item-parent.active {
-  background-color: red;
+  background-color: #e97520;
 }
 #menu-item-parent.active a .txt {
   color: #ffffff;
@@ -948,13 +947,13 @@ img {
   width: 90%;
   text-align: center;
   position: absolute;
-  top: 9%;
+  top: 300px;
   z-index: 1;
 }
 .banner-title .title {
   animation-duration: 1s;
   animation-direction: normal;
-  animation: animatezoom 1s 1;
+  animation: animatezoom 2s 1;
   width: 70%;
   font-size: 85px;
   margin: 0 auto;
@@ -963,9 +962,7 @@ img {
   line-height: 85px;
 }
 .banner-title .content {
-  animation-duration: 2s;
-  animation-direction: normal;
-  animation: animatezoom1 2s 1;
+  animation: animatezoom1 3s 1;
   font-size: 25px;
   margin: 10px auto 0;
   font-weight: bold;
@@ -1025,6 +1022,13 @@ img {
   color: red;
   font-size: 30px;
 }
+.list-solution {
+  padding-left: 20px !important;
+}
+.solution-items {
+  margin: 0;
+  padding: 0 !important;
+}
 .list-solution .solution-items .solution-img {
   position: relative;
   margin: -5px;
@@ -1032,6 +1036,7 @@ img {
   opacity: 0.8;
 }
 .solution-item {
+  overflow: hidden;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -1110,6 +1115,58 @@ img {
 .solution-content {
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+}
+#Introduce-Odoo {
+  margin-top: 50px;
+}
+.three-benefit {
+  display: flex;
+}
+.benefit.col-md-3 {
+  padding: 10px;
+  border: 2px solid #c3c3c3;
+  box-shadow: 3px 2px 1px 1px #b1b0b0;
+  width: 27.5%;
+}
+.benefit-container-img {
+  display: flex;
+  justify-content: center;
+}
+.benefit-img.img-responsive {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #32323233;
+  border-radius: 50px;
+  box-shadow: 5px 2px #888888;
+}
+.benefit-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 50px;
+}
+.benefit-txt {
+  font-size: 18px;
+  text-align: justify;
+}
+.benefit-add {
+  display: flex;
+  justify-content: center;
+  font-size: 111px;
+  align-items: center;
+  color: #ed7575;
+}
+#Contact {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  background-color: burlywood;
+}
+#contact-btn {
+  color: #ffffff;
+  font-size: 100%;
+  font-weight: bold;
+  border-radius: 60px;
 }
 @media only screen and (max-width: 1200px) {
   .banner-head-n {
@@ -1254,13 +1311,35 @@ img {
   .to-top .fa {
     font-size: 15px;
   }
+  .valign-top {
+    margin-top: 0 !important;
+  }
+  .three-benefit {
+    display: block;
+  }
+  .benefit.col-md-3 {
+    width: 100%;
+  }
+  .benefit-add {
+    font-size: 50px;
+  }
+  .benefit-title {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .benefit-txt {
+    font-size: 14px;
+  }
 }
 @media only screen and (max-width: 568px) {
   #nz-counter-1 {
     display: block;
   }
   .solution-item {
-    width: 100%!important;
+    width: 100% !important;
+  }
+  .banner-title {
+    top: 2%;
   }
 }
 @media only screen and (max-width: 400px) {
