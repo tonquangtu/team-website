@@ -28,7 +28,9 @@
     font-size: 16px;
     height: 100%;
 }
-
+.register-login input{
+    height: 42px!important;
+}
 .register-login input, .register-login textarea {
     padding-left: 30px;
     object-fit: contain;
