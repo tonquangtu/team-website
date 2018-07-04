@@ -70,10 +70,10 @@
   right: 0;
 }
 .fa-chevron-left::before {
-  color: #ee6100;
+  color: #f44336;
 }
 .fa-chevron-right::before {
-  color: #ee6100;
+  color: #f44336;
 }
 .carousel-control {
   width: 23px;

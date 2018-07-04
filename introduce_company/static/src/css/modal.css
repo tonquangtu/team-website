@@ -28,9 +28,11 @@
     font-size: 16px;
     height: 100%;
 }
-.register-login input{
-    height: 42px!important;
+
+.register-login input {
+    height: 42px !important;
 }
+
 .register-login input, .register-login textarea {
     padding-left: 30px;
     object-fit: contain;
@@ -62,7 +64,7 @@
 
 .register-login .header .title {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
     color: #3a3d3f;
 }
 
@@ -109,6 +111,11 @@ table td {
     width: 150px;
 }
 
+.register-login .footer-modal button:hover {
+   background-color: #f44336;
+    color: #ffffff;
+}
+
 @media (max-width: 991px) {
     .modal-dialog {
         vertical-align: top;
@@ -139,6 +146,7 @@ table td {
     }
 
 }
+
 @media (max-width: 768px) {
     .td-first {
         width: 100px;
