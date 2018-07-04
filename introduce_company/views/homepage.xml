@@ -26,7 +26,7 @@
                         <div class="nav-main">
                             <div class="box-nav">
                                 <ul class="menu_main" id="menu_main_ul"
-                                    style="display: none;box-shadow: 3px 0 0 0 #edecf2;">
+                                    style="display: none;">
                                     <t t-foreach="menu" t-as="item">
                                         <li class="menu-solution">
                                             <a class="" t-att-href="item.get('parent').x_link" title="Link menu"
@@ -157,7 +157,7 @@
                         <div class="col-md-6 col-sm-12 solution-odoo-info pull-left">
                             <div class="col-md-12">
                                 <div class="col-sm-12">
-                                    <p style="font-weight: bold; font-size: 30px; line-height: 32px; text-transform: uppercase;">
+                                    <p style="font-weight: bold; font-size: 30px; line-height: 32px;">
                                         <t t-if="vi" t-esc="team.x_partner_vn"/>
                                         <t t-else="" t-esc="team.name"/>
                                     </p>
@@ -192,8 +192,7 @@
                                  style="margin: 30px auto 10px" data-effect="none" data-align="left"
                                  data-margin="false">
                                 <div class="col-inner" style="">
-                                    <h2 t-if="vi"
-                                        style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                    <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
                                         class="vc_custom_heading">
                                         <t t-if="vi">Giải pháp của chúng tôi</t>
                                         <t t-else="">Our Solution</t>
@@ -202,7 +201,7 @@
                                     <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                          data-effect="none">
                                         <div class="nz-separator solid"
-                                             style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                             style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
                                             &#160;
                                         </div>
                                     </div>
@@ -312,7 +311,7 @@
                                 <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                      data-effect="none">
                                     <div class="nz-separator solid"
-                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
                                         &#160;
                                     </div>
                                 </div>
@@ -330,10 +329,8 @@
                         </div>
                     </div>
                     <div class="three-benefit">
-                        <t t-set="i" t-value="0"/>
                         <t t-foreach="odoo" t-as="odoo">
-                            <t t-set="i" t-value="i+1"/>
-                            <div class="benefit col-md-3">
+                            <div class="benefit col-md-4">
                                 <div class="benefit-container-img">
                                     <img class="benefit-img img-responsive"
                                          t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image' % (odoo.id)"/>
@@ -348,9 +345,6 @@
                                         <t t-else="" t-esc="odoo.x_description"/>
                                     </div>
                                 </div>
-                            </div>
-                            <div t-if="not i > 2" class="benefit-add col-md-1">
-                                +
                             </div>
                         </t>
                     </div>
@@ -380,7 +374,7 @@
                                 <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                      data-effect="none">
                                     <div class="nz-separator solid"
-                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
                                         &#160;
                                     </div>
                                 </div>
@@ -395,10 +389,7 @@
                                     </p>
                                     <p t-else=""
                                        style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
-                                        We were completed many many products for other customers.
-                                                                         
-                                        <br/>
-                                        This products will be active.
+                                        We were completed many many products for other customers<br/>This products will be active.
                                     </p>
                                     <p></p>
                                 </div>
@@ -447,7 +438,7 @@
                             <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                  data-effect="none">
                                 <div class="nz-separator solid"
-                                     style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                     style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
                                     &#160;
                                 </div>
                             </div>
@@ -457,11 +448,11 @@
                                 <p></p>
                                 <p t-if="vi"
                                    style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
-                                    Chúng tôi đã hợp tác với rất nhiều khách hàng trong nước cũng như nước ngoài.
+                                    Chúng tôi đã hợp tác với rất nhiều khách hàng trong nước cũng như nước ngoài...
                                 </p>
                                 <p t-else=""
                                    style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
-                                    We are already associated with many customer rows in other water..
+                                    We are already associated with many customer rows in other foreign...
                                 </p>
                                 <p></p>
                             </div>

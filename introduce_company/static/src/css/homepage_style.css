@@ -536,7 +536,6 @@ samp {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #f5a873;
   visibility: hidden;
   opacity: 0;
 }
@@ -565,7 +564,7 @@ samp {
   border-width: 1px;
   padding-top: 9px;
 }
-.project-tile-overlay .project-tile-overlay .button.tiny {
+.project-tile-overlay .button.tiny {
   width: 160px;
   font-size: 13px;
   font-weight: bold;
@@ -603,6 +602,12 @@ a,
   z-index: 10;
   text-align: center;
 }
+.project-tile:hover .project-tile-image {
+  background-color: #000000;
+}
+.project-tile:hover .project-tile-image img {
+  opacity: 0.8;
+}
 .project-tile-image:after,
 .project-tile-overlay {
   -webkit-transition: all 0.2s ease-out;
@@ -632,14 +637,11 @@ a,
   text-align: center;
 }
 .project-tile-overlay h4 {
-  color: #ffffff;
-  font-size: 14px;
+  color: #ffffff!important;
+  font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
   margin: 0 0 6px;
-}
-.project-tile:hover .project-tile-overlay h4 {
-  color: #222222;
 }
 button.tiny,
 .button.tiny {
@@ -763,11 +765,11 @@ img {
   line-height: 24px;
   opacity: 0.8;
   font-size: 16px;
-  margin-bottom: 52px;
-  display: inline;
+  display: inline-block;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-align: justify;
   font-family: Roboto Condensed;
 }
 .solution-odoo-info p {
@@ -798,7 +800,7 @@ img {
   margin-left: 9%;
 }
 .box-logo {
-  width: 80%;
+  width: 100%;
   float: right;
   text-align: center;
   padding-top: 5px;
@@ -865,7 +867,7 @@ img {
 .menu_main {
   top: 78px;
   overflow-y: scroll;
-  height: 370px;
+  height: 415px;
 }
 .menu_main li {
   width: 100%;
@@ -878,7 +880,7 @@ img {
 }
 .menu_main li a {
   display: block;
-  padding: 5px 3px 10px 3px;
+  padding: 5px 3px 7px 3px;
   font-size: 15px;
   text-transform: uppercase;
   color: #666565;
@@ -920,7 +922,7 @@ img {
   margin: 0;
   z-index: 100;
   width: 100%;
-  background-color: red;
+  background-color: #ffffff;
   opacity: 1;
 }
 .sub-small li a {
@@ -1056,14 +1058,12 @@ img {
 .list-solution h5 {
   font-family: "Roboto Condensed", Arial, sans-serif;
   font-weight: 400;
-  margin: 10px 0;
   color: #ffffff !important;
 }
 .list-solution .solution-info h4 {
   font-size: 24px;
   line-height: 22px;
   font-weight: bold;
-  padding-bottom: 10px;
 }
 .list-solution .solution-info h5 {
   font-size: 20px;
@@ -1118,20 +1118,17 @@ img {
 .three-benefit {
   display: flex;
 }
-.benefit.col-md-3 {
+.benefit.col-md-4 {
   padding: 0;
-  width: 27.5%;
+  margin: 15px;
   border-radius: 4px;
   overflow: hidden;
+  width: 33.33%;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-.benefit.col-md-3:hover {
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(239, 8, 8, 0.16), 0 2px 10px 0 rgba(232, 13, 13, 0.12);
-}
 .benefit-content {
-  padding: 25px;
+  padding: 25px 15px;
 }
 .benefit-container-img {
   display: flex;
@@ -1197,13 +1194,19 @@ img {
     font-size: 25px;
     line-height: 25px;
   }
+  .solution-item:hover .solution-info {
+    display: none;
+  }
+  .solution-item:hover .solution-content {
+    margin-bottom: 0;
+  }
 }
 @media only screen and (max-width: 991px) {
   .solution-odoo {
     padding-top: 0;
   }
   .solution-odoo .solution-odoo-img img {
-    width: 50%;
+    width: 60%;
   }
   .solution-odoo .solution-odoo-img {
     float: left !important;
@@ -1227,6 +1230,9 @@ img {
   .banner-title {
     top: 5%;
   }
+  #Advisory {
+    padding: 16px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .item-partner {
@@ -1248,9 +1254,6 @@ img {
   .banner-title .content {
     font-size: 15px;
     line-height: 15px;
-  }
-  .solution-item:hover .solution-info {
-    display: none;
   }
   .solution-item:hover .solution-content {
     bottom: 60%;
@@ -1285,6 +1288,14 @@ img {
   .benefit-txt {
     font-size: 14px;
   }
+  .solution-odoo .solution-odoo-img img {
+    width: 100%;
+  }
+  .benefit.col-md-4 {
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+  }
 }
 @media only screen and (max-width: 568px) {
   #nz-counter-1 {
@@ -1313,6 +1324,9 @@ img {
   .banner-title .content {
     font-size: 10px;
     line-height: 10px;
+  }
+  .container {
+    padding: 0!important;
   }
 }
 @media only screen and (min-width: 768px) {

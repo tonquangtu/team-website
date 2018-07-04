@@ -197,7 +197,7 @@
                         <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                              data-effect="none">
                             <div class="nz-separator solid"
-                                 style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:20px;margin-bottom:20px;">
+                                 style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
                                 &#160;
                             </div>
                         </div>
