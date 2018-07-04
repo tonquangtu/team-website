@@ -120,9 +120,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
-
+input[type="submit"]{
+  background-color: #388E3C;
+}
 button, input[type="reset"],
-input[type="submit"], input[type="button"],
+ input[type="button"],
 a.edit, a.view,
 .loop .project-more:hover,
 #comments #submit:hover {
@@ -166,8 +168,10 @@ a.edit, a.view,
   font-size: 13px;
   border-radius: 0;
 }
-
-.nz-persons .person .name, .nz-persons .person .title, .box-more:hover, .person-meta .title:hover {
+.nz-persons .person .name, .nz-persons .person .title{
+  color: #999999;
+}
+ .box-more:hover, .person-meta .title:hover {
   color: #f44336 !important;
 }
 
@@ -547,7 +551,7 @@ a, .current-menu-item a, .footer-bar .footer-nav .current_page_item a {
   background-color: #000000;
 }
   .project-tile-image img{
-    opacity: 0.8;
+    opacity: 0.4;
   }
 }
 .project-tile-image:after, .project-tile-overlay {
@@ -608,7 +612,7 @@ button.tiny, .button.tiny {
 }
 
 .button:hover, .button:focus {
-  background: #f44336;
+  background: #388E3C;
   border-color: transparent;
   outline: none;
   color: #ffffff;
@@ -1156,8 +1160,9 @@ img {
   border-radius: 4px;
   overflow: hidden;
   width: 33.33%;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  border: 1px solid #c7c7c7;
+  //-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  //box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
 }
 
 .benefit-content {
@@ -1200,7 +1205,8 @@ img {
   display: block;
   text-align: center;
   padding: 80px;
-  background-color: burlywood;
+  background-image: url("/introduce_company/static/src/img/background-image.png");
+  background-size: 100% 100%;
 }
 
 #contact-btn {
@@ -1208,6 +1214,10 @@ img {
   font-size: 100%;
   font-weight: bold;
   border-radius: 60px;
+  background-color: #388E3C;
+}
+.benefit-title{
+  color: #ffffff;
 }
 
 @media only screen and (max-width: 1200px) {

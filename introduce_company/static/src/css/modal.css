@@ -96,9 +96,9 @@
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
-    color: #666666;
+    color: #ffffff;
     border-radius: 3px;
-    background-color: #ffffff;
+    background-color: #81C784;
     border: solid 1px #cbcbd0;
     width: 100%;
 }
@@ -112,7 +112,7 @@ table td {
 }
 
 .register-login .footer-modal button:hover {
-   background-color: #f44336;
+   background-color: #388E3C;
     color: #ffffff;
 }
 

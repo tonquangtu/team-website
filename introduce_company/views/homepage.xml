@@ -189,9 +189,9 @@
                     <div class="">
                         <div class="container" style="display: flex;">
                             <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
-                                 style="margin: 30px auto 10px" data-effect="none" data-align="left"
+                                 style="margin: 70px auto 10px" data-effect="none" data-align="left"
                                  data-margin="false">
-                                <div class="col-inner" style="">
+                                <div class="col-inner" style="margin-top:15px">
                                     <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
                                         class="vc_custom_heading">
                                         <t t-if="vi">Giải pháp của chúng tôi</t>
@@ -201,7 +201,7 @@
                                     <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                          data-effect="none">
                                         <div class="nz-separator solid"
-                                             style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
+                                             style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px;">
                                             &#160;
                                         </div>
                                     </div>
@@ -300,9 +300,9 @@
                 <div id="Introduce-Odoo" class="container">
                     <div class="container" style="display: flex;">
                         <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
-                             style="margin: 30px auto 10px;width:100%;" data-effect="none" data-align="left"
+                             style="margin: 70px auto 10px;width:100%;" data-effect="none" data-align="left"
                              data-margin="false">
-                            <div class="col-inner" style="width: 50%;margin: 0 auto;">
+                            <div class="col-inner" style="width: 50%;margin: 15px auto;">
                                 <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
                                     class="vc_custom_heading">
                                     <t t-if="vi">Giới Thiệu Odoo</t>
@@ -311,7 +311,7 @@
                                 <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                      data-effect="none">
                                     <div class="nz-separator solid"
-                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
+                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px;">
                                         &#160;
                                     </div>
                                 </div>
@@ -361,7 +361,7 @@
                 <div id="Product" class="section-body container">
                     <div class="container" style="display: flex;">
                         <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
-                             style="margin: 0px auto 10px" data-effect="none" data-align="left" data-margin="false">
+                             style="margin: 40px auto 10px" data-effect="none" data-align="left" data-margin="false">
                             <div class="col-inner" style="">
                                 <h2 t-if="vi"
                                     style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
@@ -374,7 +374,7 @@
                                 <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                      data-effect="none">
                                     <div class="nz-separator solid"
-                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
+                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px;">
                                         &#160;
                                     </div>
                                 </div>
@@ -426,7 +426,7 @@
                 <!--customer-->
                 <div id="Customer" class="partner">
                     <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
-                         style="margin: 30px auto 10px;width:100%;" data-effect="none" data-align="left"
+                         style="margin: 70px auto 10px;width:100%;" data-effect="none" data-align="left"
                          data-margin="false">
                         <div class="col-inner" style="width: 50%;margin: 0 auto;">
                             <h2 t-if="vi" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
@@ -438,7 +438,7 @@
                             <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
                                  data-effect="none">
                                 <div class="nz-separator solid"
-                                     style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;">
+                                     style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px;">
                                     &#160;
                                 </div>
                             </div>
