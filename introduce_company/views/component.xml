@@ -161,16 +161,12 @@
                                 </div>
                                 <div t-else="" class="mailchimp-subtitle">Import your email to receive latest reports
                                 </div>
-                                <form action="#Banner"
-                                      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                                      class="validate" target="_blank" novalidate="">
-                                    <input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL"
+                                <div>
+                                    <input type="text" value="" name="EMAIL" class="email" id="footer_email"
                                            placeholder="email" required=""/>
-                                    <input t-if="vi" type="submit" value="Gửi" name="subscribe"
-                                           id="mc-embedded-subscribe"/>
-                                    <input t-else="" type="submit" value="Subscribe" name="subscribe"
-                                           id="mc-embedded-subscribe"/>
-                                </form>
+                                    <input t-att-value="'%s'% ('Gửi' if vi else 'Subscribe')" type="submit"  name="subscribe"
+                                           id="footer_subscribe"/>
+                                </div>
                                 <div class="mailchimp-description"></div>
                             </div>
                         </div>

@@ -69,27 +69,48 @@ odoo.define("introduce_company.homepage", function (require) {
         return false;
     });
 
+    //form question
     $('#btn_send').click(function () {
         var name = $('#contact_name').val();
         var phone = $('#contact_phone').val();
         var email = $('#contact_email').val();
         var question = $('#contact_question').val();
 
-        ajax.jsonRpc('/question', 'call', {
-            'kwargs': {
-                'name': name,
-                'phone': phone,
-                'email': email,
-                'question': question
-            }
-        }).then(function (data) {
-            if (data['success']){
-                alert("da thanh cong")
-            }
-        });
+        if (email.indexOf('@') !== -1) {
+            ajax.jsonRpc('/question', 'call', {
+                'kwargs': {
+                    'name': name,
+                    'phone': phone,
+                    'email': email,
+                    'question': question
+                }
+            }).then(function (data) {
+                if (data['success']) {
+                    alert("da thanh cong")
+                }
+            });
+        }
     });
 
-    //
+    // footer email
+    $('#footer_subscribe').click(function (e) {
+        e.preventDefault();
+        var email = $('#footer_email').val();
+
+        if (email.indexOf('@') !== -1) {
+            ajax.jsonRpc('/email', 'call', {
+                'kwargs': {
+                    'email': email
+                }
+            }).then(function (data) {
+                if (data['success']) {
+
+                }
+            });
+        }
+    });
+
+    //show menu mobi-header
     $('.navbar-toggle-custom').click(function () {
         var menuHeader = menuUl.css('display');
         if (menuHeader === "none") {
@@ -187,10 +208,16 @@ odoo.define("introduce_company.homepage", function (require) {
     });
 
     //modal login
-    var $modalLogin = $('#modal-question');
+    var $modalQuestion = $('#modal-question');
     $('#contact-btn').click(function () {
-        $modalLogin.modal('toggle');
+        $modalQuestion.modal('toggle');
     });
+    var $modalSuccess = $('#modal-success');
+    $('#btn_send').click(function () {
+        $modalQuestion.modal('toggle');
+        $modalSuccess.modal('toggle');
+    });
+
 
     //click change my language => click odoo language
     $('.js_change_lang').onclick(function () {
