@@ -60,6 +60,14 @@ odoo.define("introduce_company.homepage", function (require) {
         }
     });
 
+    //  Function for scroliing to top
+    $('.to-top').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
     $('.navbar-toggle-custom').click(function () {
         var menuHeader = menuUl.css('display');
         if (menuHeader === "none") {
@@ -130,7 +138,7 @@ odoo.define("introduce_company.homepage", function (require) {
             'scrollTop': $target.offset().top - 96 -checkOdooHeader
         }, 800, 'swing', function () {
             // window.location.hash = target;
-            $(document).on("scroll", onScroll1);
+            $(document).on("scroll", onScroll1());
         });
     });
 

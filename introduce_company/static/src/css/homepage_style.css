@@ -672,9 +672,6 @@ button.tiny,
   padding-right: 9%;
   padding-left: 9%;
 }
-.partner {
-  padding-bottom: 30px;
-}
 .partner-top {
   width: 100%;
   text-align: center;
@@ -1112,10 +1109,6 @@ img {
   -o-transform: translateY(50%);
   transform: translateY(50%);
 }
-.solution-content {
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-}
 #Introduce-Odoo {
   margin-top: 50px;
 }
@@ -1163,7 +1156,8 @@ img {
   display: block;
   text-align: center;
   padding: 80px;
-  background-image: url("/introduce_company/static/src/img/background-image.png");
+  margin-top: 50px;
+  background-image: url("/introduce_company/static/src/img/background-image.jpeg");
   background-size: 100% 100%;
 }
 #contact-btn {
@@ -1174,7 +1168,7 @@ img {
   background-color: #388E3C;
 }
 .benefit-title {
-  color: #ffffff;
+  color: #333333;
 }
 @media only screen and (max-width: 1200px) {
   .banner-head-n {

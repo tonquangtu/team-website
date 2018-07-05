@@ -533,7 +533,7 @@
                                             <td class="name">Câu hỏi của bạn:</td>
                                             <td>
                                                 <textarea class="form-control" name="description"
-                                                          style="min-height: 120px" required="True"></textarea>
+                                                          style="min-height: 120px;resize: vertical;" required="True"></textarea>
                                             </td>
                                         </tr>
                                     </table>
