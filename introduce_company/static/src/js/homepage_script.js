@@ -42,7 +42,7 @@ odoo.define("introduce_company.homepage", function (require) {
         }
 
         if (height >= 800) {
-            //tang tu 1,2,3... đen het
+            // 1,2,3... to end
             var $countValue = $(".count-value");
             if (!$countValue.hasClass('check-width')) {
                 $('.count').each(function () {
@@ -69,13 +69,19 @@ odoo.define("introduce_company.homepage", function (require) {
         return false;
     });
 
+    //modal login
+    var $modalQuestion = $('#modal-question');
+    $('#contact-btn').click(function () {
+        $modalQuestion.modal('toggle');
+    });
+
+
     //form question
     $('#btn_send').click(function () {
         var name = $('#contact_name').val();
         var phone = $('#contact_phone').val();
         var email = $('#contact_email').val();
         var question = $('#contact_question').val();
-
         if (email.indexOf('@') !== -1) {
             ajax.jsonRpc('/question', 'call', {
                 'kwargs': {
@@ -86,9 +92,16 @@ odoo.define("introduce_company.homepage", function (require) {
                 }
             }).then(function (data) {
                 if (data['success']) {
-                    alert("da thanh cong")
+                    var $modalSuccess = $('#modal-success');
+                    $('#btn_send').click(function () {
+                        $modalQuestion.modal('toggle');
+                        $modalSuccess.modal('toggle');
+                    });
+                    $("#contact_email").removeClass('border-email');
                 }
             });
+        }else{
+            $("#contact_email").addClass('border-email')
         }
     });
 
@@ -96,17 +109,18 @@ odoo.define("introduce_company.homepage", function (require) {
     $('#footer_subscribe').click(function (e) {
         e.preventDefault();
         var email = $('#footer_email').val();
-
         if (email.indexOf('@') !== -1) {
-            ajax.jsonRpc('/email', 'call', {
-                'kwargs': {
-                    'email': email
-                }
-            }).then(function (data) {
-                if (data['success']) {
-
-                }
-            });
+            if (email.indexOf('@') !== -1) {
+                ajax.jsonRpc('/email', 'call', {
+                    'kwargs': {
+                        'email': email
+                    }
+                }).then(function (data) {
+                    if (data['success']) {
+                        alert("da thanh cong")
+                    }
+                });
+            }
         }
     });
 
@@ -149,7 +163,6 @@ odoo.define("introduce_company.homepage", function (require) {
     //experience and parameter
     $('.count-title').each(function () {
         var testText = $(this).text();
-        console.log(testText);
         if ((testText.trim() === "EXPERIENCE")) {
             $(this).parent().find('.exp-value').removeClass('hidden');
 
@@ -206,18 +219,6 @@ odoo.define("introduce_company.homepage", function (require) {
             $(document).on("scroll", onScroll2);
         });
     });
-
-    //modal login
-    var $modalQuestion = $('#modal-question');
-    $('#contact-btn').click(function () {
-        $modalQuestion.modal('toggle');
-    });
-    var $modalSuccess = $('#modal-success');
-    $('#btn_send').click(function () {
-        $modalQuestion.modal('toggle');
-        $modalSuccess.modal('toggle');
-    });
-
 
     //click change my language => click odoo language
     $('.js_change_lang').onclick(function () {

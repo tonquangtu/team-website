@@ -64,7 +64,7 @@ class Homepage(Website):
         return {'success': 0}
 
     @http.route('/email', website=True, type='json', auth='public', methods=['POST'])
-    def create_question(self, **kw):
+    def create_email(self, **kw):
         vals = {
             'email': kw['kwargs']['email'],
         }

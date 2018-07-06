@@ -573,21 +573,21 @@
                     </div>
                 </div>
 
-                <!--<div class="modal fade modal-success" id="modal-success" role="dialog">-->
-                    <!--<div class="modal-dialog">-->
-                        <!--&lt;!&ndash; Modal content&ndash;&gt;-->
-                        <!--<div class="modal-content">-->
-                            <!--<div class="modal-header">-->
-                                <!--<h4 class="modal-title"></h4>-->
-                            <!--</div>-->
-                            <!--<div class="modal-body">-->
-                                <!--<h3>Thanks your question!</h3>-->
-                            <!--</div>-->
-                            <!--<div class="modal-footer">-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div class="modal fade modal-success" id="modal-success" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <h3>Thanks your question!</h3>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <script src="/introduce_company/static/src/js/homepage_script.js"/>
         </t>
