@@ -23,6 +23,7 @@ odoo.define("introduce_company.homepage", function (require) {
         $('.menu_main').css('top', '44');
     }
 
+    //check scroll page
     $(window).scroll(function () {
         var header = $('.header');
         var height = $(window).scrollTop();
@@ -69,7 +70,7 @@ odoo.define("introduce_company.homepage", function (require) {
         return false;
     });
 
-    //modal login
+    //turn on modal question
     var $modalQuestion = $('#modal-question');
     $('#contact-btn').click(function () {
         $modalQuestion.modal('toggle');
@@ -82,7 +83,9 @@ odoo.define("introduce_company.homepage", function (require) {
         var phone = $('#contact_phone').val();
         var email = $('#contact_email').val();
         var question = $('#contact_question').val();
-        if (email.indexOf('@') !== -1) {
+        var checkemail = checkEmail(email, "question");
+        var checkphone = phonenumber(phone);
+        if (checkemail && checkphone) {
             ajax.jsonRpc('/question', 'call', {
                 'kwargs': {
                     'name': name,
@@ -92,16 +95,14 @@ odoo.define("introduce_company.homepage", function (require) {
                 }
             }).then(function (data) {
                 if (data['success']) {
+                    // turn off modal question turn on modal success
                     var $modalSuccess = $('#modal-success');
-                    $('#btn_send').click(function () {
-                        $modalQuestion.modal('toggle');
-                        $modalSuccess.modal('toggle');
-                    });
-                    $("#contact_email").removeClass('border-email');
+                    $modalQuestion.modal('toggle');
+                    $modalSuccess.modal('toggle');
                 }
             });
-        }else{
-            $("#contact_email").addClass('border-email')
+        } else {
+
         }
     });
 
@@ -109,19 +110,19 @@ odoo.define("introduce_company.homepage", function (require) {
     $('#footer_subscribe').click(function (e) {
         e.preventDefault();
         var email = $('#footer_email').val();
-        if (email.indexOf('@') !== -1) {
-            if (email.indexOf('@') !== -1) {
-                ajax.jsonRpc('/email', 'call', {
-                    'kwargs': {
-                        'email': email
-                    }
-                }).then(function (data) {
-                    if (data['success']) {
-                        alert("da thanh cong")
-                    }
-                });
-            }
+        if (checkEmail(email, "footer")) {
+            ajax.jsonRpc('/email', 'call', {
+                'kwargs': {
+                    'email': email
+                }
+            }).then(function (data) {
+                if (data['success']) {
+                    $('.done-tick').addClass('hidden');
+
+                }
+            });
         }
+
     });
 
     //show menu mobi-header
@@ -190,7 +191,6 @@ odoo.define("introduce_company.homepage", function (require) {
 
         var target = this.hash;
         var $target = $(target);
-        var heightHeader = $();
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top - 96 - checkOdooHeader
         }, 800, 'swing', function () {
@@ -226,6 +226,39 @@ odoo.define("introduce_company.homepage", function (require) {
     });
 
 });
+
+function checkEmail(inputtxt, type) {
+    var filter = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
+    if (filter.test(inputtxt)) {
+        if (type === "question") {
+            $("#contact_email").removeClass('error-question');
+        } else {
+            $('#footer_email').removeClass('boder-footer-email');
+        }
+        return true;
+    } else {
+        if (type === "question") {
+            $("#contact_email").addClass('error-question');
+        } else {
+            $('#footer_email').addClass('boder-footer-email');
+        }
+        return false;
+    }
+}
+
+//check phone-number
+function phonenumber(inputtxt) {
+    var phoneno = /^([(]?)?([+]?)?([0-9]{1,2})?([)]?)?([0-9]{9,10})$/;
+    if (inputtxt.match(phoneno)) {
+        $('#contact_phone').removeClass('error-question');
+        return true;
+    }
+    else {
+        $('#contact_phone').addClass('error-question');
+        return false;
+    }
+}
 
 function onScroll1() {
     var scrollPos = $(document).scrollTop() + 130;
