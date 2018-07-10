@@ -40,7 +40,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="" dir="ltr">
-                                        <a class="js_change_lang" href="" data-default-lang="true" data-lang="en_US">
+                                        <a class="js_change_lang" href="" data-default-lang="true" data-lang="en_US"  onclick="setCookie('lang','en')">
                                             <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
                                                  title="English (UK)" style="width: 20px;"/>
                                             English (UK)

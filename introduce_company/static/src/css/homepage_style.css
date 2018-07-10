@@ -961,7 +961,7 @@ img {
   height: 618px;
 }
 .carousel-caption {
-  left: 20% !important;
+  left: 40% !important;
   bottom: 20% !important;
   width: 60%;
   overflow: hidden;
@@ -989,7 +989,7 @@ img {
   font-size: 85px;
   margin: 0 auto;
   font-weight: bold;
-  color: yellow;
+  color: #171717;
   line-height: 85px;
 }
 .banner-title .content {
@@ -998,7 +998,7 @@ img {
   font-size: 25px;
   margin: 10px auto 0;
   font-weight: bold;
-  color: yellow;
+  color: #171717;
   line-height: 25px;
 }
 .banner-title .demo {
@@ -1192,7 +1192,7 @@ img {
 #Advisory {
   display: block;
   text-align: center;
-  padding: 80px;
+  padding: 100px;
   margin-top: 50px;
   background-image: url("/introduce_company/static/src/img/background-image.jpeg");
   background-size: 100% 100%;

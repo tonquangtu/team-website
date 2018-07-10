@@ -59,7 +59,7 @@
                                             <ul class="dropdown-menu">
                                                 <li class="" dir="ltr">
                                                     <a class="js_change_lang" href="" data-default-lang="true"
-                                                       data-lang="en_US"  onclick="setCookie('lang','en')">
+                                                       data-lang="en_US" onclick="setCookie('lang','en')">
                                                         <img src="/introduce_company/static/src/img/en.gif"
                                                              alt="English (UK)"
                                                              title="English (UK)" style="width: 20px;"/>
@@ -112,7 +112,7 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="/introduce_company/static/src/img/banner1.jpeg" alt="Image1"
+                                    <img src="/introduce_company/static/src/img/banner1.jpg" alt="Image1"
                                          style="width:100%;"/>
                                     <div class="carousel-caption banner-title caption-1">
                                         <p class="title">The OInsight</p>
@@ -144,7 +144,7 @@
                                 </div>
 
                                 <div class="item">
-                                    <img src="/introduce_company/static/src/img/banner3.jpeg" alt="Image3"
+                                    <img src="/introduce_company/static/src/img/banner3.jpg" alt="Image3"
                                          style="width:100%;"/>
                                     <div class="carousel-caption banner-title caption-3">
                                         <p class="title">The OInsight</p>
@@ -199,13 +199,9 @@
                                          data-effect="none"
                                          data-effect-speed="50">
                                         <p></p>
-                                        <p t-if="vi"
-                                           style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
-                                            Chúng tôi cung cấp những giải pháp tốt nhất trên nền tảng Odoo
-                                        </p>
-                                        <p t-else=""
-                                           style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
-                                            We provide the best solutions on the Odoo platform
+                                        <p style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                            <t t-if="vi">Odoo là một hệ thống phần mềm quản lý tổng thể doanh nghiệp</t>
+                                            <t t-else="">Odoo is a system management software for business</t>
                                         </p>
                                         <p></p>
                                     </div>
@@ -266,12 +262,17 @@
                                      data-effect="none"
                                      data-effect-speed="50">
                                     <p></p>
-                                    <p style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
-                                        <t t-if="vi">Odoo là một hệ thống phần mềm quản lý tổng thể doanh nghiệp</t>
-                                        <t t-else="">Odoo is a system management software for business</t>
+                                    <p t-if="vi"
+                                       style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                        Chúng tôi cung cấp những giải pháp tốt nhất trên nền tảng Odoo
+                                    </p>
+                                    <p t-else=""
+                                       style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                        We provide the best solutions on the Odoo platform
                                     </p>
                                     <p></p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -347,7 +348,7 @@
                     <div class="col-md-12">
                         <t t-foreach="reason" t-as="reason">
                             <a href="#" class="reason-item">
-                                <div class="col-md-4 reason">
+                                <div class="col-md-6 reason">
                                     <div class="reason-img col-xs-12 col-sm-3 col-md-3">
                                         <img class="img-responsive"
                                              t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image' % (reason.id)"/>
