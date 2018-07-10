@@ -57,6 +57,7 @@ class Homepage(Website):
             'phone': kw['kwargs']['phone'],
             'email': kw['kwargs']['email'],
             'question': kw['kwargs']['question'],
+            'status': 'wait',
         }
         check = request.env['introduce.question'].sudo().create(vals)
         if check:

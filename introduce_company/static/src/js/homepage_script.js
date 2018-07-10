@@ -91,7 +91,7 @@ odoo.define("introduce_company.homepage", function (require) {
                     'name': name,
                     'phone': phone,
                     'email': email,
-                    'question': question
+                    'question': question,
                 }
             }).then(function (data) {
                 if (data['success']) {
@@ -117,8 +117,9 @@ odoo.define("introduce_company.homepage", function (require) {
                 }
             }).then(function (data) {
                 if (data['success']) {
-                    $('.done-tick').addClass('hidden');
-
+                    $('.done-tick').removeClass('hidden');
+                    $('.register').addClass('hidden');
+                    $('.register-succuess').removeClass('hidden');
                 }
             });
         }

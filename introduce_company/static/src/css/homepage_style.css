@@ -1,5 +1,5 @@
 body.o_connected_user {
-  padding-right: 0!important;
+  padding-right: 0 !important;
 }
 * {
   margin: 0;
@@ -644,7 +644,7 @@ a,
   text-align: center;
 }
 .project-tile-overlay h4 {
-  color: #ffffff!important;
+  color: #ffffff !important;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
@@ -1040,12 +1040,15 @@ img {
 }
 .solution-item {
   overflow: hidden;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 20px;
+  border-radius: 6px;
+  padding: 0;
 }
-.solution-img .img-solution {
+.img-solution {
+  height: 150px;
+  margin-top: 160px;
   width: 100%;
-  opacity: 0.3;
 }
 .list-solution a {
   color: inherit;
@@ -1068,8 +1071,16 @@ img {
   font-size: 24px;
   line-height: 22px;
   font-weight: bold;
+  background-color: red;
+  display: block;
+  padding: 10px;
+  float: left;
+  margin: auto auto 20px;
+  border-radius: 0 4px 4px 0;
+  color: #ffffff !important;
 }
 .list-solution .solution-info h5 {
+  display: inline-block;
   font-size: 20px;
   line-height: 22px;
   opacity: 0.8;
@@ -1086,7 +1097,13 @@ img {
   background: #000;
   opacity: 0.8;
 }
-.list-solution .solution-items .solution-img:hover {
+.solution-item:hover {
+  margin-top: 0 !important;
+}
+.solution-item:hover h5 {
+  color: #000000 !important;
+}
+.solution-item:hover .solution-img {
   background: url("/introduce_company/static/src/img/Rectangle 10.png");
   opacity: 1;
   background-size: 100%;
@@ -1117,20 +1134,23 @@ img {
 }
 .three-benefit {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .benefit.col-md-4 {
-  padding: 0;
-  margin: 15px;
-  border-radius: 4px;
+  padding: 15px 15px 20px;
   overflow: hidden;
   width: 33.33%;
-  border: 1px solid #c7c7c7;
 }
 .benefit-content {
-  padding: 25px 15px;
+  height: 295px;
+  padding: 25px 18px;
+  background-color: #f0f3f2;
 }
 .benefit-container-img {
   display: block;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
 }
 .benefit-img.img-responsive {
   max-width: 100%;
@@ -1177,7 +1197,33 @@ img {
 }
 .footer #mailchimp-1 .boder-footer-email,
 .modal-content table tr td .error-question {
-  border: 1px solid red!important;
+  border: 1px solid red !important;
+}
+.solution-oinsight .reason {
+  margin-bottom: 20px;
+}
+.solution-oinsight .reason-txt .title {
+  padding-top: 0;
+  padding-right: 30px;
+  line-height: 24px;
+  text-transform: none;
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 20px;
+  z-index: 1;
+  color: #333333;
+}
+.solution-oinsight .reason-txt .content p {
+  line-height: 22px;
+  font-size: 16px;
+  margin: 0 0 15px;
+  color: #777777;
+}
+.solution-oinsight .reason:hover .reason-txt .title {
+  color: red;
+}
+.solution-oinsight .reason:hover .reason-txt .content p {
+  color: #333333;
 }
 @media only screen and (max-width: 1200px) {
   .banner-head-n {
@@ -1336,7 +1382,7 @@ img {
     line-height: 10px;
   }
   .container {
-    padding: 0!important;
+    padding: 0 !important;
   }
 }
 @media only screen and (min-width: 768px) {
