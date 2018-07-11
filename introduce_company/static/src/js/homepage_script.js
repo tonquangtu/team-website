@@ -181,8 +181,8 @@ odoo.define("introduce_company.homepage", function (require) {
     //homepage is color
     $('#menu-item-parent:nth-child(1)').addClass('active');
 
+    //scroll
     $(document).on("scroll", onScroll1);
-    //smoothscroll
     $menuParent.on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
@@ -198,12 +198,12 @@ odoo.define("introduce_company.homepage", function (require) {
             'scrollTop': $target.offset().top - 96 - checkOdooHeader
         }, 800, 'swing', function () {
             // window.location.hash = target;
-            $(document).on("scroll", onScroll1());
+            $(document).on("scroll", onScroll1);
         });
     });
 
+    //scroll mobi
     $(document).on("scroll", onScroll2);
-    //smoothscroll
     $menuSoluA.on('click', function (e) {
         e.preventDefault();
         $(document).off("scroll");
@@ -245,6 +245,42 @@ odoo.define("introduce_company.homepage", function (require) {
    }
 });
 
+//scroll
+function onScroll1() {
+    var scrollPos = $(document).scrollTop() + 130;
+    var $menuParent = $('#menu-item-parent a');
+    $menuParent.each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.outerHeight() > scrollPos) {
+            $menuParent.parent().removeClass("active");
+            currLink.parent().addClass("active");
+        }
+        else {
+            currLink.parent().removeClass("active");
+        }
+    });
+}
+
+//scroll mobi
+function onScroll2() {
+    var scrollPos = $(document).scrollTop();
+    var $menuSoluA = $('.menu-solution a');
+    $menuSoluA.each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position()) {
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $menuSoluA.removeClass("active");
+                currLink.addClass("active");
+            }
+            else {
+                currLink.removeClass("active");
+            }
+        }
+    });
+}
+
 // functions to help manipulating cookies
 function setCookie(cname,cvalue,exdays){
    var d = new Date();
@@ -267,7 +303,6 @@ function getCookie(cname) {
        }
    }
    return "";
-
 }
 
 function checkEmail(inputtxt, type) {
@@ -302,38 +337,3 @@ function phonenumber(inputtxt) {
         return false;
     }
 }
-
-function onScroll1() {
-    var scrollPos = $(document).scrollTop() + 130;
-    var $menuParent = $('#menu-item-parent a');
-    $menuParent.each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.outerHeight() > scrollPos) {
-            $menuParent.removeClass("active");
-            currLink.parent().addClass("active");
-        }
-        else {
-            currLink.parent().removeClass("active");
-        }
-    });
-}
-
-function onScroll2() {
-    var scrollPos = $(document).scrollTop();
-    var $menuSoluA = $('.menu-solution a');
-    $menuSoluA.each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (refElement.position()) {
-            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                $menuSoluA.removeClass("active");
-                currLink.addClass("active");
-            }
-            else {
-                currLink.removeClass("active");
-            }
-        }
-    });
-}
-
