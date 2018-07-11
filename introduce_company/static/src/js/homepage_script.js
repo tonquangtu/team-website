@@ -10,7 +10,7 @@ odoo.define("introduce_company.homepage", function (require) {
     var checkOdooHeader = 0;
     var header = $('.header');
 
-    //status header - top
+    //status header- top
     var offsetHeader = (header.offset().top);
     if (offsetHeader > 70) {
         header.addClass('active');
