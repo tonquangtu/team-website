@@ -10,11 +10,6 @@ odoo.define("introduce_company.homepage", function (require) {
     var checkOdooHeader = 0;
     var header = $('.header');
 
-    var liveChat = $('.o_livechat_button').css('display');
-        if (liveChat === 'block') {
-            alert("adfasdf");
-        }
-
     //status header - top
     var offsetHeader = (header.offset().top);
     if (offsetHeader > 70) {
