@@ -10,11 +10,16 @@ odoo.define("introduce_company.homepage", function (require) {
     var checkOdooHeader = 0;
     var header = $('.header');
 
+    var liveChat = $('.o_livechat_button').css('display');
+        if (liveChat === 'block') {
+            alert("adfasdf");
+        }
+
     //status header - top
     var offsetHeader = (header.offset().top);
-     if(offsetHeader > 70){
-         header.addClass('active');
-     }
+    if (offsetHeader > 70) {
+        header.addClass('active');
+    }
 
     $('.list-solution a').click(function (e) {
         e.preventDefault();
@@ -223,26 +228,20 @@ odoo.define("introduce_company.homepage", function (require) {
         });
     });
 
-    //click change my language => click odoo language
-    $('.js_change_lang').onclick(function () {
-        $('.js_language_selector .js_change_lang').click()
-    });
-
     // Change the interface language
-   var lang = getCookie("lang");
-   if(lang){
-       // cookie language was set to "vi" and URL does not contain "vi"
-       if (lang.include("vi") && !(document.URL.includes("vi"))){
-           window.location.href = '/vi/';
-       } else if (lang.include("en") && !(document.URL.includes("en"))){
-           window.location.href = '/en/';
-       }
+    var lang = getCookie("lang");
+    if (lang) {
+        //cookie language was set to "vi" and URL does not contain "vi"
+        if (lang.includes("vi") && !(document.URL.includes("vi"))) {
+            window.location.href = '/vi/';
+        }
+    }
+    else {
+        var userLang = navigator.language;
+        if (userLang.includes('vi') && !(document.URL.includes("vi")))
+            window.location.href = '/vi/';
+    }
 
-   } else {
-       var userLang = navigator.language;
-       if (userLang.includes('vi')&&!(document.URL.includes("vi")))
-           window.location.href = '/vi/';
-   }
 });
 
 //scroll
@@ -282,27 +281,27 @@ function onScroll2() {
 }
 
 // functions to help manipulating cookies
-function setCookie(cname,cvalue,exdays){
-   var d = new Date();
-   d.setTime(d.getTime() + (exdays*24*60*60*1000));
-   var expires = "expires="+ d.toUTCString();
-   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
-   var name = cname + "=";
-   var decodedCookie = decodeURIComponent(document.cookie);
-   var ca = decodedCookie.split(';');
-   for (var i = 0; i <ca.length; i++) {
-       var c = ca[i];
-       while (c.charAt(0)==' '){
-           c=c.substring(1);
-       }
-       if (c.indexOf(name)==0){
-           return c.substring(name.length, c.length);
-       }
-   }
-   return "";
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
 
 function checkEmail(inputtxt, type) {
