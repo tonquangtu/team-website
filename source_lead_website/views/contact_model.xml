@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+
+        <record id="view_contact_form" model="ir.ui.view">
+            <field name="name">source_lead_website.contact_us.form</field>
+            <field name="model">source_lead_website.contact_us</field>
+            <field name="arch" type="xml">
+                <form string="Contact Us">
+                    <header>
+                        <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"
+                                attrs="{'invisible':[('status','!=','wait')]}"/>
+                        <button name="action_done" string="Done" type="object" class="oe_highlight"
+                                attrs="{'invisible':[('status','!=','in_progress')]}"/>
+                        <field name="status" widget="statusbar" statusbar_visible="wait,in_progress,done"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" placeholder="Name"/>
+                            <field name="phone" placeholder="Phone"/>
+                            <field name="email" placeholder="Email"/>
+                            <field name="address" placeholder="Address"/>
+                            <field name="create_date"/>
+                        </group>
+                        <notebook>
+                            <page string="Question">
+                                <field name="question" placeholder="Question"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_contact_tree" model="ir.ui.view">
+            <field name="name">source_lead_website.contact_us.tree</field>
+            <field name="model">source_lead_website.contact_us</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Question">
+                    <field name="name"/>
+                    <field name="status"/>
+                    <field name="create_date"/>
+                    <field name="question" widget="html"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="contact_action">
+            <field name="name">Contact_us</field>
+            <field name="res_model">source_lead_website.contact_us</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_contact_tree"/>
+
+        </record>
+
+        <menuitem id="main_contact_menu" name="Contact Us"/>
+        <menuitem id="contact_menu" name="Source Lead" parent="main_contact_menu"/>
+        <menuitem id="contact_main" name="Website" parent="contact_menu" action="contact_action"/>
+
+
+        <!--Email-->
+        <!--<record id="email_tree" model="ir.ui.view">-->
+        <!--<field name="name">contact_us.email.tree</field>-->
+        <!--<field name="model">contact_us.email</field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<tree string="Idea list">-->
+        <!--<field name="showName"/>-->
+        <!--<field name="showPhone"/>-->
+        <!--<field name="showEmail"/>-->
+        <!--<field name="showAddress"/>-->
+        <!--<field name="showQuestion"/>-->
+        <!--</tree>-->
+        <!--</field>-->
+        <!--</record>-->
+
+        <!--<record id="view_email_form" model="ir.ui.view">-->
+        <!--<field name="name">source_lead_website.email.config.form</field>-->
+        <!--<field name="model">source_lead_website.email.config</field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<header>-->
+        <!--<button style="margin-top: 4px; margin-bottom: 4px;" string="Apply" type="object"-->
+        <!--name="set_values" class="oe_highlight"/>-->
+        <!--</header>-->
+        <!--<form string="Show">-->
+        <!--<sheet>-->
+        <!--<group>-->
+        <!--<group>-->
+        <!--<field name="showName"/>-->
+        <!--<field name="showPhone"/>-->
+        <!--<field name="showEmail"/>-->
+        <!--</group>-->
+        <!--<group>-->
+        <!--<field name="showAddress"/>-->
+        <!--<field name="showQuestion"/>-->
+        <!--</group>-->
+        <!--</group>-->
+        <!--</sheet>-->
+        <!--</form>-->
+        <!--</field>-->
+        <!--</record>-->
+
+        <!--<record model="ir.actions.act_window" id="email_action">-->
+        <!--<field name="name">Email</field>-->
+        <!--<field name="res_model">source_lead_website.email.config</field>-->
+        <!--<field name="view_type">form</field>-->
+        <!--<field name="view_mode">form</field>-->
+        <!--<field name="view_id" ref="view_email_form"/>-->
+
+        <!--</record>-->
+
+        <!--<menuitem id="email_menu" name="Email" parent="contact_menu" action="email_action"/>-->
+
+        <record id="view_onsignal_form" model="ir.ui.view">
+            <field name="name">onesignal.view.form</field>
+            <field name="model">onesignal.config</field>
+            <field name="arch" type="xml">
+                <form string="OneSignal Notifications" create="false" delete="false">
+                    <xpath expr="//button[@name='action_cancel']" position="replace">
+                    </xpath>
+                    <header>
+                        <button style="margin-top: 4px; margin-bottom: 4px;" string="Apply" type="object"
+                                name="set_values" class="oe_highlight"/>
+                    </header>
+
+                    <sheet>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="activate_onesignal"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="activate_onesignal"/>
+                                    <div class="text-muted">
+                                        Choose to activate OneSignal Notifications
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_onesignal">
+            <field name="name">OneSinal Configurations</field>
+            <field name="res_model">onesignal.config</field>
+            <field name="view_id" ref="view_onsignal_form"/>
+            <field name="view_mode">form</field>
+        </record>
+
+        <menuitem id="menu_onesignal"
+                  parent="contact_menu"
+                  name="OneSignal Notifications"
+                  action="action_onesignal"
+                  sequence="50"
+        />
+    </data>
+</odoo>
