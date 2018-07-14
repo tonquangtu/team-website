@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "introduce_company",
+    'name': "source_lead_website",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,18 +20,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'website_sale'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        # 'views/assets.xml',
-        'views/homepage.xml',
-        'views/component.xml',
-        'views/custom.xml',
-        'views/experience.xml',
-        'views/question.xml',
-        'views/banner.xml',
+        'views/contact.xml',
+        'views/contact_model.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
