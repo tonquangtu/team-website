@@ -9,12 +9,23 @@ def get_show():
     show_email = request.env['ir.config_parameter'].sudo().get_param('email_config.isShowEmail')
     show_address = request.env['ir.config_parameter'].sudo().get_param('email_config.isShowAddress')
     show_question = request.env['ir.config_parameter'].sudo().get_param('email_config.isShowQuestion')
+    backgroundColor = request.env['ir.config_parameter'].sudo().get_param('email_config.backgroundColor')
+    textColor = request.env['ir.config_parameter'].sudo().get_param('email_config.textColor')
+    btnColor = request.env['ir.config_parameter'].sudo().get_param('email_config.btnColor')
+    txtBtnColor = request.env['ir.config_parameter'].sudo().get_param('email_config.txtBtnColor')
+
+    position = request.env['ir.config_parameter'].sudo().get_param('email_config.position')
     return {
         'showname': show_name,
         'showphone': show_phone,
         'showemail': show_email,
         'showaddress': show_address,
         'showquestion': show_question,
+        'backgroundColor': backgroundColor,
+        'textColor': textColor,
+        'btnColor': btnColor,
+        'txtBtnColor': txtBtnColor,
+        'position': position
     }
 
 
@@ -22,21 +33,33 @@ class ContactUs(http.Controller):
     @http.route('/contact-us', auth='public', website=True)
     def index(self, **kw):
         contact = request.env['source_lead_website.contact_us'].sudo().search([])
-        get_show().update({
+        val = get_show()
+        val.update({
             'contact': contact,
         })
-        return http.request.render('source_lead_website.contact_bottom', get_show())
+        if val.get('position') == 'leftbottom':
+            val.update({
+                'leftbottom': True,
+            })
+            return http.request.render('source_lead_website.contact_bottom', val)
+
+        if val.get('position') == 'rightbottom':
+            return http.request.render('source_lead_website.contact_bottom', val)
+
+        if val.get('position') == 'leftmid':
+            val.update({
+                'leftmid': True,
+            })
+            return http.request.render('source_lead_website.contact_vertical', val)
+
+        if val.get('position') == 'rightmid':
+            val.update({
+                'rightmid': True,
+            })
+            return http.request.render('source_lead_website.contact_vertical', val)
 
 
-class ContactMid(http.Controller):
-    @http.route('/contact-mid', auth='public', website=True)
-    def index(self, **kw):
-        contact = request.env['source_lead_website.contact_us'].sudo().search([])
-        get_show().update({
-            'contact': contact,
-        })
-        return http.request.render('source_lead_website.contact_vertical', get_show())
-
+class ContactAjax(http.Controller):
     @http.route('/handling-form', website=True, type='json', auth='public', methods=['POST'])
     def create_question(self, **kw):
         vals = {
@@ -78,3 +101,4 @@ class ContactMid(http.Controller):
             return {
                 'success': 0
             }
+

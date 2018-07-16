@@ -42,6 +42,13 @@ class EmaiConfig(models.TransientModel):
     isCheckEmail = fields.Boolean(string="Check Email", default=True)
     isCheckPhone = fields.Boolean(string="Check Phone", default=True)
 
+    backgroundColor = fields.Char(string="Background Color", default="#ff0000")
+    textColor = fields.Char(string="Text Color", default="#ff0000")
+    btnColor = fields.Char(string="Button Color", default="#ff0000")
+    txtBtnColor = fields.Char(string="Text Button Color", default="#ff0000")
+
+    position = fields.Selection(selection=(['leftmid', 'Left Mid'], ['leftbottom', 'Left Bottom'], ['rightbottom', 'Right Bottom'], ['rightmid', 'Right Mid']), default="leftbottom")
+
     @api.model
     def get_values(self):
         res = super(EmaiConfig, self).get_values()
@@ -53,6 +60,14 @@ class EmaiConfig(models.TransientModel):
             isShowQuestion=Until.convert_boolean_string((self.env['ir.config_parameter'].sudo().get_param('email_config.isShowQuestion', default=True))),
             isCheckEmail=Until.convert_boolean_string((self.env['ir.config_parameter'].sudo().get_param('email_config.isCheckEmail', default=True))),
             isCheckPhone=Until.convert_boolean_string((self.env['ir.config_parameter'].sudo().get_param('email_config.isPhone', default=True))),
+
+            backgroundColor=(self.env['ir.config_parameter'].sudo().get_param('email_config.backgroundColor', default="#ff0000")),
+            textColor=(self.env['ir.config_parameter'].sudo().get_param('email_config.textColor', default="#ff0000")),
+            btnColor=(self.env['ir.config_parameter'].sudo().get_param('email_config.btnColor', default="#ff0000")),
+            txtBtnColor=(self.env['ir.config_parameter'].sudo().get_param('email_config.txtBtnColor', default="#ff0000")),
+
+            position=(self.env['ir.config_parameter'].sudo().get_param('email_config.position')),
+
         )
         return res
 
@@ -66,3 +81,10 @@ class EmaiConfig(models.TransientModel):
         self.env['ir.config_parameter'].sudo().set_param('email_config.isShowQuestion', self.isShowQuestion)
         self.env['ir.config_parameter'].sudo().set_param('email_config.isCheckEmail', self.isCheckEmail)
         self.env['ir.config_parameter'].sudo().set_param('email_config.isCheckPhone', self.isCheckPhone)
+
+        self.env['ir.config_parameter'].sudo().set_param('email_config.backgroundColor', self.backgroundColor)
+        self.env['ir.config_parameter'].sudo().set_param('email_config.textColor', self.textColor)
+        self.env['ir.config_parameter'].sudo().set_param('email_config.btnColor', self.btnColor)
+        self.env['ir.config_parameter'].sudo().set_param('email_config.txtBtnColor', self.txtBtnColor)
+
+        self.env['ir.config_parameter'].sudo().set_param('email_config.position', self.position)

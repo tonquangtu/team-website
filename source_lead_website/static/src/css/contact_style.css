@@ -3,12 +3,10 @@
   height: 390px;
   transition: height 0.5s;
   box-shadow: 0px -1px 2px 2px #dadada;
-  background-color: red;
   padding-bottom: 10px;
   overflow: hidden;
   position: fixed;
   bottom: 0;
-  left: 0;
   right: 0;
   z-index: 201;
 }
@@ -16,7 +14,7 @@
   display: flex;
   height: 40px;
   align-items: center;
-  box-shadow: 0 1px 1px #333333;
+  box-shadow: 0 1px 1px #dcdcdc;
   cursor: s-resize;
 }
 #form_contact .contact-header p {
@@ -74,14 +72,14 @@
 #form_contact.collect .contact-header {
   cursor: n-resize;
 }
-#form_vertical .modal-dialog {
-  background-color: red;
+#form_vertical .modal.fade .modal-dialog {
+  transition: transform 1s ease-out;
 }
 #form_vertical .contact-header {
   display: flex;
   height: 40px;
   align-items: center;
-  box-shadow: 0 1px 1px #333333;
+  box-shadow: 0 1px 1px #dcdcdc;
 }
 #form_vertical .contact-header p {
   padding: 0;
@@ -105,8 +103,6 @@
 }
 #form_vertical .contact-header span .fa {
   opacity: 0.7;
-  transition: opacity 0.2s, -webkit-transform 0.2s !important;
-  transition: transform .2s, opacity .2s !important;
   transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s !important;
 }
 #form_vertical .contact-header span .fa:hover {
@@ -161,8 +157,10 @@
   color: #ffffff;
   cursor: pointer;
   z-index: 201;
+  transition: 0.5s;
+}
+#form_vertical .envelope.left {
   left: 0;
-  transition: left 0.5s;
 }
 #form_vertical .envelope .fa-envelope-o {
   font-size: 20px;
@@ -174,8 +172,11 @@
   padding: 10px;
   font-weight: bold;
 }
-#form_vertical .envelope.collect-envelope {
+#form_vertical .envelope.collect-envelope.left {
   left: -97px;
+}
+#form_vertical .right.collect-envelope {
+  right: 0 !important;
 }
 .error-question {
   background-color: #BBDEFB !important;
