@@ -88,10 +88,10 @@
                                     </group>
                                     </div>
                                     <div class="col-md-6">
-                                    <group>
-                                        <field name="isCheckPhone"/>
-                                        <field name="isCheckEmail"/>
-                                    </group>
+                                        <group>
+                                            <field name="isCheckEmail"/>
+                                            <field name="isCheckPhone"/>
+                                        </group>
                                     </div>
                                 </div>
                                 <div class="choose-view o_group_col_12">

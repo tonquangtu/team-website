@@ -33,4 +33,5 @@ $(document).ready(function () {
         var value = '"' + $(this).attr('name') + '"';
         $('.position .select').val(value).change();
     });
+
 });

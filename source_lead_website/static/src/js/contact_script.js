@@ -29,13 +29,13 @@ odoo.define('source_lead_website.contact', function (require) {
     });
 
     //form question ajax
-    $('#btn_send').click(function () {
-        var name = $('#contact_name').val();
-        var phone = $('#contact_phone').val();
-        var address = $('#contact_address').val();
-        var email = $('#contact_email').val();
-        var question = $('#contact_question').val();
-        var checkemail = checkEmail(email, "question");
+    $('.contact-footer #btn_send').click(function () {
+        var name = $('.contact-body #contact_name').val();
+        var phone = $('.contact-body #contact_phone').val();
+        var address = $('.contact-body #contact_address').val();
+        var email = $('.contact-body #contact_email').val();
+        var question = $('.contact-body #contact_question').val();
+        var checkemail = checkEmail(email);
         var checkphone = phonenumber(phone);
         ajax.jsonRpc('/handling-form', 'call', {
             'kwargs': {
@@ -50,18 +50,18 @@ odoo.define('source_lead_website.contact', function (require) {
         }).then(function (data) {
             if (data) {
                 if (data['emailerror']) {
-                   $("#contact_email").addClass('error-question');
+                   $(".contact-body #contact_email").addClass('error-question');
                 }else {
-                    $("#contact_email").removeClass('error-question');
+                    $(".contact-body #contact_email").removeClass('error-question');
                 }
                 if(data['phoneerror']){
-                    $('#contact_phone').addClass('error-question');
+                    $('.contact-body #contact_phone').addClass('error-question');
                 }else {
-                    $("#contact_phone").removeClass('error-question');
+                    $(".contact-body #contact_phone").removeClass('error-question');
                 }
                 if(data['success']){
                     // turn off modal question turn on modal success
-                    var $modalSuccess = $('#modal-success');
+                    var $modalSuccess = $('#form_vertical').find('#modal-success');
                     $modalForm.modal('toggle');
                     $modalSuccess.modal('toggle');
                 }
@@ -71,23 +71,14 @@ odoo.define('source_lead_website.contact', function (require) {
 });
 
 //check email
-function checkEmail(inputtxt, type) {
-    var filter = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-    if (filter.test(inputtxt)) {
-        return true;
-    } else {
-        return false;
-    }
+function checkEmail(inputtxt) {
+    var filter = /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/;
+    return !!filter.test(inputtxt);
 }
 
 //check phone-number
 function phonenumber(inputtxt) {
     var phonenu = /^([(]?)?([+]?)?([0-9]{1,2})?([)]?)?([0-9]{9,10})$/;
-    if (inputtxt.match(phonenu)) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return !!inputtxt.match(phonenu);
 }
 

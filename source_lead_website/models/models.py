@@ -59,7 +59,7 @@ class EmaiConfig(models.TransientModel):
             isShowAddress=Until.convert_boolean_string((self.env['ir.config_parameter'].sudo().get_param('email_config.isShowAddress', default=True))),
             isShowQuestion=Until.convert_boolean_string((self.env['ir.config_parameter'].sudo().get_param('email_config.isShowQuestion', default=True))),
             isCheckEmail=Until.convert_boolean_string((self.env['ir.config_parameter'].sudo().get_param('email_config.isCheckEmail', default=True))),
-            isCheckPhone=Until.convert_boolean_string((self.env['ir.config_parameter'].sudo().get_param('email_config.isPhone', default=True))),
+            isCheckPhone=Until.convert_boolean_string((self.env['ir.config_parameter'].sudo().get_param('email_config.isCheckPhone', default=True))),
 
             backgroundColor=(self.env['ir.config_parameter'].sudo().get_param('email_config.backgroundColor', default="#ff0000")),
             textColor=(self.env['ir.config_parameter'].sudo().get_param('email_config.textColor', default="#ff0000")),

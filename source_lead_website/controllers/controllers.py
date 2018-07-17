@@ -29,36 +29,6 @@ def get_show():
     }
 
 
-class ContactUs(http.Controller):
-    @http.route('/contact-us', auth='public', website=True)
-    def index(self, **kw):
-        contact = request.env['source_lead_website.contact_us'].sudo().search([])
-        val = get_show()
-        val.update({
-            'contact': contact,
-        })
-        if val.get('position') == 'leftbottom':
-            val.update({
-                'leftbottom': True,
-            })
-            return http.request.render('source_lead_website.contact_bottom', val)
-
-        if val.get('position') == 'rightbottom':
-            return http.request.render('source_lead_website.contact_bottom', val)
-
-        if val.get('position') == 'leftmid':
-            val.update({
-                'leftmid': True,
-            })
-            return http.request.render('source_lead_website.contact_vertical', val)
-
-        if val.get('position') == 'rightmid':
-            val.update({
-                'rightmid': True,
-            })
-            return http.request.render('source_lead_website.contact_vertical', val)
-
-
 class ContactAjax(http.Controller):
     @http.route('/handling-form', website=True, type='json', auth='public', methods=['POST'])
     def create_question(self, **kw):
@@ -101,4 +71,30 @@ class ContactAjax(http.Controller):
             return {
                 'success': 0
             }
+
+
+class PageAjax(http.Controller):
+    @http.route('/contact-ajax', website=True, type='json', auth='public', methods=['POST'])
+    def create_question(self, **kw):
+        val = get_show()
+        if val.get('position') == 'leftbottom':
+            val.update({
+                'leftbottom': True,
+            })
+            return request.env['ir.ui.view'].render_template('source_lead_website.contact_bottom', val)
+
+        if val.get('position') == 'rightbottom':
+            return request.env['ir.ui.view'].render_template('source_lead_website.contact_bottom', val)
+
+        if val.get('position') == 'leftmid':
+            val.update({
+                'leftmid': True,
+            })
+            return request.env['ir.ui.view'].render_template('source_lead_website.contact_vertical', val)
+
+        if val.get('position') == 'rightmid':
+            val.update({
+                'rightmid': True,
+            })
+            return request.env['ir.ui.view'].render_template('source_lead_website.contact_vertical', val)
 
