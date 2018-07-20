@@ -3,11 +3,21 @@ odoo.define('source_lead_website.contact', function (require) {
     var ajax = require('web.ajax');
     require("web.dom_ready");
     var $formControl = $('#form_contact');
+    var $close = $('.contact-close .fa');
+    var heightF = $formControl.height();
+
+    //click collect form
     $('.contact-header').click(function () {
         if ($formControl.hasClass('collect')) {
             $formControl.removeClass('collect');
+            $formControl.css('bottom',heightF-32);
+            $close.addClass('fa-angle-down');
+            $close.removeClass('fa-angle-up');
         } else {
             $formControl.addClass('collect');
+            $close.addClass('fa-angle-up');
+            $close.removeClass('fa-angle-down');
+            $formControl.css('bottom',0);
         }
     });
 
@@ -68,6 +78,7 @@ odoo.define('source_lead_website.contact', function (require) {
             }
         });
     });
+
 });
 
 //check email

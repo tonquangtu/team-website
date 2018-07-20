@@ -15,6 +15,10 @@ def get_show():
     txtBtnColor = request.env['ir.config_parameter'].sudo().get_param('email_config.txtBtnColor')
 
     position = request.env['ir.config_parameter'].sudo().get_param('email_config.position')
+
+    txtHeader = request.env['ir.config_parameter'].sudo().get_param('email_config.txtHeader')
+    txtBtn = request.env['ir.config_parameter'].sudo().get_param('email_config.txtBtn')
+
     return {
         'showname': show_name,
         'showphone': show_phone,
@@ -25,7 +29,9 @@ def get_show():
         'textColor': textColor,
         'btnColor': btnColor,
         'txtBtnColor': txtBtnColor,
-        'position': position
+        'position': position,
+        'txtHeader': txtHeader,
+        'txtBtn': txtBtn,
     }
 
 
