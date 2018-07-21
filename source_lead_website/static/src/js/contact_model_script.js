@@ -1,49 +1,32 @@
 $(document).ready(function () {
+    $.ajax({
+        url: '/contact-ajax',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            'jsonrpc': "2.0",
+            'method': "call",
+            "params": {},
+        }),
+        success: function (data) {
+            var content = data['result'];
+            $('#preview').append(content);
+        },
+        error: function (e) {
+            alert('error');
+            console.log(e.message);
+        }
+    });
+
+    $('.sp-palette-buttons-disabled').remove();
+
     var checkIC = 0;
-    var checkC = 0;
     // set color
     var $inputColor = $('input.input-color');
     var $choseColor = $('input.chose-color-spectrum');
 
-    $inputColor.each(function () {
-        var code = $(this).val();
-        alert(code);
-        $(this).parent().find('input.chose-color-spectrum').spectrum({
-            color: code
-        });
-    });
-
-    $inputColor.click(function () {
-        checkIC = 1;
-    });
-    $choseColor.on('click', function () {
-        checkC = 1;
-        console.log(checkC);
-    });
-
-    $(document).mouseup(function (e) {
-        if (checkIC) {
-            $inputColor.each(function () {
-                var code = $(this).val();
-                if ($(this).length > 0 && !$(this).is(e.target) && $(this).has(e.target).length === 0) {
-                    $(this).parent().find('input.chose-color-spectrum').val(code);
-                }
-                checkIC = 0;
-            });
-        }
-        if (checkC) {
-            $choseColor.each(function () {
-                var varcode = $(this).val();
-                if ($(this).length > 0 && !$(this).is(e.target) && $(this).has(e.target).length === 0) {
-                    $(this).parent().find('input.input-color').val(varcode).change();
-                    checkC = 0;
-                    console.log(checkC)
-                }
-            });
-        }
-    });
-
-    $('.chose-color-spectrum').spectrum({
+    var val = {
         showInput: true,
         className: "full-spectrum",
         showInitial: true,
@@ -52,21 +35,6 @@ $(document).ready(function () {
         maxSelectionSize: 10,
         preferredFormat: "hex",
         localStorageKey: "spectrum.demo",
-        move: function (color) {
-
-        },
-        show: function () {
-
-        },
-        beforeShow: function () {
-
-        },
-        hide: function () {
-
-        },
-        change: function () {
-
-        },
         palette: [
             ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
                 "rgb(204, 204, 204)", "rgb(217, 217, 217)", "rgb(255, 255, 255)"],
@@ -83,6 +51,34 @@ $(document).ready(function () {
                 "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
                 "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
         ]
+    };
+
+    $choseColor.spectrum(val);
+
+    $inputColor.click(function () {
+        checkIC = 1;
+    });
+
+    $inputColor.each(function () {
+        val.color = $(this).val();
+        $(this).parent().find($choseColor).spectrum(val);
+    });
+
+    $(document).mouseup(function (e) {
+        if (checkIC) {
+            $inputColor.each(function () {
+                val.color = $(this).val();
+                if ($(this).length > 0 && !$(this).is(e.target) && $(this).has(e.target).length === 0) {
+                    $(this).parent().find($choseColor).spectrum(val);
+                }
+                checkIC = 0;
+            });
+        }
+    });
+
+    $choseColor.change(function () {
+        var varcode = $(this).val();
+        $(this).parent().find($inputColor).val(varcode).change();
     });
 
     //set position
@@ -103,4 +99,8 @@ $(document).ready(function () {
         var value = '"' + $(this).attr('name') + '"';
         $('.position .select').val(value).change();
     });
+
+    $('.sp-container').addClass('hidden');
+
+
 });

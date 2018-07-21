@@ -209,7 +209,7 @@ License: MIT
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00ff', endColorstr='#ff0000');
 }
 
-.sp-hidden {
+.hidden {
     display: none !important;
 }
 

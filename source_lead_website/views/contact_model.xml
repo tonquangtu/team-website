@@ -54,7 +54,7 @@
             <field name="view_id" ref="view_contact_tree"/>
         </record>
 
-        <menuitem id="main_contact_menu" name="Contact"/>
+        <menuitem id="main_contact_menu" name="Contact Us"/>
         <menuitem id="contact_menu" name="Source Lead" parent="main_contact_menu"/>
         <menuitem id="contact_main" name="Customer" parent="contact_menu" action="contact_action"/>
 
@@ -163,9 +163,8 @@
                                             </li>
                                         </ul>
                                         <field name="position" class="select hidden"/>
-                                        <div class="col-md-6 preview" id="preview">
-                                            <div class="preview-header"></div>
-                                            <t t-call="source_lead_website.contact_bottom"/>
+                                        <div class="col-md-12 preview" id="preview">
+                                            <!--<t t-call="source_lead_website.preview"/>-->
                                         </div>
                                     </div>
                                     <script src="/source_lead_website/static/src/js/contact_model_script.js"/>

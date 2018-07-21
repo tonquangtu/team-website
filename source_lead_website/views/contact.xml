@@ -16,7 +16,7 @@
                 <div class="contact-body" style="display:block">
                     <div t-if="showname">
                         <div class="name" t-att-style="'color: %s;' % (textColor)">
-                            <t>Name:</t>
+                            <t>Name</t>
                         </div>
                         <div>
                             <input id='contact_name' class="form-control" name="contact_name"
@@ -26,7 +26,7 @@
                     </div>
                     <div t-if="showphone">
                         <div class="name" t-att-style="'color: %s;' % (textColor)">
-                            <t>Phone:</t>
+                            <t>Phone</t>
                         </div>
                         <div>
                             <input id='contact_phone' class="form-control" name="contact_phone"
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div t-if="showemail">
-                        <div class="name" t-att-style="'color: %s;' % (textColor)">Email:</div>
+                        <div class="name" t-att-style="'color: %s;' % (textColor)">Email</div>
                         <div>
                             <input id='contact_email' class="form-control" name="contact_email"
                                    required="True"
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div t-if="showaddress">
-                        <div class="name" t-att-style="'color: %s;' % (textColor)">Address:</div>
+                        <div class="name" t-att-style="'color: %s;' % (textColor)">Address</div>
                         <div>
                             <input id='contact_address' class="form-control" name="contact_address"
                                    required="True"
@@ -52,8 +52,8 @@
                     </div>
                     <div t-if="showquestion">
                         <div class="name" t-att-style="'color: %s;' % (textColor)">
-                            <t t-if="vi">Câu hỏi:</t>
-                            <t t-else="">Question:</t>
+                            <t t-if="vi">Câu hỏi</t>
+                            <t t-else="">Question</t>
                         </div>
                         <div>
                             <textarea id='contact_question' class="form-control" name="description"
@@ -111,7 +111,7 @@
                     <div class="contact-body">
                         <div t-if="showname">
                             <div class="name" t-att-style="'color: %s;' % (textColor)">
-                                <t>Name:</t>
+                                <t>Name</t>
                             </div>
                             <div>
                                 <input id='contact_name' class="form-control" name="contact_name"
@@ -121,7 +121,7 @@
                         </div>
                         <div t-if="showphone">
                             <div class="name" t-att-style="'color: %s;' % (textColor)">
-                                <t>Phone:</t>
+                                <t>Phone</t>
                             </div>
                             <div>
                                 <input id='contact_phone' class="form-control" name="contact_phone"
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                         <div t-if="showemail">
-                            <div class="name" t-att-style="'color: %s;' % (textColor)">Email:</div>
+                            <div class="name" t-att-style="'color: %s;' % (textColor)">Email</div>
                             <div>
                                 <input id='contact_email' class="form-control" name="contact_email"
                                        required="True"
@@ -138,7 +138,7 @@
                             </div>
                         </div>
                         <div t-if="showaddress">
-                            <div class="name" t-att-style="'color: %s;' % (textColor)">Address:</div>
+                            <div class="name" t-att-style="'color: %s;' % (textColor)">Address</div>
                             <div>
                                 <input id='contact_address' class="form-control" name="contact_address"
                                        required="True"
@@ -147,8 +147,8 @@
                         </div>
                         <div t-if="showquestion">
                             <div class="name" t-att-style="'color: %s;' % (textColor)">
-                                <t t-if="vi">Câu hỏi:</t>
-                                <t t-else="">Question:</t>
+                                <t t-if="vi">Câu hỏi</t>
+                                <t t-else="">Question</t>
                             </div>
                             <div>
                                 <textarea id='contact_question' class="form-control" name="description"

@@ -28,6 +28,7 @@
 
 .color-item {
   display: flex;
+  align-items: center;
   width: 100%;
   padding: 10px 0;
 }
@@ -57,6 +58,10 @@ input[type="color"]::-webkit-color-swatch {
 }
 .color-item .input-color {
   width: 25% !important;
+  margin: 0;
+  height: 30px;
+  border-radius: 0;
+  border: 1px solid #91765d;
 }
 
 .set-text-item input {
@@ -68,11 +73,14 @@ input[type="color"]::-webkit-color-swatch {
   height: 250px;
   border: 1px solid #eaedf1;
   padding: 0;
-  .preview-header {
-    background-color: #eaedf1;
-    height: 40px;
-  }
 }
 .full-spectrum .sp-palette {
   max-width: 200px;
+}
+#preview{
+  overflow: hidden;
+  height: 400px;
+}
+.container-form{
+  position: absolute!important;
 }

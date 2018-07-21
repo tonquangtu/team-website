@@ -18,7 +18,7 @@ def get_show():
 
     txtHeader = request.env['ir.config_parameter'].sudo().get_param('email_config.txtHeader')
     txtBtn = request.env['ir.config_parameter'].sudo().get_param('email_config.txtBtn')
-
+    print("get_show()")
     return {
         'showname': show_name,
         'showphone': show_phone,
@@ -37,7 +37,7 @@ def get_show():
 
 class ContactAjax(http.Controller):
     @http.route('/handling-form', website=True, type='json', auth='public', methods=['POST'])
-    def create_question(self, **kw):
+    def handling(self, **kw):
         vals = {
             'name': kw['kwargs']['name'],
             'phone': kw['kwargs']['phone'],
@@ -81,7 +81,7 @@ class ContactAjax(http.Controller):
 
 class PageAjax(http.Controller):
     @http.route('/contact-ajax', website=True, auth='public', type='json', methods=['POST'])
-    def create_question_1(self, **kw):
+    def create_question(self, **kw):
         val = get_show()
         if val.get('position') == 'leftbottom':
             val.update({
@@ -103,4 +103,5 @@ class PageAjax(http.Controller):
                 'rightmid': True,
             })
             return request.env['ir.ui.view'].render_template('source_lead_website.contact_vertical', val)
+
 

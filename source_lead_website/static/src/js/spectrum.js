@@ -90,7 +90,7 @@
         }
 
         return [
-            "<div class='sp-container sp-hidden'>",
+            "<div class='sp-container hidden'>",
                 "<div class='sp-palette-container'>",
                     "<div class='sp-palette sp-thumb sp-cf'></div>",
                     "<div class='sp-palette-button-container sp-cf'>",
@@ -624,7 +624,7 @@
             $(doc).bind("click.spectrum", clickout);
             $(window).bind("resize.spectrum", resize);
             replacer.addClass("sp-active");
-            container.removeClass("sp-hidden");
+            container.removeClass("hidden");
 
             reflow();
             updateUI();
@@ -670,7 +670,7 @@
             $(window).unbind("resize.spectrum", resize);
 
             replacer.removeClass("sp-active");
-            container.addClass("sp-hidden");
+            container.addClass("hidden");
 
             callbacks.hide(get());
             boundElement.trigger('hide.spectrum', [ get() ]);
