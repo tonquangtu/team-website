@@ -18,7 +18,6 @@ def get_show():
 
     txtHeader = request.env['ir.config_parameter'].sudo().get_param('email_config.txtHeader')
     txtBtn = request.env['ir.config_parameter'].sudo().get_param('email_config.txtBtn')
-    print("get_show()")
     return {
         'showname': show_name,
         'showphone': show_phone,

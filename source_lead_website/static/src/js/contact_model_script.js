@@ -1,23 +1,23 @@
 $(document).ready(function () {
-    // $.ajax({
-    //     url: '/contact-ajax',
-    //     type: 'POST',
-    //     dataType: 'json',
-    //     contentType: 'application/json',
-    //     data: JSON.stringify({
-    //         'jsonrpc': "2.0",
-    //         'method': "call",
-    //         "params": {},
-    //     }),
-    //     success: function (data) {
-    //         var content = data['result'];
-    //         $('#preview').append(content);
-    //     },
-    //     error: function (e) {
-    //         alert('error');
-    //         console.log(e.message);
-    //     }
-    // });
+    $.ajax({
+        url: '/contact-ajax',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            'jsonrpc': "2.0",
+            'method': "call",
+            "params": {},
+        }),
+        success: function (data) {
+            var content = data['result'];
+            $('#preview').append(content);
+        },
+        error: function (e) {
+            alert('error');
+            console.log(e.message);
+        }
+    });
 
     $('.sp-palette-buttons-disabled').remove();
 

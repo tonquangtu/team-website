@@ -1,4 +1,4 @@
-odoo.define('source_lead_website.contact', function (require) {
+odoo.define('source_lead_website.contact_xml', function (require) {
     'use strict';
     var ajax = require('web.ajax');
     require("web.dom_ready");

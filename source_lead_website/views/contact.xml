@@ -77,7 +77,6 @@
                         </div>
                     </a>
                 </div>
-                <script src="/source_lead_website/static/src/js/contact_script.js"/>
             </div>
         </div>
     </template>
@@ -187,7 +186,6 @@
                 </div>
             </div>
         </div>
-        <script src="/source_lead_website/static/src/js/contact_script.js"/>
     </template>
 
 </odoo>
