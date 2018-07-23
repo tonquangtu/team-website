@@ -1,0 +1,305 @@
+.container-form {
+  top: 100%;
+  margin-top: -40px;
+  position: fixed;
+  z-index: 3299792458;
+}
+#form_contact {
+  width: 300px;
+  transition: bottom 0.5s;
+  padding-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  z-index: 201;
+}
+#form_contact .contact-header {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  border-bottom: 1px solid #bf8888;
+  cursor: pointer;
+}
+#form_contact .contact-header p {
+  margin: 0;
+  width: 100%;
+  padding: 0 0 0 15px;
+  text-align: left;
+  color: #ffffff;
+  font-size: 17px;
+  font-family: inherit;
+  font-weight: 700;
+}
+#form_contact .contact-body {
+  padding: 15px 15px 0 15px;
+  display: flex;
+  align-items: center;
+}
+#form_contact .contact-body table {
+  margin: 0;
+}
+#form_contact .form-control {
+  padding: 0 12px;
+  width: auto;
+  border: none;
+  border-radius: 2px;
+}
+#form_contact .contact-body input,
+#form_contact .contact-body textarea {
+  width: 100%;
+  color: #171717;
+  height: 32px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+#form_contact .contact-footer {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+#form_contact .contact-footer button {
+  cursor: pointer;
+  margin: 15px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: normal;
+  color: #ffffff;
+  border-radius: 4px;
+  background-color: #00BCD4;
+}
+.width-icon {
+  display: none;
+  height: 40px;
+  border-radius: 4px;
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.55s linear;
+  -o-transition: opacity 0.55s linear;
+  transition: opacity 0.55s linear;
+}
+#form_vertical .modal.fade .modal-dialog {
+  width: 420px;
+  transition: transform 1s ease-out;
+  box-shadow: 0 12px 25px 5px rgba(0, 0, 0, 0.4);
+  margin: 30px auto!important;
+}
+#form_vertical .contact-header {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  box-shadow: 0 1px 1px #bf9c9c;
+}
+#form_vertical .contact-header p {
+  padding: 0;
+  margin: 0 0 0 30px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: bold;
+}
+#form_vertical .contact-header span {
+  width: 36px;
+  height: 42px;
+  margin-top: 15px;
+  font-size: 22px;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+  cursor: pointer;
+}
+#form_vertical .contact-header span .fa {
+  opacity: 0.7;
+  transition: transform 0.2s, opacity 0.2s, -webkit-transform 0.2s !important;
+}
+#form_vertical .contact-header span .fa:hover {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+#form_vertical .contact-body {
+  padding: 15px 20px 0 20px;
+}
+#form_vertical .form-control {
+  padding: 0 12px;
+  width: auto;
+}
+#form_vertical .contact-body input,
+#form_vertical .contact-body textarea {
+  width: 100%;
+  color: #171717;
+  height: 32px;
+  padding-left: 10px;
+  background-color: #ffffff;
+}
+#form_vertical .contact-body input {
+  margin-bottom: 16px;
+}
+#form_vertical .contact-footer {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+}
+#form_vertical .contact-footer button {
+  width: 100%;
+  margin: 0 15px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 4px;
+  background-color: #00BCD4;
+  border: none;
+}
+#form_vertical .envelope {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 40%;
+  width: 140px;
+  height: 42px;
+  background-color: red;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 201;
+  transition: 0.5s;
+}
+#form_vertical .envelope.left {
+  left: 0;
+}
+#form_vertical .envelope .fa-envelope-o {
+  font-size: 20px;
+  z-index: 10;
+  padding: 10px;
+  font-weight: bold;
+}
+#form_vertical .envelope span {
+  padding: 10px;
+  font-weight: bold;
+}
+#form_vertical .envelope.collect-envelope.left {
+  left: -97px;
+}
+#form_vertical .right.collect-envelope {
+  right: 0 !important;
+}
+.error-question {
+  background-color: #BBDEFB !important;
+}
+.contact-footer #btn_send span {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase!important;
+}
+.contact-close {
+  margin-right: 15px;
+  height: 20px;
+  width: 20px;
+}
+.contact-close .fa {
+  font-size: 20px;
+  color: #e4e4e4;
+}
+#form_vertical #modal-success .modal-body h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+#form_vertical #modal-success .modal-body {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+#form_vertical #modal-success .modal-header,
+#form_vertical #modal-success .modal-footer {
+  display: none;
+}
+.by-team {
+  height: 40px;
+  text-align: center;
+}
+.by-team .background-team {
+  text-align: center;
+  margin: 10px 60px;
+  border-radius: 20px;
+  background-color: #f0f0f0!important;
+  padding: 5px;
+  height: 30px;
+  opacity: 0.2;
+}
+.by-team a {
+  text-align: center;
+}
+.by-team div {
+  margin-top: -35px;
+}
+.by-team .by-team-txt {
+  font-size: 14px;
+  color: #ffffff;
+}
+#form_vertical .by-team.width-team {
+  margin-bottom: -40px;
+}
+#form_vertical .by-team.width-team .background-team {
+  background-color: #333333!important;
+  opacity: 1;
+  width: 165px;
+  margin: 10px auto;
+}
+.contact-body .name {
+  margin-bottom: 5px;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  #modal-success .modal-body {
+    height: 100px;
+  }
+  .width-icon {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    left: 15px;
+    bottom: 15px;
+    z-index: 2000;
+    padding: 10px;
+    color: #ffffff;
+  }
+  .width-icon .txt {
+    margin: 10px;
+  }
+  .width-icon .fa {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 440px) {
+  #form_contact {
+    width: 100%;
+  }
+  .modal-dialog {
+    width: 100% !important;
+    margin-top: 0!important;
+  }
+}
+@media (min-width: 992px) {
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
