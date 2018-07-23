@@ -163,7 +163,7 @@
                                             </li>
                                         </ul>
                                         <field name="position" class="select hidden"/>
-                                        <div class="col-md-12 preview" id="preview">
+                                        <div class="col-md-6 preview" id="preview">
                                             <!--<t t-call="source_lead_website.preview"/>-->
                                         </div>
                                     </div>

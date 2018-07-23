@@ -68,9 +68,10 @@ input[type="color"]::-webkit-color-swatch {
   max-width: 200px;
 }
 #preview {
+  transform: scale(0.5);
   overflow: hidden;
   height: 400px;
 }
-.container-form {
+.position .container-form {
   position: absolute!important;
 }
