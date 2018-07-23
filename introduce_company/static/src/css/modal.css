@@ -1,0 +1,177 @@
+/*Modal*/
+.modal {
+    text-align: center;
+}
+
+.modal-question .modal-dialog{
+    width: 650px;
+}
+
+.modal-question .inner-addon {
+    position: relative;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+.modal-question .inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+}
+
+.modal-question .left-addon .fa {
+    left: 0;
+    color: #cccccc;
+    font-size: 16px;
+    height: 100%;
+}
+
+.modal-question input, .footer-modal button {
+    height: 42px !important;
+}
+
+.modal-question input, .modal-question textarea {
+    padding-left: 30px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: none!important;
+    border: 1px solid #9a9a9a!important;
+    height: 100%;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: #333333;
+    font-size: 16px;
+}
+
+.modal-question input::placeholder, .modal-question textarea::placeholder {
+    color: #888888;
+}
+
+.modal-question .header {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 15px;
+}
+
+.modal-question .header span {
+    width: 100%;
+    float: left;
+    object-fit: contain;
+}
+
+.modal-question .header .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3a3d3f;
+}
+
+.modal-question .header .description {
+    font-size: 14px;
+    text-align: center;
+    color: #666666;
+}
+
+.modal-question .body {
+    margin: 0 40px;
+    border-bottom: 1px dotted #979797;
+    padding-bottom: 30px;
+}
+
+.modal-question .body .name {
+    font-size: 20px;
+    color: #333333 !important;
+    vertical-align: top;
+}
+
+.modal-question .footer-modal {
+    text-align: center;
+    margin: 15px auto 30px;
+}
+
+.modal-question .footer-modal button {
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 3px;
+    background-color: #388E3C;
+    border: solid 1px #cbcbd0;
+    width: 100%;
+}
+
+table td {
+    vertical-align: middle;
+}
+
+.td-first {
+    width: 150px;
+}
+
+.modal-question .footer-modal button:hover {
+    background-color: #388E3C;
+    color: #ffffff;
+}
+
+.modal-question .footer-modal button.close {
+    margin-right: 15px!important;
+}
+#modal-success .modal-body h3{
+    text-align: center;
+    color: #388E3C;
+}
+
+@media (max-width: 991px) {
+    .modal-dialog {
+        vertical-align: top;
+    }
+
+    .modal-question .modal-dialog {
+        width: auto;
+    }
+
+    .modal-question .body {
+        margin: 0 5px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .td-first {
+        width: 100px;
+    }
+
+    .modal-question .body .name {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .td-first {
+        width: 60px;
+    }
+
+    .modal-question .body .name {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="exprience_form" model="ir.ui.view">
+            <field name="name">introduce.experience.form</field>
+            <field name="model">introduce.experience</field>
+            <field name="arch" type="xml">
+                <form string="experience">
+                    <sheet>
+                        <group colspan="2" col="2">
+                            <field name="name" placeholder="name"/>
+                            <field name="name_vn" placeholder="Tên"/>
+                        </group>
+                        <group colspan="2" col="2">
+                            <field name="description" placeholder="Idea description..."/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="course_list_action">
+            <field name="name">Exprience</field>
+            <field name="res_model">introduce.experience</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first exprience
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="main_exprience_menu" name="Exprience"/>
+        <menuitem id="exprience_menu" name="Exprience" parent="main_exprience_menu" action="course_list_action"/>
+
+    </data>
+</odoo>

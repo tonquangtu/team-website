@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <template id="homepage" name="Odoo Insight">
+        <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/homepage_style.css"/>
+        <t t-call="website.layout">
+            <div id="homepage">
+
+                <t id="header" t-call="introduce_company.header">
+                    <t t-set="menu_list" t-value="menu"/>
+                    <t t-set="team" t-value="team"/>
+                </t>
+
+                <!--mobi header-->
+                <div class="width_header cen">
+                    <button type="button" class="navbar-toggle-custom collapsed" data-toggle="collapse"
+                            data-target="#menu_main_ul">
+                        <img src="/introduce_company/static/src/img/icon_menu.svg"/>
+                    </button>
+                    <div class="box-logo pd0">
+                        <a href="/" class="logo">
+                            <img t-att-src="'data:image/png;base64,' + to_text(team.logo)"
+                                 alt="Odoo Insight" style="height:40px!important;"/>
+                        </a>
+                    </div>
+                    <div class="box-menu">
+                        <div class="nav-main">
+                            <div class="box-nav">
+                                <ul class="menu_main" id="menu_main_ul"
+                                    style="display: none;">
+                                    <t t-foreach="menu" t-as="item">
+                                        <li class="menu-solution">
+                                            <a class="" t-att-href="item.get('parent').x_link" title="Link menu"
+                                               target="_self">
+                                                <t t-esc="item.get('parent').name"/>
+                                                <img src="/introduce_company/static/src/img/Shape 1.png"
+                                                     style="margin-left: 5px;margin-bottom: 7px;" class="hidden"/>
+                                            </a>
+                                            <ul class="sub-small hidden" style="display: none;">
+                                                <t t-foreach="item.get('childs')" t-as="childs">
+                                                    <li>
+                                                        <a t-att-href="item.get('childs').x_link">
+                                                            <t t-if="vi" t-esc="childs.x_name_vn"/>
+                                                            <t t-else="" t-esc="childs.name"/>
+                                                        </a>
+                                                    </li>
+                                                </t>
+                                            </ul>
+                                        </li>
+                                    </t>
+
+                                    <ul class="menu-mobi">
+                                        <li t-if="vi" class="dropdown">
+                                            <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                                <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                                     title="Tiếng Việt" style="width: 20px;"/>
+                                                Tiếng Việt
+                                                <b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li class="" dir="ltr">
+                                                    <a class="js_change_lang" href="" data-default-lang="true"
+                                                       data-lang="en_US" onclick="setCookie('lang','en')">
+                                                        <img src="/introduce_company/static/src/img/en.gif"
+                                                             alt="English (UK)"
+                                                             title="English (UK)" style="width: 20px;"/>
+                                                        English (UK)
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li t-else="" class="dropdown">
+                                            <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                                <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                                     title="English (UK)" style="width: 20px;"/>
+                                                English (UK)
+                                                <b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li class="" onclick="setCookie('lang','vi')" dir="ltr">
+                                                    <a href="/vi" onclick="setCookie('lang','vi')">
+                                                        <img src="/introduce_company/static/src/img/vi.gif"
+                                                             alt="Tiếng Việt"
+                                                             title="Tiếng Việt" style="width: 20px;"/>
+                                                        Tiếng Việt
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <div style="text-align:center;display: inline-block;width: 100%;">
+                                            <b>
+                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                                <t t-esc="team.phone"/>
+                                            </b>
+                                        </div>
+                                    </ul>
+
+
+                                </ul>
+                                <ul class="hidden" id="top_menu">
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--slide banner-->
+                <div id="Banner" class="banner">
+                    <div class="container1">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-animation-speed="">
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <t t-foreach="banner" t-as="k">
+                                    <div t-att-class="'banner-img item %s' % ('active' if k== banner[0] else '')">
+                                        <img t-att-src="'data:image/png;base64,' + to_text(k.image)"
+                                             alt="Banner1"/>
+                                        <div class="carousel-caption banner-title caption-1">
+                                            <p class="title">
+                                                <t t-if="vi" t-esc="k.name_vn"/>
+                                                <t t-else="" t-esc="k.name"/>
+                                            </p>
+                                            <p class="content">
+                                                <t t-if="vi" t-esc="k.title_vn"/>
+                                                <t t-else="" t-esc="k.title"/>
+                                            </p>
+                                            <a href="http://demo.odooinsight.info/" target="_blank">
+                                                <button class="btn demo">
+                                                    <t t-if="vi" t-esc="k.button_vn"/>
+                                                    <t t-else="" t-esc="k.button"/>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                <span class="fa fa-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                <span class="fa fa-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Odoo-->
+                <div id="Introduce-Odoo" class="container">
+                    <div class="container" style="display: flex;">
+                        <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+                             style="margin: 70px auto 10px; width:100%" data-effect="none" data-align="left"
+                             data-margin="false">
+                            <div class="col-inner" style="margin-top:15px">
+                                <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                    class="vc_custom_heading">
+                                    <t t-if="vi">Giới thiệu Odoo</t>
+                                    <t t-else="">Introduce Odoo</t>
+                                </h2>
+
+                                <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+                                     data-effect="none">
+                                    <div class="nz-separator solid"
+                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px;">
+                                        &#160;
+                                    </div>
+                                </div>
+                                <div style="" class="nz-column-text nz-clearfix  element-animate-false"
+                                     data-effect="none"
+                                     data-effect-speed="50">
+                                    <p></p>
+                                    <p style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                        <t t-if="vi">Odoo là một hệ thống phần mềm quản lý tổng thể doanh nghiệp</t>
+                                        <t t-else="">Odoo is a system management software for business</t>
+                                    </p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three-benefit">
+                        <t t-foreach="odoo" t-as="odoo">
+                            <div class="benefit col-xs-12 col-sm-6 col-md-3">
+                                <div class="benefit-container-img">
+                                    <img class="benefit-img img-responsive"
+                                         t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image' % (odoo.id)"/>
+                                </div>
+                                <div class="benefit-content">
+                                    <div class="benefit-title">
+                                        <t t-if="vi" t-esc="odoo.x_title_vn"/>
+                                        <t t-else="" t-esc="odoo.name"/>
+                                    </div>
+                                    <div class="benefit-txt">
+                                        <t t-if="vi" t-raw="odoo.x_description_vn"/>
+                                        <t t-else="" t-raw="odoo.x_description"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <svg viewBox="0 0 1000 20" preserveAspectRatio="none" width="100%" height="20"
+                                         style="fill: #f0f3f2;">
+                                        <path d="M 0,-0.5 0,20 500,0 1000,20 1000,-0.5"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+
+                <!--Solution-->
+                <div id="Solution" class="nz-section horizontal autoheight-false animate-false full-width-false "
+                     data-animation-speed="35000" data-parallax="false" style="padding-bottom:25px;">
+                    <div class="">
+                        <div class="container" style="display: flex;">
+                            <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+                                 style="margin: 70px auto 10px;width:100%;" data-effect="none" data-align="left"
+                                 data-margin="false">
+                                <div class="col-inner" style="margin: 15px auto;">
+                                    <h2 style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                        class="vc_custom_heading">
+                                        <t t-if="vi">Giải pháp của chúng tôi</t>
+                                        <t t-else="">Solution</t>
+                                    </h2>
+                                    <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+                                         data-effect="none">
+                                        <div class="nz-separator solid"
+                                             style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px;">
+                                            &#160;
+                                        </div>
+                                    </div>
+                                    <div style="" class="nz-column-text nz-clearfix  element-animate-false"
+                                         data-effect="none"
+                                         data-effect-speed="50">
+                                        <p></p>
+                                        <p t-if="vi"
+                                           style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                            Chúng tôi cung cấp những giải pháp tốt nhất trên nền tảng Odoo
+                                        </p>
+                                        <p t-else=""
+                                           style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                            We provide the best solutions on the Odoo platform
+                                        </p>
+                                        <p></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nz-row container list-solution">
+                            <div class="col-md-12 solution-items">
+                                <t t-foreach="solution" t-as="k">
+                                    <a href="">
+                                        <div class="col-xs-6 col-sm-6 col-md-3 solution-item">
+                                            <div class="solution-img">
+                                                <div class="solution-info">
+                                                    <h4>
+                                                        <t t-esc="k.name"/>
+                                                    </h4>
+                                                    <h5>
+                                                        <t t-if="vi" t-esc="k.x_title_vn"/>
+                                                        <t t-else="" t-esc="k.x_title"/>
+                                                    </h5>
+                                                </div>
+                                                <div class="solution-content hidden">
+                                                    <t t-if="vi" t-esc="k.x_description_vn"/>
+                                                    <t t-else="" t-esc="k.x_description"/>
+                                                </div>
+                                                <img class="img-solution"
+                                                     t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image' % (k.id)"/>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </t>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--Introduce-->
+                <div id="Introduce-OIsight" class="reason-oinsight container">
+                    <div class="container" style="display: flex;">
+                        <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+                             style="margin: 70px auto 10px" data-effect="none" data-align="left" data-margin="false">
+                            <div class="col-inner" style="">
+                                <h2 t-if="vi"
+                                    style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                    class="vc_custom_heading">Tại sao chọn chúng tôi
+                                </h2>
+                                <h2 t-else=""
+                                    style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                    class="vc_custom_heading">Why choose us
+                                </h2>
+                                <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+                                     data-effect="none">
+                                    <div class="nz-separator solid"
+                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px">
+                                        &#160;
+                                    </div>
+                                </div>
+                                <div style="" class="nz-column-text nz-clearfix  element-animate-false"
+                                     data-effect="none"
+                                     data-effect-speed="50">
+                                    <p></p>
+                                    <p t-if="vi"
+                                       style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                        Chúng tôi có những thành viên trẻ trung và năng động.
+                                        <br/>
+                                        Sẵn sàng đối mặt với mọi thử thách.
+                                    </p>
+                                    <p t-else=""
+                                       style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                        We have the following users and dynamic center.<br/>Ready for objects with every
+                                        try.
+                                    </p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <t t-foreach="reason" t-as="reason">
+                            <div class="col-md-6 reason">
+                                <div class="reason-img col-xs-5 col-sm-5 col-md-3">
+                                    <img class="img-responsive"
+                                         t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image' % (reason.id)"/>
+                                </div>
+                                <div class="reason-txt col-xs-7 col-sm-7 col-md-9">
+                                    <div class="title col-md-12">
+                                        <t t-if="vi" t-esc="reason.x_title_vn"/>
+                                        <t t-else="" t-esc="reason.name"/>
+                                    </div>
+                                    <div class="content col-md-12">
+                                        <p>
+                                            <t t-if="vi" t-esc="reason.x_description_vn"/>
+                                            <t t-else="" t-esc="reason.x_description"/>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+
+                <!--experience-->
+                <div id="Experience" class="nz-section horizontal autoheight-false animate-false full-width-false "
+                     data-img-width="1600" data-img-height="899" data-animation-speed="35000" data-parallax="false"
+                     style="background-color:#333333;background-image:url(/introduce_company/static/src/img/background.jpg);background-repeat:repeat;background-position:left top;background-attachment:scroll;padding-top:80px;padding-bottom:30px;">
+                    <div class="nz-video-overlay" style="background-image:url();">&#160;</div>
+                    <div class="container">
+                        <div class="nz-row">
+                            <div class="col vc_col-sm-12 col12  element-animate-false valign-top" style=""
+                                 data-effect="none" data-align="left">
+                                <div class="col-inner" style="">
+                                    <div id="nz-counter-1" class="nz-counter nz-clearfix" data-columns="4">
+                                        <t t-foreach="experience" t-as="exp">
+                                            <div class="nz-count" id="nz-count-1">
+                                                <div class="nz-count-wrap nz-clearfix">
+                                                    <span class="count-title" style="color:#f44336;">
+                                                        <t t-if="vi" t-esc="exp.name_vn"/>
+                                                        <t t-else="" t-esc="exp.name"/>
+                                                    </span>
+                                                    <span class="count-value"
+                                                          style="color:#ffffff;display: flex;justify-content: center;">
+                                                        <span class="count" style="color:#ffffff;">
+                                                            <t t-esc="exp.description"/>
+                                                        </span>
+                                                        <div class="exp-value_vn hidden" style="font-size: 28px;">
+                                                            <span t-if="vi">năm</span>
+                                                        </div>
+                                                        <div class="exp-value hidden" style="font-size: 28px;">
+                                                            <span t-esle="">year</span>
+                                                        </div>
+                                                        <div class="product-value hidden" style="font-size: 28px;">+
+                                                        </div>
+                                                    </span>
+                                                    <span class="count-border" style="background-color:#525252;"></span>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--member-->
+                <div id="Member">
+                    <t t-call="introduce_company.person">
+                        <t t-set="user" t-value="user"/>
+                    </t>
+                </div>
+
+                <!--list complete product-->
+                <div id="Product" class="section-body container">
+                    <div class="container" style="display: flex;">
+                        <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+                             style="margin: 40px auto 10px; width:100%;" data-effect="none" data-align="left"
+                             data-margin="false">
+                            <div class="col-inner" style="">
+                                <h2 t-if="vi"
+                                    style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                    class="vc_custom_heading">Dự Án Đã Hoàn Thành
+                                </h2>
+                                <h2 t-else=""
+                                    style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                    class="vc_custom_heading">Complete Project
+                                </h2>
+                                <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+                                     data-effect="none">
+                                    <div class="nz-separator solid"
+                                         style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px;">
+                                        &#160;
+                                    </div>
+                                </div>
+                                <div style="" class="nz-column-text nz-clearfix  element-animate-false"
+                                     data-effect="none"
+                                     data-effect-speed="50">
+                                    <p></p>
+                                    <p t-if="vi"
+                                       style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                        Chúng tôi đã hoàn thành rất nhiều dự án cho các khách hàng khác nhau.
+                                        <br/>Các sản phẩm này vẫn đang được hoạt động.
+                                    </p>
+                                    <p t-else=""
+                                       style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                        We were completed many many project for other customers<br/>This projects will
+                                        be active.
+                                    </p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="project-tiles large-block-grid-4 medium-block-grid-2 small-block-grid-1">
+                        <t t-foreach="product" t-as="j">
+                            <li class="project-tile">
+                                <div class="project-tile-inner">
+                                    <div class="project-tile-image fullscreener fsr-container">
+                                        <!--t-att-style="'background-image: url(/web/image?model=product.template&amp;id=%s&amp;field=image); background-position: center center;background-size: 100% 100%;' % (j.id)">-->
+                                        <img t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image' % (j.id)"
+                                             class="img-responsive"/>
+                                    </div><!-- /.project-tile-image fullscreener -->
+
+                                    <div class="project-tile-overlay">
+                                        <h4>
+                                            <t t-esc="j.name"/>
+                                        </h4>
+                                        <a t-if="vi" t-att-href="j.x_link"
+                                           class="button tiny">Xem sản phẩm
+                                        </a>
+                                        <a t-else="" t-att-href="j.x_link"
+                                           class="button tiny">View Product
+                                        </a>
+                                    </div><!-- /.project-tile-overlay -->
+                                </div><!-- /.project-tile-inner -->
+                            </li><!-- /.project-tile -->
+                        </t>
+                    </ul><!-- /.project-tiles medium-block-grid-3 -->
+                </div>
+
+                <!--customer-->
+                <div id="Customer" class="partner">
+                    <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+                         style="margin: 70px auto 10px;width:100%;" data-effect="none" data-align="left"
+                         data-margin="false">
+                        <div class="col-inner" style="width: 100%;margin: 0 auto;">
+                            <h2 t-if="vi" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                class="vc_custom_heading">Khách Hàng Của Chúng Tôi
+                            </h2>
+                            <h2 t-else="" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                                class="vc_custom_heading">OUR CUSTOMER
+                            </h2>
+                            <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+                                 data-effect="none">
+                                <div class="nz-separator solid"
+                                     style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px;">
+                                    &#160;
+                                </div>
+                            </div>
+                            <div style="" class="nz-column-text nz-clearfix  element-animate-false"
+                                 data-effect="none"
+                                 data-effect-speed="50">
+                                <p></p>
+                                <p t-if="vi"
+                                   style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                    Chúng tôi đã hợp tác với rất nhiều khách hàng trong nước cũng như nước ngoài...
+                                </p>
+                                <p t-else=""
+                                   style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                    We are already associated with many customer rows in other foreign...
+                                </p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partner-top">
+                        <t t-foreach="customer" t-as="i">
+                            <div class="col-md-2 item-partner">
+                                <a t-att-href="i.x_link">
+                                    <img alt="Customer"
+                                         t-att-src="'/web/image?model=product.template&amp;id=%s&amp;field=image_medium' % (i.id)"/>
+                                </a>
+                            </div>
+                        </t>
+                    </div>
+                    <div class="clearfix "></div>
+                    <div class="nz-clearfix hidden" style="text-align:center;">
+                        <a t-if="vi" class="box-more" href="#" style="font-size: 20px;">Xem thêm</a>
+                        <a t-else="" class="box-more" href="#" style="font-size: 20px;">Read more</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div id="Advisory">
+                    <div class="benefit-title">
+                        <t t-if="vi">Hãy liên hệ với chúng tôi để được tư vẫn miễn phí!</t>
+                        <t t-else="">Please contact us for a free quote!</t>
+                    </div>
+                    <button id="contact-btn">
+                        <t t-if="vi">Liên hệ ngay</t>
+                        <t t-else="">Contact now</t>
+                    </button>
+                </div>
+
+                <!--pointer-->
+                <a href="#Banner" class="to-top hidden">
+                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                </a>
+
+                <t t-call="introduce_company.footer">
+                    <t t-set="team" t-value="team"/>
+                </t>
+
+                <!--popup question-->
+                <div class="modal fade modal-question in" role="dialog" id="modal-question"
+                     aria-hidden="false">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body" t-attf-class="form-group">
+                                <button type="button" class="close" data-dismiss="modal" style="margin-right: 15px;">
+                                    <img src="/introduce_company/static/src/img/shape.svg" alt=""/>
+                                </button>
+                                <input type="hidden" name="csrf_token"
+                                       value=""/>
+                                <input type="hidden" name="redirect" value="/"/>
+                                <div class="row header">
+                                    <span class="title">
+                                        <t t-if="vi">LIÊN HỆ VỚI CHÚNG TÔI</t>
+                                        <t t-else="">Contact Us</t>
+                                    </span>
+                                </div>
+                                <div class="row body">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td class="name td-first">
+                                                <t t-if="vi">Tên của bạn:</t>
+                                                <t t-else="">Name:</t>
+                                            </td>
+                                            <td>
+                                                <input id='contact_name' class="form-control" name="contact_name"
+                                                       required="True"
+                                                       type="text" placeholder="Nguyen Van A"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name">
+                                                <t t-if="vi">Điện thoại:</t>
+                                                <t t-else="">Phone:</t>
+                                            </td>
+                                            <td>
+                                                <input id='contact_phone' class="form-control" name="contact_phone"
+                                                       required="True"
+                                                       type="text" placeholder="0123456789"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name">Email:</td>
+                                            <td>
+                                                <input id='contact_email' class="form-control" name="contact_email"
+                                                       required="True"
+                                                       type="text" placeholder="123@gmail.com"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="name">
+                                                <t t-if="vi">Câu hỏi:</t>
+                                                <t t-else="">Question:</t>
+                                            </td>
+                                            <td>
+                                                <textarea id='contact_question' class="form-control" name="description"
+                                                          style="min-height: 120px;resize: vertical;" required="True"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="row footer-modal">
+                                    <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+                                        <button id="btn_send" class="form-control" type="submit">
+                                            <t t-if="vi">Gửi</t>
+                                            <t t-else="">Submit</t>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--modal question success-->
+                <div class="modal fade modal-success" id="modal-success" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">
+                                <h3>Thanks your question!</h3>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                (function (w,i,d,g,e,t,s) {
+                w[d] = w[d]||[];
+                t= i.createElement(g);
+                t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];
+                s.parentNode.insertBefore(t, s);
+                })
+                (window, document, '_gscq','script','//widgets.getsitecontrol.com/145550/script.js');
+            </script>
+
+            <script>
+                $(document).ready(function () {
+                    console.log('abc');
+                    $.ajax({
+                        url: '/contact-ajax',
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        data: JSON.stringify({'jsonrpc': "2.0", 'method': "call", "params": {}}),
+                        success: function (data) {
+                            var content = data['result']
+                            $('body').append(content);
+                        },
+                        error: function (e) {
+                           console.log(e.message);
+                        }
+                    });
+                });
+            </script>
+            <script src="/introduce_company/static/src/js/homepage_script.js"/>
+        </t>
+    </template>
+</odoo>

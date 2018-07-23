@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+"custom_access_res_company","access_res_company_name","model_res_company",,1,1,1,1
+"access_res_user","access_res_user_image","model_res_users",,1,1,1,1
+"custom_access_res_partner","res_partner_image","base.model_res_partner",,1,1,1,1

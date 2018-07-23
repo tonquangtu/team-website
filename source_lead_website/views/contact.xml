@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="contact_bottom" name="Contact">
+        <link rel="stylesheet" type="text/css" href="/source_lead_website/static/src/css/contact_style.css"/>
+        <div class="container-form" t-att-style="'%s' % ('right:50;' if not leftbottom else 'left:50') ">
+            <div id="form_contact" class="collect"
+                 t-att-style="'background-color: %s' % (backgroundColor) ">
+                <div class="contact-header">
+                    <p class="title" t-att-style="'color: %s;' % (textColor)">
+                        <t t-esc="txtHeader"/>
+                    </p>
+                    <span id="contact-close" class="contact-close">
+                        <i class="fa fa-angle-up" aria-hidden="true"/>
+                    </span>
+                </div>
+                <div class="contact-body" style="display:block">
+                    <div t-if="showname">
+                        <div class="name" t-att-style="'color: %s;' % (textColor)">
+                            <t>Name</t>
+                        </div>
+                        <div>
+                            <input id='contact_name' class="form-control" name="contact_name"
+                                   required="True"
+                                   type="text"/>
+                        </div>
+                    </div>
+                    <div t-if="showphone">
+                        <div class="name" t-att-style="'color: %s;' % (textColor)">
+                            <t>Phone</t>
+                        </div>
+                        <div>
+                            <input id='contact_phone' class="form-control" name="contact_phone"
+                                   required="True"
+                                   type="text"/>
+                        </div>
+                    </div>
+                    <div t-if="showemail">
+                        <div class="name" t-att-style="'color: %s;' % (textColor)">Email</div>
+                        <div>
+                            <input id='contact_email' class="form-control" name="contact_email"
+                                   required="True"
+                                   type="text"/>
+                        </div>
+                    </div>
+                    <div t-if="showaddress">
+                        <div class="name" t-att-style="'color: %s;' % (textColor)">Address</div>
+                        <div>
+                            <input id='contact_address' class="form-control" name="contact_address"
+                                   required="True"
+                                   type="text"/>
+                        </div>
+                    </div>
+                    <div t-if="showquestion">
+                        <div class="name" t-att-style="'color: %s;' % (textColor)">
+                            <t t-if="vi">Câu hỏi</t>
+                            <t t-else="">Question</t>
+                        </div>
+                        <div>
+                            <textarea id='contact_question' class="form-control" name="description"
+                                      style="min-height: 75px;resize: none;" required="True"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-footer">
+                    <button id="btn_send" class="form-control" type="submit"
+                            t-att-style="'background-color: %s;' %btnColor">
+                        <span t-att-style="'color:%s' %txtBtnColor">
+                            <t t-esc="txtBtn"/>
+                        </span>
+                    </button>
+                </div>
+                <div class="by-team">
+                    <a href="http://odooinsight.info/" target="_blank">
+                        <div class="background-team"/>
+                        <div>
+                            <span class="by-team-txt">Powered by OIsight</span>
+                        </div>
+                    </a>
+                </div>
+                <script src="/source_lead_website/static/src/js/contact_script.js"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="contact_vertical" name="Contact Us">
+        <link rel="stylesheet" type="text/css" href="/source_lead_website/static/src/css/contact_style.css"/>
+        <div id="form_vertical" class="collect">
+            <div t-if="leftmid" class="envelope left collect-envelope"
+                 t-att-style="'background-color: %s;' % (backgroundColor)">
+                <span>Sent to email</span>
+                <i class="fa fa-envelope-o" aria-hidden="true"/>
+            </div>
+
+            <div t-else="" class="envelope right" t-att-style="'background-color: %s;right:-97px;' % (backgroundColor)">
+                <i class="fa fa-envelope-o" aria-hidden="true"/>
+                <span>Sent to email</span>
+            </div>
+
+            <!--modal email-->
+            <div class="modal fade modal-form in" role="dialog" id="modal-form"
+                 aria-hidden="false">
+                <div class="modal-dialog" t-att-style="'background-color: %s;' % (backgroundColor)">
+                    <div class="contact-header">
+                        <p class="title" t-att-style="'color: %s;' % (textColor)">
+                            <t t-esc="txtHeader"/>
+                        </p>
+                        <span id="close_modal">
+                            <i class="fa fa-times-circle-o" aria-hidden="true"/>
+                        </span>
+                    </div>
+                    <div class="contact-body">
+                        <div t-if="showname">
+                            <div class="name" t-att-style="'color: %s;' % (textColor)">
+                                <t>Name</t>
+                            </div>
+                            <div>
+                                <input id='contact_name' class="form-control" name="contact_name"
+                                       required="True"
+                                       type="text"/>
+                            </div>
+                        </div>
+                        <div t-if="showphone">
+                            <div class="name" t-att-style="'color: %s;' % (textColor)">
+                                <t>Phone</t>
+                            </div>
+                            <div>
+                                <input id='contact_phone' class="form-control" name="contact_phone"
+                                       required="True"
+                                       type="text"/>
+                            </div>
+                        </div>
+                        <div t-if="showemail">
+                            <div class="name" t-att-style="'color: %s;' % (textColor)">Email</div>
+                            <div>
+                                <input id='contact_email' class="form-control" name="contact_email"
+                                       required="True"
+                                       type="text"/>
+                            </div>
+                        </div>
+                        <div t-if="showaddress">
+                            <div class="name" t-att-style="'color: %s;' % (textColor)">Address</div>
+                            <div>
+                                <input id='contact_address' class="form-control" name="contact_address"
+                                       required="True"
+                                       type="text"/>
+                            </div>
+                        </div>
+                        <div t-if="showquestion">
+                            <div class="name" t-att-style="'color: %s;' % (textColor)">
+                                <t t-if="vi">Câu hỏi</t>
+                                <t t-else="">Question</t>
+                            </div>
+                            <div>
+                                <textarea id='contact_question' class="form-control" name="description"
+                                          style="min-height: 75px;resize: none;" required="True"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-footer">
+                        <button id="btn_send" class="form-control" type="submit"
+                                t-att-style="'background-color: %s;' %btnColor">
+                            <span t-att-style="'color:%s' %txtBtnColor">
+                                <t t-esc="txtBtn"/>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="by-team width-team">
+                        <a href="http://odooinsight.info/" target="_blank">
+                            <div class="background-team"/>
+                            <div>
+                                <span class="by-team-txt">Powered by OIsight</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--modal success-->
+            <div class="modal fade modal-success" id="modal-success" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-body" t-att-style="'background-color: %s;' % (backgroundColor)">
+                            <h3 t-att-style="'color: %s;' % (textColor)">Thanks your question!</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/source_lead_website/static/src/js/contact_script.js"/>
+    </template>
+
+</odoo>

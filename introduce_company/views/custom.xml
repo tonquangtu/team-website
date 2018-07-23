@@ -1,0 +1,66 @@
+<odoo>
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page/group/group/field[@name='partner_id']" position="after">
+                <field name="x_partner_vn" placeholder="nhập tên"/>
+            </xpath>
+            <xpath expr="//sheet/notebook/page/group/group/field[@name='report_header']" position="before">
+                <field name="x_address" placeholder="nhập địa chỉ"/>
+            </xpath>
+            <xpath expr="//sheet/notebook/page/group/group/field[@name='report_header']" position="after">
+                <field name="x_description" placeholder="Description"/>
+                <field name="x_description_vn" placeholder="Nội dung miêu tả"/>
+                <field name="x_id" placeholder="ID"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_users_form" model="ir.ui.view">
+        <field name="name">res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page/group" position="inside">
+                <field name="x_name_vn" placeholder="Nhập tên"/>
+                <field name="x_job" placeholder="Job"/>
+                <field name="x_job_vn" placeholder="Banj "/>
+                <field name="x_facebook" placeholder="facebook"/>
+                <field name="x_twitter" placeholder="twitter"/>
+                <field name="x_googleplus" placeholder="googleplus"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page/group/group" position="inside">
+                <field name="x_title_vn" placeholder="Tên VN/ tiêu đề odoo"/>
+                <field name="x_title" placeholder="odoo"/>
+                <field name="x_description_vn" placeholder=""/>
+                <field name="x_description" placeholder=""/>
+                <field name="x_link" placeholder="Link"/>
+                <field name="x_type"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_public_category_form_view" model="ir.ui.view">
+        <field name="name">product.public.category.form</field>
+        <field name="model">product.public.category</field>
+        <field name="inherit_id" ref="website_sale.product_public_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div/group" position="inside">
+                <field name="x_name_vn" placeholder="Tên mục"/>
+                <field name="x_link" placeholder="Link"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

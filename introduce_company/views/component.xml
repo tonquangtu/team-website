@@ -1,0 +1,288 @@
+<odoo>
+    <template id="header" name="Header">
+        <div id="header"
+             class="header desk version4 page-title-section-version1 one-page-side slider-active stuck-boxed-true sl-true search-true cart-true iversion-dark effect-underline subeffect-ghost fixed-true fiversion-dark wiversion-dark">
+            <div class="header-content">
+                <div class="header-top nz-clearfix" style=" max-height: 40px;">
+                    <div class="container" style="display:flex;">
+                        <div class="slogan nz-clearfix">
+                            <span class="nz-icon none small icon-phone animate-false" style="color:#f44336"/>
+                            <span t-if="vi" style="color:#999999;font-size:12px;padding-right:15px">Điện thoại:
+                                <t t-esc="team.phone"/>
+                            </span>
+                            <span t-else="" style="color:#999999;font-size:12px;padding-right:15px">CALL US:
+                                <t t-esc="team.phone"/>
+                            </span>
+                            <span class="nz-icon none small icon-envelope animate-false"
+                                  style="color:#f44336;font-size:12px"/>
+                            <span style="color:#999999;font-size:12px">
+                                <t t-esc="team.email"/>
+                            </span>
+                        </div>
+                        <div class="social-links header-top-social-links nz-clearfix">
+                            <span t-if="vi" class="social-text">Liên hệ:</span>
+                            <span t-else="" class="social-text">Contact us:</span>
+                            <a class="icon-facebook" t-att-href="team.social_facebook" title="facebook"
+                               target="_blank"/>
+                            <a class="icon-twitter" t-att-href="team.social_twitter" title="twitter"
+                               target="_blank"/>
+                            <a class="icon-youtube" t-att-href="team.social_youtube" title="youtube"
+                               target="_blank"/>
+                        </div>
+
+                        <ul class="nav navbar-right">
+                            <li t-if="vi" class="dropdown">
+                                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                         title="Tiếng Việt" style="width: 20px;"/>
+                                    Tiếng Việt
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="" dir="ltr">
+                                        <a class="js_change_lang" href="" data-default-lang="true" data-lang="en_US"  onclick="setCookie('lang','en')">
+                                            <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                                 title="English (UK)" style="width: 20px;"/>
+                                            English (UK)
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li t-else="" class="dropdown">
+                                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="/introduce_company/static/src/img/en.gif" alt="English (UK)"
+                                         title="English (UK)" style="width: 20px;"/>
+                                    English (UK)
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="" onclick="setCookie('lang','vi')" dir="ltr">
+                                        <a href="/vi" onclick="setCookie('lang','vi')">
+                                            <img src="/introduce_company/static/src/img/vi.gif" alt="Tiếng Việt"
+                                                 title="Tiếng Việt" style="width: 20px;"/>
+                                            Tiếng Việt
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="header-body">
+                    <div class="container">
+                        <div class="logo logo-desk">
+                            <a href="#" title="Odoo Insight">
+                                <img class="normal-logo" style="max-width:284px;max-height:60px;"
+                                     t-att-src="'data:image/png;base64,' + to_text(team.logo)"
+                                     alt="Odoo Insight"/>
+                                <!--<img class="fixed-logo" style="max-width:284px;max-height:48px;margin-top:-24px"-->
+                                <!--t-att-src="'/web/image?model=res.company&amp;id=%s&amp;field=logo' % (team.id)"-->
+                                <!--alt="Odoo Insight"/>-->
+                            </a>
+                        </div>
+
+                        <nav class="header-menu desk-menu nz-clearfix">
+                            <ul id="header-menu" class="menu">
+                                <t t-foreach="menu_list" t-as="item">
+                                    <li id="menu-item-parent"
+                                        class="menu-item menu-item-object-parent current-menu-item current-menu-ancestor current-menu-parent"
+                                        data-mm="false" data-mmc="2">
+                                        <a t-att-href="item.get('parent').x_link">
+                                            <span class="mi"></span>
+                                            <span class="txt">
+                                                <t t-if="vi" t-esc="item.get('parent').x_name_vn"/>
+                                                <t t-else="" t-esc="item.get('parent').name"/>
+                                            </span>
+                                            <span class="di icon-arrow-right9"></span>
+                                        </a>
+                                        <ul class="sub-menu menu-child">
+                                            <t t-foreach="item.get('childs')" t-as="childs">
+                                                <li id="menu-item-5913"
+                                                    class="menu-item menu-item-type-custom menu-item-object-child"
+                                                    data-mm="false" data-mmc="2">
+                                                    <a href="http://ngonparty.com">
+                                                        <span class="mi"></span>
+                                                        <span class="txt">
+                                                            <t t-if="vi" t-esc="childs.x_name_vn"/>
+                                                            <t t-else="" t-esc="childs.name"/>
+                                                        </span>
+                                                        <span class="di icon-arrow-right9"></span>
+                                                    </a>
+                                                </li>
+                                            </t>
+                                        </ul>
+                                    </li>
+                                </t>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="footer" name="Footer">
+        <div class="footer">
+            <div class="footer-wa footer-columns-4 nz-clearfix">
+                <div class="container">
+                    <aside class="footer-widget-area widget-area nz-clearfix">
+                        <div id="text-2" class="widget widget_text">
+                            <div class="textwidget">
+                                <img class="normal-logo" style="max-width:284px;max-height:60px;"
+                                     t-att-src="'data:image/png;base64,' + to_text(team.logo)"
+                                     alt="Odoo Insight"/>
+                                <div class="gap nz-clearfix" style="height:30px">&#160;</div>
+                                <span t-if="vi" style="color:#c0c0c1;font-size:14px;line-height:28px;">Địa chỉ:
+                                    <br/>
+                                    <t t-esc="team.x_address"/>
+                                </span>
+                                <span t-else="" style="color:#c0c0c1;font-size:14px;line-height:28px;">Address
+                                    <br/>
+                                    <t t-esc="team.street"/>
+                                </span>
+                                <div class="gap nz-clearfix" style="height:25px">&#160;</div>
+                                <div class="nz-sl social-links nz-clearfix left">
+                                    <a class="icon-facebook" t-att-href="team.social_facebook" target="_self"></a>
+                                    <a class="icon-twitter" t-att-href="team.social_twitter" target="_self"></a>
+                                    <a class="icon-googleplus" t-att-href="team.social_googleplus" target="_self"></a>
+                                    <a class="icon-youtube" t-att-href="team.social_youtube" target="_self"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mailchimp-1" class="widget widget_mailchimp">
+                            <h6 t-if="vi" class="widget_title">Đăng ký</h6>
+                            <h6 t-else="" class="widget_title">Subscribe</h6>
+                            <div id="mc_embed_signup">
+                                <div class="mailchimp-subtitle">
+                                    <div class="done-tick hidden">
+                                        <img src="/introduce_company/static/src/img/done-tick.svg"/>
+                                    </div>
+                                    <div class="register">
+                                        <t t-if="vi">Nhập email của bạn để nhận thông báo mới nhất</t>
+                                        <t t-else="">Import your email to receive latest reports</t>
+                                    </div>
+                                    <div class="register-succuess hidden">
+                                        <t t-if="vi">Chúng tôi đã nhận được email của bạn</t>
+                                        <t t-else="">We have been received your email</t>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="text" value="" name="EMAIL" class="email" id="footer_email"
+                                           placeholder="email" required=""/>
+                                    <input t-att-value="'%s'% ('Gửi' if vi else 'Subscribe')" type="submit"
+                                           name="subscribe"
+                                           id="footer_subscribe"/>
+                                </div>
+                                <div class="mailchimp-description"></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="person" name="Person">
+        <link rel="stylesheet" type="text/css" href="/introduce_company/static/src/css/person_style.css"/>
+        <!--multi-carousel-->
+        <div class="product-together">
+            <div class="container" style="display: flex;">
+                <div class="col vc_col-sm-12 vc_col-lg-6 vc_col-md-8 vc_col-xs-12 col12  element-animate-false valign-top"
+                     style="margin: 70px auto 10px" data-effect="none" data-align="left" data-margin="false">
+                    <div class="col-inner" style="">
+                        <h2 t-if="vi" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                            class="vc_custom_heading">Thành viên
+                        </h2>
+                        <h2 t-else="" style="font-size: 30px;color: #333333;line-height: 40px;text-align: center"
+                            class="vc_custom_heading">TEAM MEMBERS
+                        </h2>
+                        <div class="sep-wrap element-animate element-animate-false center nz-clearfix"
+                             data-effect="none">
+                            <div class="nz-separator solid"
+                                 style="border-bottom-color:#f44336;width:100px;border-bottom-width:2px;border-bottom-style:solid;margin-top:8px">
+                                &#160;
+                            </div>
+                        </div>
+                        <div style="" class="nz-column-text nz-clearfix  element-animate-false" data-effect="none"
+                             data-effect-speed="50">
+                            <p></p>
+                            <p t-if="vi"
+                               style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                Chúng tôi có những thành viên trẻ trung và năng động.
+                                <br/>
+                                Sẵn sàng đối mặt với mọi thử thách.
+                            </p>
+                            <p t-else=""
+                               style="text-align: center; font-size: 21px; line-height: 26px; color: #777777;">
+                                We have the following users and dynamic center.<br/>Ready for objects with every try.
+                            </p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="carousel slide multi-item-carousel" data-interval="2000"
+                             id="theCarousel">
+                            <div class="carousel-inner nz-persons">
+                                <t t-foreach="user" t-as="j">
+                                    <div t-att-class="'item %s' % ('active' if j== user[0] else '')">
+                                        <div class="product-together-item col-xs-6 col-sm-4 col-md-3 ">
+                                            <div class="animate-item person ">
+                                                <div class="img">
+                                                    <img t-att-src="'data:image/png;base64,' + to_text(j.image)"
+                                                         alt="Image" class="image-person"/>
+                                                </div>
+                                                <div class="person-body">
+                                                    <div class="person-meta">
+                                                        <a href="#">
+                                                            <div class="name">
+                                                                <t t-if="vi" t-esc="j.x_name_vn"/>
+                                                                <t t-else="" t-esc="j.name"/>
+                                                            </div>
+                                                        </a>
+                                                        <div class="title">
+                                                            <t t-if="vi" t-esc="j.x_job_vn"/>
+                                                            <t t-else="" t-esc="j.x_job"/>
+                                                        </div>
+                                                        <div class="nz-clearfix"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="ninzio-overlay">
+                                                    <div class="ninzio-overlay-content">
+                                                        <div class="social-links">
+                                                            <a class="icon-twitter" t-att-href="j.x_twitter"
+                                                               title="twitter"></a>
+                                                            <a class="icon-facebook" t-att-href="j.x_facebook"
+                                                               title="facebook"></a>
+                                                            <a class="icon-googleplus" t-att-href="j.x_googleplus"
+                                                               title="googleplus"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                            <a class="left carousel-control" style="background:none"
+                               href="#theCarousel"
+                               data-slide="prev">
+                                <span class="owl-prev fa fa-arrow-left" aria-hidden="true"/>
+                            </a>
+                            <a class="right carousel-control" style="background:none"
+                               href="#theCarousel"
+                               data-slide="next">
+                                <span class="owl-next fa fa-arrow-right" aria-hidden="true"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/introduce_company/static/src/js/person_script.js"></script>
+    </template>
+</odoo>
