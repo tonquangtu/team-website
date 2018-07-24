@@ -69,9 +69,35 @@ input[type="color"]::-webkit-color-swatch {
 }
 #preview {
   transform: scale(0.5);
+  transform-origin: 0 0 0;
   overflow: hidden;
-  height: 400px;
+  height: 700px;
+  width: 800px;
+  margin-right: -50%;
+  border: 1px solid #666666;
+  background: url("/source_lead_website/static/src/img/docx.png") no-repeat;
+  background-size: 100% 100%;
+}
+.dark-screen {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.5;
+}
+.preview-header {
+  width: 100%;
+  height: 80px;
+  background-color: #a5a5a5;
 }
 .position .container-form {
-  position: absolute!important;
+  position: absolute !important;
+}
+.modal-backdrop {
+  display: none!important;
+}
+#preview-screen .modal.fade .modal-dialog {
+  margin-left: 25%!important;
 }

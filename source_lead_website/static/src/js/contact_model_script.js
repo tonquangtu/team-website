@@ -11,7 +11,7 @@ $(document).ready(function () {
         }),
         success: function (data) {
             var content = data['result'];
-            $('#preview').append(content);
+            $('#preview-screen').append(content);
         },
         error: function (e) {
             alert('error');

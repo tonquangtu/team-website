@@ -110,7 +110,8 @@
                                     <div class="choose-view o_group_col_12">
                                         <div class="chose-color col-md-12">
                                             <div class="label-position">Color:</div>
-                                            <link rel='stylesheet' href='/source_lead_website/static/src/css/spectrum.css'/>
+                                            <link rel='stylesheet'
+                                                  href='/source_lead_website/static/src/css/spectrum.css'/>
                                             <div class="col-md-6">
                                                 <div class="color-item">
                                                     <span class="title-color">Background Color:</span>
@@ -164,7 +165,9 @@
                                         </ul>
                                         <field name="position" class="select hidden"/>
                                         <div class="col-md-6 preview" id="preview">
-                                            <!--<t t-call="source_lead_website.preview"/>-->
+                                            <div class="preview-header"></div>
+                                            <div class="hidden dark-screen"></div>
+                                            <div id="preview-screen"></div>
                                         </div>
                                     </div>
                                     <script src="/source_lead_website/static/src/js/contact_model_script.js"/>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <template id="contact_bottom" name="Contact">
-        <link rel="stylesheet" type="text/css" href="/source_lead_website/static/src/css/contact_style.css"/>
-        <div class="container-form" t-att-style="'%s' % ('right:50;' if not leftbottom else 'left:50') ">
+        <div class="container-form" t-att-style="'%s' % ('right:50px;' if not leftbottom else 'left:50px') ">
             <div id="form_contact" class="collect"
                  t-att-style="'background-color: %s' % (backgroundColor) ">
                 <div class="contact-header">
@@ -77,12 +76,12 @@
                         </div>
                     </a>
                 </div>
+                <!--<script src="/source_lead_website/static/src/js/contact_script.js"/>-->
             </div>
         </div>
     </template>
 
     <template id="contact_vertical" name="Contact Us">
-        <link rel="stylesheet" type="text/css" href="/source_lead_website/static/src/css/contact_style.css"/>
         <div id="form_vertical" class="collect">
             <div t-if="leftmid" class="envelope left collect-envelope"
                  t-att-style="'background-color: %s;' % (backgroundColor)">
@@ -90,7 +89,7 @@
                 <i class="fa fa-envelope-o" aria-hidden="true"/>
             </div>
 
-            <div t-else="" class="envelope right" t-att-style="'background-color: %s;right:-97px;' % (backgroundColor)">
+            <div t-else="" class="envelope right collect-envelope" t-att-style="'background-color: %s;right:0;' % (backgroundColor)">
                 <i class="fa fa-envelope-o" aria-hidden="true"/>
                 <span>Sent to email</span>
             </div>
@@ -186,6 +185,7 @@
                 </div>
             </div>
         </div>
+        <!--<script src="/source_lead_website/static/src/js/contact_script.js"/>-->
     </template>
 
 </odoo>
