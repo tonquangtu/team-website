@@ -95,7 +95,7 @@
             </div>
 
             <!--modal email-->
-            <div class="modal fade modal-form in" role="dialog" id="modal-form"
+            <div class="modal fade modal-form " role="dialog" id="modal-form"
                  aria-hidden="false">
                 <div class="modal-dialog" t-att-style="'background-color: %s;' % (backgroundColor)">
                     <div class="contact-header">
